@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { resolve } from "path";
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -8,11 +7,6 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
-    
-  },
-  alias: {
-    assets: "/<rootDir>/assets",
-    '@': resolve(__dirname, "/"),
   },
   css: ['~/assets/css/main.css'],
   postcss: {
@@ -27,4 +21,7 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     'nuxt-anchorscroll',
   ],
+  colorMode: {
+    preference: 'light'
+  }
 })

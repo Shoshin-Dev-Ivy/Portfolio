@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-gradient: white;
+    color: black;
+  }
+  
+  /* Mode sombre */
+  html.dark body {
+    background-color: #121212;
+    color: white;
+  }
