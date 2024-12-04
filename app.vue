@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-300 mb-0 dark:bg-sky-900 bg-cover box-shadow h-svh">
+  <div class="bg-slate-300 mb-0 dark:bg-sky-900 bg-cover box-shadow">
     <Header />
     <NuxtLayout>
       <NuxtPage />

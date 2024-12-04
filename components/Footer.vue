@@ -1,5 +1,5 @@
 <template>
-<div class="flex justify-center mt-20 bg-slate-500 dark:bg-sky-950">
+<div class="flex justify-center bg-slate-500 dark:bg-sky-950">
         <div>
                 <div class="flex">
                         <img src="assets/images/shoshin.svg"alt="logo" class="bg-gradient-to-r from-green-400 dark:bg-white h-10 w-10 ml-12 mx-6 my-10 rounded-full shadow-2xl shadow-white"/>
@@ -7,7 +7,7 @@
                 </div>
                 <div class="flex">
                         <h2 class="text-xl text-black dark:text-white my-10 ml-28 mr-4">Développeur</h2>
-                        <h2 class="text-xl dark:text-white my-10 text-green-600">Web</h2>
+                        <h2 class="text-xl dark:text-white my-10 text-green-400">Web</h2>
                 </div>
                 <p class="mt-8 mx-36 text-black dark:text-white"></p>
                 <div class="flex">
