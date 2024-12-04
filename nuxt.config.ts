@@ -20,8 +20,9 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-headlessui',
     'nuxt-anchorscroll',
+    '@nuxt/content'
   ],
   colorMode: {
     preference: 'light'
-  }
+  },
 })
