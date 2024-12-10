@@ -7,9 +7,9 @@
     </Head>
     <div class="flex flex-col mb-20">
         <div class="flex">
-            <h1 class="flex justify-start text-2xl text-black mx-28 my-8 dark:text-white">Pierre Tinard</h1>
-            <h2 class="text-xl text-black dark:text-white my-10 ml-28 mr-4">Développeur</h2>
-            <h2 class="text-xl my-10 mr-16 font-black text-orange-400">Web</h2>
+            <h1 class="flex justify-start text-2xl text-sky-700 mx-28 my-4 dark:text-white">Pierre Tinard</h1>
+            <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">Développeur</h2>
+            <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">Web</h2>
          </div>
         <div class="flex justify-center avatar my-10">
             <div class="w-48 rounded-full">
@@ -17,7 +17,10 @@
             </div>
         </div>
         <div class="flex justify-center">
-            <p class="">Ma priorité: utiliser la solution la plus efficace, et la plus évolutive possible, créons ensemble vos projets web !!</p>
+            <p class="text-2xl">Ma priorité: utiliser la solution la plus efficace, et la plus évolutive possible.</p>
+        </div>
+        <div class="flex justify-center">
+            <p class="text-2xl">Créons ensemble vos projets web !!</p>
         </div>
         <div>
             <div>
@@ -25,7 +28,7 @@
                     <div class="flex flex-col">
                         <div class="flex items-start">
                             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
-                            <h2 class="text-xl text-black dark:text-white  my-14 ml-4">Mon parcours</h2>
+                            <h2 class="text-2xl font-black text-sky-700 dark:text-white  my-14 ml-4">Mon parcours</h2>
                         </div>
                         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
                             <li>
@@ -127,12 +130,12 @@
                 </div>
                 <div class="flex items-start">
                     <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
-                    <h2 class="flex justify-left text-xl text-black dark:text-white  my-14 ml-4">Skills</h2>
+                    <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white  my-14 ml-4">Skills</h2>
                 </div>
                 <div class="flex mx-96">
                     <div class="flex mx-auto">
                         <div class="flex flex-col">
-                            <p>Frontend</p>
+                            <p class="text-xl text-orange-400 font-black -ml-4">Frontend</p>
                             <div>
                                 <Icon name="logos:html-5" class="-ml-12 my-8 mr-6 size-16" />
                                 <Icon name="logos:css-3" class="my-8 size-16" />
@@ -146,14 +149,14 @@
                                 <Icon name="logos:nodejs" class="my-4 size-16" />
                             </div>
                             <div>
-                                <Icon name="logos:typescript-icon" class="my-4 size-16" />
+                                <Icon name="logos:typescript-icon" class="-ml-12 my-4 mr-6 size-16" />
                                 <Icon name="skill-icons:tailwindcss-light" class="my-4 size-16" />
                             </div>
                         </div>
                     </div>
                     <div class="flex mx-auto">
                         <div class="flex flex-col">
-                            <p>Backend</p>
+                            <p class="text-xl text-orange-400 font-black">Backend</p>
                             <Icon name="logos:python" class="my-6 size-16 mt-8" />
                             <Icon name="logos:mongodb" class="my-6 size-18" />
                             <Icon name="logos:mysql" class="my-6 size-16" />
@@ -163,14 +166,14 @@
                 <div>
                     <div class="flex items-start">
                         <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
-                        <h2 class="flex justify-left text-xl text-black dark:text-white my-14 ml-4">Les services proposés</h2>
+                        <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Les services proposés</h2>
                     </div>
                     <p class="my-2 mx-56">Création d'API / API REST</p>
                     <p class="my-2 mx-56">Création de base de données MySQL / NoSQL(MongoDB)</p>
                 </div>
             <div class="flex items-start">
                 <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
-                <h2 class="flex justify-left text-xl text-black dark:text-white  my-14 ml-4">Portfolio</h2>
+                <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white  my-14 ml-4">Portfolio</h2>
                 <h3 class="my-24">Un aperçu des projets réalisés, ceux en cours, où à venir...</h3>
             </div>
             <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1">
@@ -241,7 +244,7 @@
             </div>
         <div class="flex items-start">
             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
-            <h2 class="flex justify-left text-xl text-black dark:text-white  my-14 ml-4">Contact</h2>
+            <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white  my-14 ml-4">Contact</h2>
         </div>
             <section class="bg-sky-700 dark:bg-sky-700 my-30 mx-96 rounded-2xl">
             <div class="py-8 lg:py-16 px-4">
@@ -257,17 +260,17 @@
                     </div>
                     <div class="sm:col-span-2">
                         <label for="message" class="block mb-2 text-sm font-medium text-orange-400 dark:text-white">Décrivez moi votre projet !!</label>
-                        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laisser votre message ici..."></textarea>
+                        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laissez votre message ici..."></textarea>
                     </div>
                     <div class="flex justify-center">
-                        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-orange-400 dark:text-white rounded-lg bg-sky-900 sm:w-fit  focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyer votre message</button>
+                        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-orange-400 dark:text-white rounded-lg bg-sky-900 sm:w-fit  focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyez votre message</button>
                     </div>
                 </form>
             </div>
         </section>
         <div class="flex items-start">
             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
-            <h2 class="flex justify-left text-xl text-black dark:text-white  my-14 ml-4">News</h2>
+            <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white  my-14 ml-4">News</h2>
         </div>
             <p class="ml-48 text-black dark:text-white">Nuxt.js  => Site web activité littéraire de François-G. Bussac (projet en cours)</p>
             <p class="ml-48 text-black dark:text-white">Nuxt.js => portfolio Shoshin Web Services</p>

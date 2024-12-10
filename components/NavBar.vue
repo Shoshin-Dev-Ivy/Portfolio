@@ -2,7 +2,9 @@
     <div class="flex items-center justify-center gap-3 h mb-10 bg-sky-700 sticky top-0 z-20 box-shadow-xl box-shadow-green-400">
         <div class="flex"> 
             <img src="assets/images/shoshin.svg" alt="logo" class="h-10 w-10 my-10 mx-6 rounded-full bg-white dark:shadow shadow-2xl  dark:shadow-white bg-gradient-to-r from-orange-400 dark:bg-white"/>
-            <h1 class=" flex text-2xl  text-orange-400 mt-11 mr-28">{ <p class="text-white dark:text-white mx-1">Shoshin</p ><p class="text-orange-400 font-black mx-1">Web </p> <p class="text-white dark:text-white mx-1">Services</p> }</h1>
+            <h1 class="flex text-2xl text-orange-400 mt-11 mr-28">{ <p class="text-white dark:text-white mx-1">Shoshin</p >
+                <p class="text-orange-400 font-black mx-1">Web </p> <p class="text-2xl text-white dark:text-white mx-1">Services</p> }
+            </h1>
             <nav class="flex justify-around">
                 <button class="text-orange-400 font-black hover:text-white hover:underline dark:text-white text-2xl  hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour revenir suur la page d'accueil">
                     <NuxtLink to="/">Accueil</NuxtLink>

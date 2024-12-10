@@ -3,13 +3,14 @@
         <div>
                 <div class="flex">
                         <img src="assets/images/shoshin.svg"alt="logo" class="bg-gradient-to-r from-orange-400 dark:bg-white h-10 w-10 ml-12 mx-6 my-10 rounded-full shadow-2xl shadow-white bg-white"/>
-                        <h1 class="flex text-2xl text-orange-400 mt-10">{ <p class="text-white mx-1 dark:text-white">Shoshin</p ><p class="text-orange-400 font-black mx-1">Web </p> <p class="text-white dark:text-white mx-1">Services</p> } </h1>
+                        <h1 class="flex text-2xl text-orange-400 mt-10">{ <p class="text-white mx-1 dark:text-white">Shoshin</p >
+                        <p class="text-2xl text-orange-400 font-black mx-1">Web </p> <p class="text-white dark:text-white mx-1">Services</p> } </h1>
                 </div>
-                <div class="flex">
-                        <h2 class="text-xl text-white dark:text-white my-10 ml-28 mr-4">Développeur</h2>
-                        <h2 class="text-xl text-orange-400 font-black my-10">Web</h2>
+                <div class="flex -mt-16">
+                        <h2 class="text-2xl text-white font-black dark:text-white my-10 ml-28 mr-4">Développeur</h2>
+                        <h2 class="text-3xl text-orange-400 font-black my-9">Web</h2>
                 </div>
-                <div class="flex">
+                <div class="flex -mt-10">
                         <ul class="flex items-center flex-row mx-20 my-6">
                         <li class="ml-14">
                                 <a href="https://linkedin.com/in/pierre-tinard-867200207/" target="_blank"><Icon name="entypo-social:linkedin" class=" size-8 mx-2 text-white hover:text-orange-400" aria-label="Cliquez ici pour accéder mon profil LinkedIn" />
