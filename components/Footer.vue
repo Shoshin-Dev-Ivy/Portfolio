@@ -3,11 +3,11 @@
         <div>
                 <div class="flex">
                         <img src="assets/images/shoshin.svg"alt="logo" class="bg-gradient-to-r from-orange-400 dark:bg-white h-10 w-10 ml-12 mx-6 my-10 rounded-full shadow-2xl shadow-white bg-white"/>
-                        <h1 class="flex text-2xl text-orange-400 mt-10">{ <p class="text-white mx-1 dark:text-white">Shoshin</p ><p class="text-orange-400 mx-1">Web </p> <p class="text-white dark:text-white mx-1">Services</p> } </h1>
+                        <h1 class="flex text-2xl text-orange-400 mt-10">{ <p class="text-white mx-1 dark:text-white">Shoshin</p ><p class="text-orange-400 font-black mx-1">Web </p> <p class="text-white dark:text-white mx-1">Services</p> } </h1>
                 </div>
                 <div class="flex">
                         <h2 class="text-xl text-white dark:text-white my-10 ml-28 mr-4">Développeur</h2>
-                        <h2 class="text-xl text-orange-400 my-10">Web</h2>
+                        <h2 class="text-xl text-orange-400 font-black my-10">Web</h2>
                 </div>
                 <div class="flex">
                         <ul class="flex items-center flex-row mx-20 my-6">

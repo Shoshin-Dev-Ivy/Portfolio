@@ -6,11 +6,18 @@
       <Title>Shoshin Web Services</Title>
     </Head>
     <div class="flex flex-col mb-20">
-         <h1 class="flex justify-start text-2xl text-black mx-28 my-8 dark:text-white">Pierre Tinard</h1>
         <div class="flex">
+            <h1 class="flex justify-start text-2xl text-black mx-28 my-8 dark:text-white">Pierre Tinard</h1>
             <h2 class="text-xl text-black dark:text-white my-10 ml-28 mr-4">Développeur</h2>
-            <h2 class="text-xl my-10 mr-16 text-orange-400">Web</h2>
-            <p class="justify-center">Ma priorité utiliser la solution la plus efficace, et la plus évolutive possible: créons ensemble vos projets web !!</p>
+            <h2 class="text-xl my-10 mr-16 font-black text-orange-400">Web</h2>
+         </div>
+        <div class="flex justify-center avatar my-10">
+            <div class="w-48 rounded-full">
+                <img src="assets/images/portrait.png" />
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <p class="">Ma priorité: utiliser la solution la plus efficace, et la plus évolutive possible, créons ensemble vos projets web !!</p>
         </div>
         <div>
             <div>
@@ -29,10 +36,10 @@
                                     <div class="text-lg font-black text-orange-400">Formation Nuxt.js & Python</div>
                                         Formation autodidacte Nuxt & Python (Udemy).
                                     </div>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                             </li>
                             <li>
-                                <hr class="mx-2"  />
+                                <hr class="mx-2 bg-orange-400" />
                                 <div class="timeline-middle">
                                 </div>
                                 <div class="timeline-end mb-10">
@@ -48,10 +55,10 @@
                                     P6 => Construire une API sécurisée pour une application d'avis gastronomiques. (Backend)<br>
                                     P7 => Créer un réseau social d'entreprise. (FullStack)
                                 </div>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                             </li>
                             <li>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                                 <div class="timeline-middle">
                                 </div>
                                 <div class="timeline-start mb-10 md:text-end">
@@ -61,10 +68,10 @@
                                 Applications de procédures bancaires. <br>
                                 Prise d'appels en anglais.
                                 </div>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                             </li>
                             <li>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                                 <div class="timeline-middle">
                                 </div>
                                 <div class="timeline-end mb-10">
@@ -73,10 +80,10 @@
                                 Animation et gestion de groupe: enfants, ados, adultes. <br>
                                 Pédagogie adapté aux niveau et à la progression des pratiquants.
                                 </div>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                             </li>
                             <li>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                                 <div class="timeline-middle">
                                 </div>
                                 <div class="timeline-start mb-10 md:text-end">
@@ -84,22 +91,36 @@
                                 <div class="text-lg font-black text-orange-400">Vennte & commerce</div>
                                 Durant plus de 10 ans, dans le secteur du commerce et de la vente, <br> j'ai occupé différents postes à responsabilités. <br>
                                 (activité sportive comprise). <br>
-                                Ce qui m'a permis de développer des compétences en gestion de projet. <br> Utilisé aujourd'hui pour offrir des solutions techniques et pragmatiques <br> dans mes projets de développement web.
+                                Ce qui m'a permis de développer des compétences en gestion de projet. <br> Utilisées aujourd'hui pour offrir des solutions techniques et évolutives <br> dans mes projets de développement web.
                                 </div>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                             </li>
                             <li>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
                                 <div class="timeline-middle">
                                 </div>
                                 <div class="timeline-end mb-10">
-                                <time class="font-mono font-black italic">2004 / 2005</time>
-                                <div class="text-lg font-black text-orange-400">DAEU option A</div>
-                                Esuivalence baccalauréat option A (littéraire), préparé avec le CNED.  <br>
-                                Epreuves d'examen à l'université Jean Monnet (St Etienne)  <br>
-                                Diplômé.
+                                    <time class="font-mono font-black italic">2006</time>
+                                    <div class="text-lg font-black text-orange-400">Certificat de spécialisation 
+                                    <br>en transformation laitière</div>
+                                    Fabrication de fromages de Haute-Savoie: 
+                                    <br>Tomme de Savoie, Abondance, Reblochon, Raclette, beurre.
+                                    <br>ENILV La Roche-sur-Foron. <br>Diplômé.
                                 </div>
-                                <hr class="mx-2" />
+                                <hr class="mx-2 bg-orange-400" />
+                            </li>
+                            <li>
+                                <hr class="mx-2 bg-orange-400" />
+                                <div class="timeline-middle">
+                                </div>
+                                <div class="timeline-start mb-10 md:text-end">
+                                    <time class="font-mono font-black italic">2004 / 2005</time>
+                                    <div class="text-lg font-black text-orange-400">DAEU option A</div>
+                                    Equivalence baccalauréat option A (littéraire), préparé avec le CNED.  <br>
+                                    Epreuves d'examen à l'université Jean Monnet (St Etienne).  <br>
+                                    Diplômé.
+                                </div>
+                                <hr class="mx-2 bg-orange-400" />
                             </li>
                         </ul>
                     </div>
@@ -218,6 +239,32 @@
                     </div>
                 </div>
             </div>
+        <div class="flex items-start">
+            <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+            <h2 class="flex justify-left text-xl text-black dark:text-white  my-14 ml-4">Contact</h2>
+        </div>
+            <section class="bg-sky-700 dark:bg-sky-700 my-30 mx-96 rounded-2xl">
+            <div class="py-8 lg:py-16 px-4">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-orange-400 dark:text-white">Contactez moi !!</h2>
+                <form action="#" class="space-y-8">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-orange-400 dark:text-white">Votre email</label>
+                        <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="nom@email.com" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium text-orange-400 dark:text-white">Sujet</label>
+                        <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Précisez l'objet de votre demande" required>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block mb-2 text-sm font-medium text-orange-400 dark:text-white">Décrivez moi votre projet !!</label>
+                        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laisser votre message ici..."></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-orange-400 dark:text-white rounded-lg bg-sky-900 sm:w-fit  focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyer votre message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
         <div class="flex items-start">
             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
             <h2 class="flex justify-left text-xl text-black dark:text-white  my-14 ml-4">News</h2>
