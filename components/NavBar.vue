@@ -10,13 +10,13 @@
                     <NuxtLink to="/">Accueil</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black hover:text-white dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour accéder à la partie skills">
-                    <a href="#Skills">Skills</a>
+                    <NuxtLink to="#1">Skills</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:text-white hover:underline hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour accéder à la partie portfolio">
-                    <NuxtLink to="/">Portfolio</NuxtLink>
+                    <NuxtLink to="#2">Portfolio</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:text-white hover:underline hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour accéder à la partie contact">
-                    <NuxtLink to="/">Contact</NuxtLink>
+                    <NuxtLink to="#3">Contact</NuxtLink>
                 </button>
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
                     <button class="font-black text-white text-2xl hover:text-white dark:text-white hover:bg-gradient-to-r from-orange-400 my-12 ml-6 px-2 py-4 border-solid border-2 border-orange-400 hover:border-white dark:hover:border-white rounded-xl -mr-3 mt-7">
