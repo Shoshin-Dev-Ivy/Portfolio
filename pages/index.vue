@@ -187,7 +187,9 @@
                     </div>
                 </div>
                 <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
-                    <figure> <img src="assets/images/homePortfolio.png" alt="home Portfolio" class="object-cover w-full h-full" /></figure>
+                    <figure>
+                        <img src="assets/images/homePortfolioLightMode.png" alt="home Portfolio" class="object-cover w-full h-full" />
+                    </figure>
                     <div class="card-body">
                         <h2 class="card-title text-white dark:text-orange-400">Projet Porfolio</h2>
                         <p>Création from scratch, visuel sur mon activité</p>
@@ -247,27 +249,23 @@
             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
             <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white  my-14 ml-4">Contact</h2>
         </div>
-            <section class="bg-sky-600 dark:bg-sky-800 my-30 mx-96 rounded-2xl">
-            <div class="py-8 lg:py-16 px-4">
-                <h2 class="mb-4 text-3xl tracking-tight text-center text-white">Echangeons ensemble !!</h2>
-                <form action="#" class="space-y-8">
-                    <div>
-                        <label for="email" class="block mb-2 text-lg font-medium text-white">Votre email</label>
-                        <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="nom@email.com" required>
-                    </div>
-                    <div>
-                        <label for="subject" class="block mb-2 text-lg font-medium text-white">Sujet</label>
-                        <input type="text" id="subject" class="block p-3 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Précisez l'objet de votre demande" required>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="message" class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet !!</label>
-                        <textarea id="message" rows="6" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laissez votre message ici..."></textarea>
-                    </div>
-                    <div class="flex justify-center">
-                        <button type="submit" class="py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit  focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyez votre message</button>
-                    </div>
-                </form>
-            </div>
+            <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl">
+                <div class="py-8 lg:py-16 px-8 justify-items-center">
+                    <h2 class="mb-4 -mt-10 text-3xl tracking-tight text-center text-white">Echangeons ensemble !!</h2>
+                    <form @submit.prevent="submitEmail" class="space-y-8">
+                        <div>
+                            <label for="email" class="block mb-2 text-lg font-medium text-white">Votre email:<span class="text-red-500">{{ emailError }}</span></label>
+                            <input v-model="email" type="email" class="shadow-sm bg-gray-50 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="exemple@email.com" required>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="message" class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet:</label>
+                            <textarea id="message" rows="6" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laissez votre message ici !!"></textarea>
+                        </div>
+                        <div class="flex justify-center">
+                            <button type="submit" class="-mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit  focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyez votre message</button>
+                        </div>
+                    </form>
+                </div>   
         </section>
         <div class="flex items-start">
             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
@@ -280,3 +278,31 @@
     </div>
 </div>
 </template>
+
+<script setup>
+const email = ref('')
+const emailError = ref('')
+async function submitEmail() {
+  const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+
+  if (email.value && !regex.test(email.value)) {
+    emailError.value = "Address email invalide"
+    return
+  } else {
+    emailError.value = ""
+  }
+
+  const { error } = await client
+    .from('contacts')
+    .insert([
+      { email: email.value },
+    ]);
+
+  if (error) {
+    console.error("Error submitting email:", error.message);
+    return;
+  }
+
+  console.log("Email submitted successfully!");
+}
+</script>
