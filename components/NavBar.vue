@@ -1,5 +1,5 @@
 <template>
-    <div class="flex items-center justify-center gap-3 h mb-10 bg-sky-100 dark:bg-sky-900 sticky top-0 z-20 box-shadow-xl box-shadow-green-400">
+    <div class="flex items-center justify-center gap-3 h mb-10 bg-sky-50 dark:bg-sky-900 sticky top-0 z-20 box-shadow-xl box-shadow-green-400">
         <div class="flex"> 
             <img src="assets/images/shoshin.svg" alt="logo" class="h-10 w-10 my-10 mx-6 rounded-full bg-white dark:shadow shadow-2xl  dark:shadow-white bg-gradient-to-r from-orange-400 dark:bg-white"/>
             <h1 class="flex text-2xl text-orange-400 mt-11 mr-28">{ <p class="text-sky-700 dark:text-white mx-1">Shoshin</p >

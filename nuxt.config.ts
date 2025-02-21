@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: ['~/plugins/supabase.js'],
+  plugins: [],
   modules: [
     '@nuxt/icon',
     '@nuxtjs/color-mode',

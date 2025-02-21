@@ -3,7 +3,7 @@
    
 </head>
 <div>
-        <div class="flex justify-center bg-sky-100 dark:bg-sky-900">
+        <div class="flex justify-center bg-sky-50 dark:bg-sky-900">
                 <div>
                         <div class="flex">
                                 <img src="assets/images/shoshin.svg"alt="logo" class="bg-gradient-to-r from-orange-400 dark:bg-white h-10 w-10 ml-12 mx-6 my-10 rounded-full shadow-2xl shadow-white bg-white"/>
@@ -43,8 +43,8 @@
                         </div>
                 </div>
         </div>    
-        <div class="bg-sky-100 dark:bg-sky-900 flex justify-end px-20 pb-10">
-                <ScrollToTop />
+        <div class="bg-sky-50 dark:bg-sky-900 flex justify-end px-20 pb-10">
+                <ScrollToTop /> 
         </div>
 </div> 
 </template>
