@@ -16,6 +16,7 @@
     "@nuxt/icon": "^1.8.2",
     "@nuxtjs/color-mode": "^3.5.2",
     "@supabase/supabase-js": "^2.47.10",
+    "emailjs-com": "^3.2.0",
     "js-cookie": "^3.0.5",
     "nuxt": "^3.14.1592",
     "vue": "latest",

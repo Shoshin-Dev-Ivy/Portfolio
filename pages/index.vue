@@ -241,21 +241,20 @@
         </div>
         <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
-            <h2 class="mb-4 -mt-10 text-3xl tracking-tight text-center text-white">Echangeons ensemble !!</h2>
-            <form class="space-y-8" ref="form" @submit.prevent="sendEmail">
+            <h2 class="mb-4 -mt-10 text-3xl tracking-tight text-center text-white">Échangeons ensemble !!</h2>
+            <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
-                <label class="block mb-2 text-lg font-medium text-white">Votre email:</label>
-                <input type="email" name="user_email" class="shadow-sm bg-gray-50 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="exemple@email.com" required />
+                <label for="email" class="block mb-2 text-lg font-medium text-white">Email</label>
+                <input v-model="form.email" type="email" id="email" required class="shadow-sm bg-gray-50 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
-              <div class="sm:col-span-2">
-                <label class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet:</label>
-                <textarea rows="6" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laissez votre message ici !!" required></textarea>
+              <div>
+                <label for="message" class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet:</label>
+                <textarea rows="6" v-model="form.message" id="message" required class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
-              <div class="flex justify-center">
-                <button type="submit" value="Send" class="-mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyez votre message</button>
-              </div>
+              <button type="submit" class="m-auto -mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyer</button>
             </form>
-          </div>
+            <p class="mt-6 -mb-8"  v-if="statusMessage">{{ statusMessage }}</p>
+        </div>
         </section>
         <div class="flex items-start">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
@@ -269,25 +268,36 @@
   </div>
 </template>
 
-<script>
-import emailjs from '@emailjs/browser';
+<script setup>
+import emailjs from 'emailjs-com';
 
-export default {
-  methods: {
-    sendEmail() {
-      emailjs
-        .sendForm('contact_service', 'contact_form', this.$refs.form, {
-          publicKey: 'fCIqpwTs_3L1C-9No',
-        })
-        .then(
-          () => {
-            console.log('SUCCESS!');
-          },
-          (error) => {
-            console.log('FAILED...', error.text);
-          },
-        );
-    },
-  },
+const form = ref({
+  email: '',
+  message: '',
+});
+
+const statusMessage = ref('');
+
+const envoyerFormulaire = () => {
+  const serviceID = 'contact_service'; // Remplace par ton Service ID EmailJS
+  const templateID = 'contact_form'; // Remplace par ton Template ID EmailJS
+  const publicKey = 'fCIqpwTs_3L1C-9No'; // Remplace par ta public key
+
+  const templateParams = {
+    email: form.value.email,
+    message: form.value.message,
+  };
+
+  emailjs.send(serviceID, templateID, templateParams, publicKey)
+    .then((response) => {
+      console.log('Message envoyé avec succès', response);
+      statusMessage.value = 'Votre message a bien été envoyé !!'
+      form.value.email = '';
+      form.value.message = '';
+    })
+    .catch((error) => {
+      console.error("Erreur lors de l'envoi", error);
+      statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.';
+    });
 };
 </script>
