@@ -241,19 +241,19 @@
         </div>
         <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
-            <h2 class="mb-4 -mt-10 text-3xl tracking-tight text-center text-white">Échangeons ensemble !!</h2>
+            <h2 class="mb-4 -mt-12 text-3xl tracking-tight text-center text-white">Échangeons ensemble !!</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
                 <label for="email" class="block mb-2 text-lg font-medium text-white">Email</label>
-                <input v-model="form.email" type="email" id="email" required class="shadow-sm bg-gray-50 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
+                <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
                 <label for="message" class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet:</label>
-                <textarea rows="6" v-model="form.message" id="message" required class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+                <textarea rows="6" v-model="form.message" required class="block p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
               <button type="submit" class="m-auto -mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyer</button>
             </form>
-            <p class="mt-6 -mb-8"  v-if="statusMessage">{{ statusMessage }}</p>
+            <p class="mt-6 -mb-12 text-white text-lg"  v-if="statusMessage">{{ statusMessage }}</p>
         </div>
         </section>
         <div class="flex items-start">

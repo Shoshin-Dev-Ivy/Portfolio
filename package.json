@@ -22,6 +22,7 @@
     "vue": "latest",
     "vue-cookies": "^1.8.5",
     "vue-recaptcha": "^3.0.0-alpha.6",
+    "vue-recaptcha-v3": "^2.0.1",
     "vue-router": "latest"
   },
   "devDependencies": {

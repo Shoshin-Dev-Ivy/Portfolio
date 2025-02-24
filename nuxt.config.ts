@@ -15,15 +15,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: [],
-  modules: [
-    '@nuxt/icon',
-    '@nuxtjs/color-mode',
-    'nuxt-headlessui',
-    'nuxt-anchorscroll',
-    '@nuxt/content'
-  ],
+  plugins: [{ src: '~/plugins/vue-recaptcha-v3.js', mode: 'client' }],
+  modules: ['@nuxt/icon', '@nuxtjs/color-mode', 'nuxt-headlessui', 'nuxt-anchorscroll', '@nuxt/content'],
   colorMode: {
-    preference: 'light'
+    preference: 'light',
   },
-})
+});
