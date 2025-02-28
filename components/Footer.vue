@@ -28,18 +28,20 @@
                                                 </a>
                                         </li>
                                         <li>
-                                                <a href="https://github.com/" target="_blank"><Icon name="mdi:github" class="size-10 mx-2 text-sky-700 dark:text-white hover:text-orange-400 dark:hover:text-orange-400" aria-label="Cliquez ici pour accéder mon profil GitHub" />
+                                                <a href="https://github.com/ShoshinDevIvy" target="_blank"><Icon name="mdi:github" class="size-10 mx-2 text-sky-700 dark:text-white hover:text-orange-400 dark:hover:text-orange-400" aria-label="Cliquez ici pour accéder mon profil GitHub" />
                                                 </a>
                                         </li>
                                 </ul>
                         </div>
                         <p class="flex mt-4 mb-2 text-sky-700 dark:text-white">
-                                <Icon name="lucide:copyright" class="mx-4 "/>2024 - Shoshin Web Services. Tout droits réservés.
+                                <Icon name="lucide:copyright" class="mx-4 "/>2025 - Shoshin Web Services. Tout droits réservés.
                         </p>
                         <div class="flex -mb-24">
-                                <p class="text-sky-700 dark:text-white ml-12">Mentions Légales</p>
-                                <p class="mx-2 text-sky-700 dark:text-white">-</p>
-                                <p class="text-sky-700 dark:text-white">Politique de confidentialité</p>
+                                <a class="text-sky-700 dark:text-white ml-12" aria-label="Cliquez ici pour aller suur la page des mentions légales"><NuxtLink to="/mentionsLegales">Mentions Légales</NuxtLink>
+                                </a >
+                                <p class="text-sky-700 dark:text-white mx-2">-</p>
+                                <a class="text-sky-700 dark:text-white ml-1" aria-label="Cliquez ici pour aller suur la page des mentions légales"><NuxtLink to="/confidentialite">Politique de confidentialité</NuxtLink>
+                                </a >
                         </div>
                 </div>
         </div>    

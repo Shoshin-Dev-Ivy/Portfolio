@@ -6,27 +6,42 @@
                 <p class="text-orange-400 font-black mx-1">Web </p> <p class="text-2xl text-sky-700 dark:text-white mx-1">Services</p> }
             </h1>
             <nav class="flex justify-around">
-                <button class="text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour revenir suur la page d'accueil">
+                <div  class = "flex flex-col mt-11"> 
+                    <button @click = "toggleMenu"  value = "hamburger"  class ="flex flex-col justify-around h-8 w-8 p-1 rounded"> 
+                    <!-- Icône Hamburger (3 lignes) --> 
+                    <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
+                    <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
+                    <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
+                    </button> 
+                    <template  v-if = "isMenuOpen"  class = "flex flex-col pt-8"> 
+                    <!-- Éléments de menu --> 
+                    <a class="flex text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 py-2" aria-label="Cliquez ici pour revenir suur la page d'accueil"><NuxtLink to="/">Accueil</NuxtLink>
+                    </a > 
+                    <a class="flex text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 py-2" aria-label="Cliquez ici pour accéder à la partie skills"><NuxtLink to="#1">Skills</NuxtLink>
+                    </a > 
+                    <a class="flex text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 py-2" aria-label="Cliquez ici pour accéder à la partie portfolio"><NuxtLink to="#2">Portfolio</NuxtLink>
+                    </a > 
+                    <a class="flex text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 py-2" aria-label="Cliquez ici pour accéder à la partie contact"><NuxtLink to="#3">Contact</NuxtLink>
+                    </a > 
+                    </template > 
+                </div > 
+                <button class="text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour revenir suur la page d'accueil">
                     <NuxtLink to="/">Accueil</NuxtLink>
                 </button>
-                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour accéder à la partie skills">
+                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie skills">
                     <NuxtLink to="#1">Skills</NuxtLink>
                 </button>
-                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour accéder à la partie portfolio">
+                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie portfolio">
                     <NuxtLink to="#2">Portfolio</NuxtLink>
                 </button>
-                <button class="text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 mx-6 -mt-5" aria-label="Cliquez ici pour accéder à la partie contact">
+                <button class="text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie contact">
                     <NuxtLink to="#3">Contact</NuxtLink>
                 </button>
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
-                    <button class="text-sky-700 text-2xl dark:text-white hover:bg-gradient-to-r from-orange-400 my-12 ml-6 px-2 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl -mr-3 mt-7">
-                        Prendre un RDV
+                    <button class="text-sky-700 text-2xl dark:text-white hover:bg-gradient-to-r from-orange-400 my-6 ml-6 px-2 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl  animate-pulse">
+                        Prendre un RDV !!
                     </button>
                 </a> 
-                <span class="relative flex h-7 w-7 my-4">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-8 w-8 bg-red-500"><p class="px-2 py-1 text-white">1</p></span>
-                </span>
                 <button class="text-2xl text-orange-400 mx-6"></button>
             </naV>
             <ModeSwitch class="my-10"/>
@@ -34,7 +49,12 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { ref } from 'vue';
+const isMenuOpen = ref(false);
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+};
 </script>
 
 <style scoped>

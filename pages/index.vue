@@ -4,7 +4,7 @@
   </Head>
   <div class="flex flex-col mb-20">
     <div class="flex">
-      <h1 class="flex justify-start text-2xl text-sky-700 mx-28 my-4 dark:text-white">Pierre Tinard</h1>
+      <h1 class="flex justify-start text-2xl text-sky-700 mx-28 my-4 dark:text-white 2xl:ml-50">Pierre Tinard</h1>
       <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">Développeur</h2>
       <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">Web</h2>
     </div>
@@ -24,7 +24,7 @@
         <div>
           <div class="flex flex-col">
             <div class="flex items-start">
-              <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+              <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
               <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Mon parcours</h2>
             </div>
             <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
@@ -43,15 +43,17 @@
                 <div class="timeline-end mb-10">
                   <time class="font-mono font-black italic">2021 / 2023</time>
                   <div class="text-lg font-black text-orange-400">Formation Développeur Web</div>
-                  Formation Développeur Web (OpenClassrooms). <br />
-                  Diplomé, certification professionnelle ( RNCP Code 326T ) <br />
-                  P1 => Planifier et organiser l'apprentissage de la formation. <br />
+                  (OpenClassrooms) => diplomé, <br />
+                  certification professionnelle => RNCP code 326T. <br />
+                  <br />P1 => Planifier et organiser l'apprentissage de la formation. <br />
                   P2 => Transformer une maquette en site web avec HTML & CSS. <br />
                   P3 => Dynamiser une page web avec des animations CSS. <br />
                   P4 => Optimiser un site web existant (SEO). <br />
                   P5 => Construire un site de e-commerce en Javascript. (Frontend) <br />
-                  P6 => Construire une API sécurisée pour une application d'avis gastronomiques. ( Backend NoSQL MongoDB )<br />
-                  P7 => Créer un réseau social d'entreprise. (FullStack)
+                  P6 => Construire une API sécurisée pour une application d'avis gastronomiques: <br />
+                  ( Backend NoSQL MongoDB )<br />
+                  P7 => Créer un réseau social d'entreprise. <br />
+                  (FullStack, base de données MySQl)
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -74,7 +76,8 @@
                   <time class="font-mono font-black italic">2018</time>
                   <div class="text-lg font-black text-orange-400">Brevet fédéral Aikido</div>
                   Animation et gestion de groupe: enfants, ados, adultes. <br />
-                  Pédagogie adapté aux niveau et à la progression des pratiquants.
+                  Pédagogie adapté aux niveau et à la progression des pratiquants. <br />
+                  Expérience => plus de 20 ans de pratique.
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -120,10 +123,10 @@
           </div>
         </div>
         <div class="flex items-start" id="1">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Skills</h2>
         </div>
-        <div class="flex mx-96 px-20 dark:bg-sky-100 rounded-2xl">
+        <div class="flex mx-96 px-20 dark:bg-sky-100 rounded-2xl -mt-4">
           <div class="flex mx-auto">
             <div class="flex flex-col">
               <p class="text-xl text-orange-400 font-black -ml-4 mt-4">Frontend</p>
@@ -156,18 +159,21 @@
         </div>
         <div>
           <div class="flex items-start">
-            <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+            <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
             <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Les services proposés</h2>
           </div>
-          <p class="my-2 mx-56">Création d'API / API REST</p>
-          <p class="my-2 mx-56">Création de base de données MySQL / NoSQL(MongoDB)</p>
+          <ul class="-mt-8 list-disc">
+            <li class="mx-56 2xl:ml-34">SaaS</li>
+            <li class="mx-56 2xl:ml-34">API / API REST</li>
+            <li class="mx-56 2xl:ml-34">Base de données MySQL / NoSQL(MongoDB)</li>
+          </ul>
         </div>
         <div class="flex items-start" id="2">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Portfolio</h2>
-          <h3 class="my-24">Un aperçu des projets réalisés, ceux en cours, où à venir...</h3>
+          <h3 class="my-36 ml-72">Aperçu des projets réalisés, ceux en cours, où à venir...</h3>
         </div>
-        <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1">
+        <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 -mt-24">
           <div class="card bg-sky-600 dark:bg-sky-800 w-80 h-96 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
@@ -236,16 +242,16 @@
           </div>
         </div>
         <div class="flex items-start" id="3">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4" id="contact-form">Contact</h2>
         </div>
-        <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl">
+        <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl -mt-4 pt-4">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
             <h2 class="mb-4 -mt-12 text-3xl tracking-tight text-center text-white">Échangeons ensemble !!</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
                 <label for="email" class="block mb-2 text-lg font-medium text-white">Email</label>
-                <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
+                <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
                 <label for="message" class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet:</label>
@@ -253,11 +259,11 @@
               </div>
               <button type="submit" class="m-auto -mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyer</button>
             </form>
-            <p class="mt-6 -mb-12 text-white text-lg"  v-if="statusMessage">{{ statusMessage }}</p>
-        </div>
+            <p class="mt-6 -mb-12 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
+          </div>
         </section>
         <div class="flex items-start">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12" />
+          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">News</h2>
         </div>
         <p class="ml-48 text-black dark:text-white">Nuxt.js => Site web activité littéraire de François-G. Bussac (projet en cours)</p>
@@ -288,10 +294,11 @@ const envoyerFormulaire = () => {
     message: form.value.message,
   };
 
-  emailjs.send(serviceID, templateID, templateParams, publicKey)
+  emailjs
+    .send(serviceID, templateID, templateParams, publicKey)
     .then((response) => {
       console.log('Message envoyé avec succès', response);
-      statusMessage.value = 'Votre message a bien été envoyé !!'
+      statusMessage.value = 'Votre message a bien été envoyé !!';
       form.value.email = '';
       form.value.message = '';
     })
