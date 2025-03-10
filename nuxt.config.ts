@@ -5,9 +5,6 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-  },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
