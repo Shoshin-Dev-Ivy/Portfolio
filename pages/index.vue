@@ -5,8 +5,8 @@
   <div class="flex flex-col mb-20">
     <div class="flex">
       <h1 class="flex justify-start text-2xl text-sky-700 mx-28 my-4 dark:text-white 2xl:ml-50">Pierre Tinard</h1>
-      <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">Développeur</h2>
-      <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">Web</h2>
+      <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">{{ $t("Developpeur")}}</h2>
+      <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">{{ $t("Web") }}</h2>
     </div>
     <div class="flex justify-center avatar my-10">
       <div class="w-48 rounded-full">
@@ -14,10 +14,10 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <p class="text-2xl">Ma priorité: utiliser la solution la plus efficace, et la plus évolutive possible.</p>
+      <p class="text-2xl">{{ $t("Tagline1") }}</p>
     </div>
     <div class="flex justify-center">
-      <p class="text-2xl">Créons ensemble vos projets web !!</p>
+      <p class="text-2xl">{{ $t("Tagline2") }} !!</p>
     </div>
     <div>
       <div>
@@ -25,15 +25,15 @@
           <div class="flex flex-col">
             <div class="flex items-start">
               <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-              <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Mon parcours</h2>
+              <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Parcours") }}</h2>
             </div>
             <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
               <li>
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
-                  <time class="font-mono font-black italic">2024</time>
-                  <div class="text-lg font-black text-orange-400">Formation Nuxt.js & Python</div>
-                  Formation autodidacte Nuxt & Python (Udemy).
+                  <time class="font-mono font-black italic">{{ $t("2024") }}</time>
+                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} Nuxt.js / Python</div>
+                  {{ $t("Formation") }} {{ $t("Autodidacte") }} Nuxt / Python (Udemy).
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -41,19 +41,17 @@
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
-                  <time class="font-mono font-black italic">2021 / 2023</time>
-                  <div class="text-lg font-black text-orange-400">Formation Développeur Web</div>
-                  (OpenClassrooms) => diplomé, <br />
-                  certification professionnelle => RNCP code 326T. <br />
-                  <br />P1 => Planifier et organiser l'apprentissage de la formation. <br />
-                  P2 => Transformer une maquette en site web avec HTML & CSS. <br />
-                  P3 => Dynamiser une page web avec des animations CSS. <br />
-                  P4 => Optimiser un site web existant (SEO). <br />
-                  P5 => Construire un site de e-commerce en Javascript. (Frontend) <br />
-                  P6 => Construire une API sécurisée pour une application d'avis gastronomiques: <br />
-                  ( Backend NoSQL MongoDB )<br />
-                  P7 => Créer un réseau social d'entreprise. <br />
-                  (FullStack, base de données MySQl)
+                  <time class="font-mono font-black italic">{{ $t("2021") }} / {{ $t("2023") }} </time>
+                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} {{ $t("Developpeur") }} {{ $t("Web") }}</div>
+                  (OpenClassrooms) => {{ $t("Diplome") }}, <br />
+                  {{ $t("Certification") }} => RNCP code 326T. <br />
+                  <br />P1 => {{ $t("P1") }} <br />
+                  P2 => {{ $t("P2") }} <br />
+                  P3 => {{ $t("P3") }} <br />
+                  P4 => {{ $t("P4") }} <br />
+                  P5 => {{ $t("P5") }} <br />
+                  P6 => {{ $t("P6") }} <br />
+                  P7 => {{ $t("P7")}} <br />
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -61,11 +59,11 @@
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
-                  <time class="font-mono font-black italic">2019 / 2020</time>
-                  <div class="text-lg font-black text-orange-400">Téléconseiller Phone Régie</div>
-                  Prise d'appels et gestion des demandes clients. <br />
-                  Applications de procédures bancaires. <br />
-                  Prise d'appels en anglais.
+                  <time class="font-mono font-black italic"> {{ $t("2019") }} / {{ $t("2020") }} </time>
+                  <div class="text-lg font-black text-orange-400">{{ $t("Teleconseiller") }} Phone Régie</div>
+                 {{ $t("Appel") }} <br />
+                  {{ $t("Bancaires") }} <br />
+                  {{ $t("Call") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -73,11 +71,11 @@
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
-                  <time class="font-mono font-black italic">2018</time>
-                  <div class="text-lg font-black text-orange-400">Brevet fédéral Aikido</div>
-                  Animation et gestion de groupe: enfants, ados, adultes. <br />
-                  Pédagogie adapté aux niveau et à la progression des pratiquants. <br />
-                  Expérience => plus de 20 ans de pratique.
+                  <time class="font-mono font-black italic"> {{ $t("2018") }} </time>
+                  <div class="text-lg font-black text-orange-400"> {{ $t("Brevet") }}</div>
+                   {{ $t("Animation") }} <br />
+                   {{ $t("Pedagogie") }} <br />
+                   {{ $t("Experience") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -85,14 +83,10 @@
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
-                  <time class="font-mono font-black italic">2007 / 2018</time>
-                  <div class="text-lg font-black text-orange-400">Vente & commerce</div>
-                  Durant plus de 10 ans, dans le secteur du commerce et de la vente, <br />
-                  j'ai occupé différents postes à responsabilités. <br />
-                  (activité sportive comprise). <br />
-                  Ce qui m'a permis de développer des compétences en gestion de projet. <br />
-                  Utilisées aujourd'hui pour offrir des solutions techniques et évolutives <br />
-                  dans mes projets de développement web.
+                  <time class="font-mono font-black italic">{{ $t("2007") }} / {{ $t("2018") }}</time>
+                  <div class="text-lg font-black text-orange-400"> {{ $t("Vente") }}</div>
+                  {{ $t("Responsabilites") }} <br />
+                 {{ $t("Activites") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -100,10 +94,10 @@
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
-                  <time class="font-mono font-black italic">2006</time>
-                  <div class="text-lg font-black text-orange-400">Certificat de spécialisation <br />en transformation laitière</div>
-                  Fabrication de fromages de Haute-Savoie:
-                  <br />Tomme de Savoie, Abondance, Reblochon, Raclette, beurre. <br />ENILV La Roche-sur-Foron. <br />Diplômé.
+                  <time class="font-mono font-black italic"> {{ $t("2006") }}</time>
+                  <div class="text-lg font-black text-orange-400">{{ $t("Lait") }}</div>
+                   {{ $t("Fabrication") }}
+                  <br />{{ $t("Fromages") }} <br />ENILV La Roche-sur-Foron. <br /> {{ $t("Diplome") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -111,11 +105,11 @@
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
-                  <time class="font-mono font-black italic">2004 / 2005</time>
-                  <div class="text-lg font-black text-orange-400">DAEU option A</div>
-                  Equivalence baccalauréat option A (littéraire), préparé avec le CNED. <br />
-                  Epreuves d'examen à l'université Jean Monnet (St Etienne). <br />
-                  Diplômé.
+                  <time class="font-mono font-black italic"> {{ $t("2004") }} / {{ $t("2005") }}</time>
+              <div class="text-lg font-black text-orange-400">{{ $t("DAEU") }}</div>
+                  {{ $t("Equivalence") }} <br />
+                  {{ $t("Epreuves") }} <br />
+                   {{ $t("Diplome") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -124,12 +118,12 @@
         </div>
         <div class="flex items-start" id="1">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Skills</h2>
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
         </div>
         <div class="flex mx-96 px-20 dark:bg-sky-100 rounded-2xl -mt-4">
           <div class="flex mx-auto">
             <div class="flex flex-col">
-              <p class="text-xl text-orange-400 font-black -ml-4 mt-4">Frontend</p>
+              <p class="text-xl text-orange-400 font-black -ml-4 mt-4">{{ $t("Frontend") }}</p>
               <div>
                 <Icon name="logos:html-5" class="-ml-12 my-8 mr-6 size-16" />
                 <Icon name="logos:css-3" class="my-8 size-16" />
@@ -147,7 +141,7 @@
           </div>
           <div class="flex mx-auto">
             <div class="flex flex-col">
-              <p class="text-xl text-orange-400 font-black mt-4">Backend</p>
+              <p class="text-xl text-orange-400 font-black mt-4">{{ $t("Backend") }}</p>
               <Icon name="logos:python" class="my-6 size-16 mt-8" />
               <div>
                 <Icon name="logos:mongodb" class="-ml-12 my-4 mr-6 size-18" />
@@ -160,26 +154,26 @@
         <div>
           <div class="flex items-start">
             <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-            <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Les services proposés</h2>
+            <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Prestations")}}</h2>
           </div>
           <ul class="-mt-8 list-disc">
             <li class="mx-56 2xl:ml-34">SaaS</li>
             <li class="mx-56 2xl:ml-34">API / API REST</li>
-            <li class="mx-56 2xl:ml-34">Base de données MySQL / NoSQL(MongoDB)</li>
+            <li class="mx-56 2xl:ml-34">{{$t("BDD")}} MySQL / NoSQL(MongoDB)</li>
           </ul>
         </div>
         <div class="flex items-start" id="2">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">Portfolio</h2>
-          <h3 class="my-36 ml-72">Aperçu des projets réalisés, ceux en cours, où à venir...</h3>
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Portfolio") }}</h2>
+          <h3 class="my-36 ml-72">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 -mt-24">
           <div class="card bg-sky-600 dark:bg-sky-800 w-80 h-96 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet F-G Bussac</h2>
-              <p>Création from scratch site web: en cours de création...</p>
-              <p>Drupal</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
+              <p>{{ $t("ProjetBussac") }}</p>
+              <p>Nuxt.js, Tailwind.css, Typescrypt</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
@@ -187,88 +181,88 @@
               <img src="assets/images/homePortfolioLightMode.png" alt="home Portfolio" class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet Porfolio</h2>
-              <p>Création from scratch, visuel sur mon activité</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} {{ $t("Portfolio") }}</h2>
+              <p>{{ $t("ProjetPortfolio") }}</p>
               <p>Nuxt.js, Tailwind.css, Typescrypt</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeGroupomania.jpg" alt="home Groupomania" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet P7 Groupomania</h2>
-              <p>Création réseau social d'entreprise Full Stack</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P7 Groupomania</h2>
+              <p>{{ $t("Projet7") }}</p>
               <p>MySQL, Node.js, JavaScript</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeHotTakes.jpg" alt="home Hot Takes" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet P6 Hot Takes</h2>
-              <p>Création API REST</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P6 Hot Takes</h2>
+              <p>{{ $t("Projet6") }}</p>
               <p>Node.js, NoSQl (MongoDB)</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeKanap.jpg" alt="home Kanap" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet P5 Kanap</h2>
-              <p>Création site e-commerce</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P5 Kanap</h2>
+              <p>{{ $t("Projet5") }}</p>
               <p>JavaScript</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeLaChouetteAgence.jpg" alt="home La Chouette Agence" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet P4 La Chouette Agence</h2>
-              <p>Optimisation du SEO d'une page web</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P4 La Chouette Agence</h2>
+              <p>{{ $t("Projet4") }}</p>
               <p>SEO</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeOhmyfood.jpg" alt="home Ohmyfood" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet P3 Ohmyfood</h2>
-              <p>Créer des animations en CSS (ex: loading-spinner) et le responsive d'une page web</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P3 Ohmyfood</h2>
+              <p>{{ $t("Projet3") }}</p>
               <p>CSS et responsive</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeReservia.jpg" alt="home Reservia" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">Projet P2 Reservia</h2>
-              <p>Créer une page web d'après une maquette et son responsive</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P2 Reservia</h2>
+              <p>{{ $t("Projet2") }}</p>
               <p>HTML CSS et responsive</p>
             </div>
           </div>
         </div>
         <div class="flex items-start" id="3">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4" id="contact-form">Contact</h2>
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
         <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl -mt-4 pt-4">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
-            <h2 class="mb-4 -mt-12 text-3xl tracking-tight text-center text-white">Échangeons ensemble !!</h2>
+            <h2 class="mb-4 -mt-12 text-3xl tracking-tight text-center text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
-                <label for="email" class="block mb-2 text-lg font-medium text-white">Email</label>
+                <label for="email" class="block mb-2 text-lg font-medium text-white">{{ $t("Email") }}</label>
                 <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
-                <label for="message" class="block mb-2 text-lg font-medium text-white">Décrivez moi votre projet:</label>
+                <label for="message" class="block mb-2 text-lg font-medium text-white">{{ $t("Message")}}</label>
                 <textarea rows="6" v-model="form.message" required class="block p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
-              <button type="submit" class="m-auto -mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">Envoyer</button>
+              <button type="submit" class="m-auto -mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
             </form>
             <p class="mt-6 -mb-12 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
           </div>
         </section>
         <div class="flex items-start">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">News</h2>
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("News")}}</h2>
         </div>
-        <p class="ml-48 text-black dark:text-white">Nuxt.js => Site web activité littéraire de François-G. Bussac (projet en cours)</p>
-        <p class="ml-48 text-black dark:text-white">Nuxt.js => portfolio Shoshin Web Services</p>
-        <p class="ml-48 text-black dark:text-white">Python => Formation autodidacte (Udemy)</p>
+        <p class="ml-48 text-black dark:text-white">{{ $t("News1") }}</p>
+        <p class="ml-48 text-black dark:text-white">{{ $t("News2") }}</p>
+        <p class="ml-48 text-black dark:text-white">{{ $t("News3") }}</p>
       </div>
     </div>
   </div>
