@@ -10,7 +10,7 @@
     </div>
     <div class="flex justify-center avatar my-10">
       <div class="w-48 rounded-full">
-        <img src="assets/images/Aikido.jpg" />
+        <img src="assets/images/portrait.png" />
       </div>
     </div>
     <div class="flex justify-center">

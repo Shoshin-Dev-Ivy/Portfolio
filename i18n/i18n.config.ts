@@ -5,9 +5,9 @@ export default defineI18nConfig(() => ({
     fr: {
       Shoshin: "Shoshin",
       Web: "Web",
-      Services: "Services.",
+      Services: "Services",
       Accueil: "Accueil",
-      Skills: "Skills",
+      Skills: "Compétences",
       Portfolio: "Portfolio",
       Contact: "Contact",
       RDV: "Prendre un RDV !!",
@@ -60,7 +60,7 @@ export default defineI18nConfig(() => ({
       Prestations: "Prestations",
       BDD: "Base de données",
       Aperçu: "Aperçu des projets réalisés, ceux en cours, où à venir...",
-      Projet: "Projet",
+      Projet: "Projets",
       ProjetBussac: "Création from scratch de site web: en cours de création...",
       ProjetPortfolio: "Creation from scratch, un aperçu de mon activité.",
       Nuxt: "Nuxt.js, Tailwind.css, Typescrypt",
@@ -232,7 +232,7 @@ export default defineI18nConfig(() => ({
       Prestations: "performance",
       BDD: "database",
       Aperçu: "Overview of completed projects, those in progress, or those to come...",
-      Projet: "Project",
+      Projet: "Projects",
       ProjetBussac: "Website creation from scratch: in progress...",
       ProjetPortfolio: "Creation from scratch, visual on my activity.",
       Nuxt: "Nuxt.js, Tailwind.css, Typescrypt",
@@ -344,7 +344,7 @@ export default defineI18nConfig(() => ({
       Charte86: "The National Commission for Information Technology and Civil Liberties (CNIL)",
       Charte87: "We remind you that you can contact the CNIL directly on the CNIL website, or by mail to the following address: Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715, 75334 PARIS CEDEX 07.",
     },
-    jp: {
+    ja: {
       Shoshin: "初心",
       Web: "ウェブ",
       Services: "えきむ",

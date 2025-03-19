@@ -20,13 +20,17 @@ export default defineNuxtConfig({
     'nuxt-anchorscroll',
     '@nuxt/content',
     '@nuxtjs/i18n',
+    '@dargmuesli/nuxt-cookie-control',
   ],
+  cookieControl: {
+    // typed module options
+  },
   i18n: {
     vueI18n: './i18n.config.ts', // if you are using custom path, default
     locales: [
       { code: 'fr', language: 'fr-FR' },
       { code: 'en', language: 'en-US' },
-      { code: 'jp', language: 'jp-JP' }
+      { code: 'ja', language: 'ja-JA' }
     ],
     defaultLocale: 'fr',
   },

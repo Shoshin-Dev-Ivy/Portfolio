@@ -31,8 +31,8 @@
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie skills">
                     <NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Skills") }}</NuxtLink>
                 </button>
-                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie portfolio">
-                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Portfolio") }}</NuxtLink>
+                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie projets">
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Projet") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie contact">
                     <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
@@ -48,7 +48,7 @@
                 <div class="my-4">
                     <button @click="setLocale('fr')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagFR.png" alt="drapeau français" class="h-6 w-7"/></button>
                     <button @click="setLocale('en')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagEN.png" alt="drapeau anglais" class="h-6 w-7" /></button>
-                    <button @click="setLocale('jp')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagJP.png" alt="drapeau japonais" class="h-6 w-7"/></button>
+                    <button @click="setLocale('ja')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagJP.png" alt="drapeau japonais" class="h-6 w-7"/></button>
                 </div>
         </div>
         </div>

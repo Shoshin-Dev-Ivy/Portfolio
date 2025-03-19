@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@dargmuesli/nuxt-cookie-control": "^8.5.4",
     "@emailjs/browser": "^4.4.1",
     "@heroicons/vue": "^2.2.0",
     "@nuxt/content": "^2.13.4",
