@@ -33,10 +33,12 @@
                                 <Icon name="lucide:copyright" class="mx-4 "/>{{ $t("2025") }} - {{ $t("Shoshin") }} {{ $t("Web") }}  {{ $t("Services") }}   {{ $t("Droits") }}
                         </p>
                         <div class="flex -mb-24">
-                                <a class="text-sky-700 dark:text-white ml-12" aria-label="Cliquez ici pour aller suur la page des mentions légales"><NuxtLink to="/mentionsLegales">{{ $t("Mentions") }}</NuxtLink>
+                                <a class="text-sky-700 dark:text-white ml-12" aria-label="Cliquez ici pour aller suur la page des mentions légales"><NuxtLink :to="{ path: localePath('/mentionsLegales') }">
+                                        {{ $t("Mentions") }}</NuxtLink>
                                 </a >
                                 <p class="text-sky-700 dark:text-white mx-2">-</p>
-                                <a class="text-sky-700 dark:text-white ml-1" aria-label="Cliquez ici pour aller suur la page des mentions légales"><NuxtLink to="/confidentialite">{{ $t("Confidentialite") }}</NuxtLink>
+                                <a class="text-sky-700 dark:text-white ml-1" aria-label="Cliquez ici pour aller suur la page des mentions légales"><NuxtLink :to="{ path: localePath('/confidentialite') }">
+                                        {{ $t("Confidentialite") }}</NuxtLink>
                                 </a >
                         </div>
                 </div>
@@ -48,7 +50,8 @@
 </template>
 
 
-<script> 
+<script setup lang="ts"> 
+const localePath = useLocalePath()
 </script>
 
 <style>

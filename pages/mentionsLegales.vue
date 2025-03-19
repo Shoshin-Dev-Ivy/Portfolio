@@ -1,4 +1,4 @@
-<template>
+<template class="bg-cover">
   <h1 class="flex justify-center text-2xl text-sky-700 mx-28 my-4 dark:text-white 2xl:ml-50"> {{ $t("Mentions") }}</h1>
   <ul class="flex-col">
     <li class="flex justify-center mt-4 mb-2">{{ $t("Shoshin") }} {{ $t("Web") }}  {{ $t("Services") }}, Pierre Tinard (EI)</li>
@@ -22,4 +22,5 @@
   </ul>
 </template>
 
-<script></script>
+<script setup lang="ts">
+</script>

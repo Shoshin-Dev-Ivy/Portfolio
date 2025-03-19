@@ -26,16 +26,16 @@
                     </template > 
                 </div > 
                 <button class="text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour revenir suur la page d'accueil">
-                    <NuxtLink :to="{ path: '/', hash:'' }">{{ $t("Accueil") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie skills">
-                    <NuxtLink :to="{ path: '/', hash:'#1' }">{{ $t("Skills") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Skills") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie portfolio">
-                    <NuxtLink :to="{ path: '/', hash:'#2' }">{{ $t("Portfolio") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Portfolio") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie contact">
-                    <NuxtLink :to="{ path: '/', hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
                 </button>
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
                     <button class="text-sky-700 text-2xl dark:text-white hover:bg-gradient-to-r from-orange-400 my-6 mx-6 px-2 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl  animate-pulse">
@@ -56,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+const localePath = useLocalePath()
 const { setLocale } = useI18n()
 import { ref } from 'vue';
 const isMenuOpen = ref(false);
