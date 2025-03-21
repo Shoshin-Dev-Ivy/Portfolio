@@ -9,8 +9,8 @@
       <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">{{ $t("Web") }}</h2>
     </div>
     <div class="flex justify-center avatar my-10">
-      <div class="w-48 rounded-full">
-        <img src="assets/images/portrait.png" />
+      <div class="w-48 rounded-full border-2 border-sky-700 dark:border-orange-400">
+        <ImageSwitcher />
       </div>
     </div>
     <div class="flex justify-center">
@@ -164,7 +164,7 @@
         </div>
         <div class="flex items-start" id="2">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Portfolio") }}</h2>
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projet") }}</h2>
           <h3 class="my-36 ml-72">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 -mt-24">
@@ -270,6 +270,7 @@
 
 <script setup>
 import emailjs from 'emailjs-com';
+import ImageSwitcher from '~/components/ImageSwitcher.vue';
 
 const form = ref({
   email: '',

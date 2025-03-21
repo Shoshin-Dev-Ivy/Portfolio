@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center justify-center gap-3 h mb-10 bg-sky-50 dark:bg-sky-900 sticky top-0 z-20 box-shadow-xl box-shadow-green-400">
         <div class="flex"> 
-            <img src="assets/images/logo.svg" alt="logo" class="h-10 w-10 my-10 mx-6 rounded-full bg-white dark:shadow shadow-2xl  dark:shadow-white"/>
+            <img src="assets/images/logo.svg" alt="logo" class="h-16 w-16 my-8 mx-6 rounded-full border-2 border-sky-700 dark:border-orange-400"/>
             <h1 class="flex text-2xl text-orange-400 mt-11 mr-28">{ <p class="text-sky-700 dark:text-white mx-1">{{ $t("Shoshin") }}</p >
                 <p class="text-orange-400 font-black mx-1">{{ $t("Web") }} </p> <p class="text-2xl text-sky-700 dark:text-white mx-1">{{ $t("Services") }}</p> }
             </h1>
@@ -46,9 +46,9 @@
             <div>
                 <ModeSwitch class="my-6 mx-8"/>
                 <div class="my-4">
-                    <button @click="setLocale('fr')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagFR.png" alt="drapeau français" class="h-6 w-7"/></button>
-                    <button @click="setLocale('en')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagEN.png" alt="drapeau anglais" class="h-6 w-7" /></button>
-                    <button @click="setLocale('ja')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagJP.png" alt="drapeau japonais" class="h-6 w-7"/></button>
+                    <button @click="setLocale('fr')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagFR.png" alt="drapeau français" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
+                    <button @click="setLocale('en')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagEN.png" alt="drapeau anglais" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400" /></button>
+                    <button @click="setLocale('ja')" class="dark:text-white text-2xl px-2"><img src="assets/images/FlagJP.png" alt="drapeau japonais" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
                 </div>
         </div>
         </div>

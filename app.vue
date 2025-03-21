@@ -4,6 +4,11 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <CookieBanner />
     <Footer class="mt-auto" />
   </div>
 </template>
+
+<script setup lang="ts">
+import CookieBanner from '~/components/CookieBanner.vue'
+</script>

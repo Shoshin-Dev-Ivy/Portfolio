@@ -6,8 +6,8 @@
         <div class="flex justify-center bg-sky-50 dark:bg-sky-900">
                 <div>
                         <div class="flex">
-                                <img src="assets/images/logo.svg"alt="logo" class="h-10 w-10 ml-12 mx-6 my-10 rounded-full shadow-2xl shadow-white bg-white"/>
-                                <h1 class="flex text-2xl text-orange-400 mt-10">
+                                <img src="assets/images/logo.svg"alt="logo" class="h-16 w-16 ml-12 mx-8 my-6 rounded-full border-2 border-sky-700 dark:border-orange-400"/>
+                                <h1 class="flex text-2xl text-orange-400 mt-10 mb-10">
                                         { <p class="text-sky-700 mx-1 dark:text-white">{{ $t("Shoshin") }}</p >
                                         <p class="text-2xl text-orange-400 font-black mx-1">{{ $t("Web") }}</p> 
                                         <p class="text-sky-700 dark:text-white mx-1">{{ $t("Services") }}</p> } 
@@ -51,7 +51,7 @@
 
 
 <script setup lang="ts"> 
-const localePath = useLocalePath()
+const localePath = useLocalePath();
 </script>
 
 <style>
