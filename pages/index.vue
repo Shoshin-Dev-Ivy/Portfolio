@@ -169,7 +169,7 @@
         </div>
         <div class="flex items-start" id="2">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 ml-48 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projet") }}</h2>
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
           <h3 class="my-36 ml-72">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 -mt-24">

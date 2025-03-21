@@ -29,12 +29,12 @@ const checkCookiesConsent = () => {
 }
 
 const acceptCookies = () => {
-  document.cookie = "cookieConsent=true; path=/; max-age=86400" // valable 1 jour
+  document.cookie = "cookieConsent=true; path=/; max-age=7200" // valable 2 heures
   showBanner.value = false
 }
 
 const refuseCookies = () => {
-  document.cookie = "cookieConsent=false; path=/; max-age=86400" // valable 1 jour
+  document.cookie = "cookieConsent=false; path=/; max-age=7200" // valable 2 heures
   showBanner.value = false
 }
 

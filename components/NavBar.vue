@@ -32,7 +32,7 @@
                     <NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Skills") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie projets">
-                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Projet") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Projets") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 mx-6 -mt-2" aria-label="Cliquez ici pour accéder à la partie contact">
                     <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
