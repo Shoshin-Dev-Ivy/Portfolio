@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center">
+  <div class="flex object-cover w-full h-full">
     <img
       :src="currentImage"
       alt="Image"
@@ -50,6 +50,6 @@ onMounted(() => {
 <style scoped>
 /* Appliquer des transitions pour adoucir le changement d'image */
 img {
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease;
 }
 </style>
