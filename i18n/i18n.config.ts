@@ -4,6 +4,8 @@ export default defineI18nConfig(() => ({
   messages: {
     fr: {
       Shoshin: "Shoshin",
+      ShoshinDefinition: "Shoshin: esprit du débutant dans le Budō (Aïkido) rester humble quelque soit son niveau...",
+      ShoshinDefinition2: "Dans la vie courante garder l'esprit ouvert, à de nouvelles solutions techniques dans le dev web !",
       Web: "Web",
       Services: "Services",
       Accueil: "Accueil",
@@ -175,6 +177,8 @@ export default defineI18nConfig(() => ({
     },
     en: {
       Shoshin: "Shoshin",
+      ShoshinDefinition: "Shoshin: the spirit of the beginner in Budō (Aikido) to remain humble whatever your level...",
+      ShoshinDefinition2: "In everyday life, keep an open mind to new technical solutions in web dev !",
       Web: "Web",
       Services: "Services",
       Accueil: "Home",
@@ -346,6 +350,8 @@ export default defineI18nConfig(() => ({
     },
     ja: {
       Shoshin: "初心",
+      ShoshinDefinition: "尚心（しょうしん）：武道（合気道）の初心者の精神は、レベルを問わず謙虚であり続けること...",
+      ShoshinDefinition2: "日常生活においても、ウェブ 開発における新しい技術ソリューションに対して常に心を開いてください。",
       Web: "ウェブ",
       Services: "えきむ",
       Accueil: "いらっしゃいませ",

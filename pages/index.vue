@@ -3,10 +3,14 @@
     <Title>Shoshin Web Services</Title>
   </Head>
   <div class="flex flex-col mb-20">
+    <div class="flex flex-col">
+        <!-- Afficher le paragraphe pendant 10 secondes -->
+        <p v-if="isVisible" class="text-xl text-black dark:text-white -mt-10 mx-auto justify-center items-center">{{ $t("ShoshinDefinition") }}</p>
+        <p v-if="isVisible" class="text-xl text-black dark:text-white mx-auto justify-center items-center">{{ $t("ShoshinDefinition2") }}</p>
+    </div>
     <div class="flex">
-      <p></p>
       <h1 class="flex justify-start text-2xl text-sky-700 mx-28 my-4 dark:text-white 2xl:ml-50">Pierre Tinard</h1>
-      <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">{{ $t("Developpeur")}}</h2>
+      <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">{{ $t("Developpeur") }}</h2>
       <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">{{ $t("Web") }}</h2>
     </div>
     <div class="flex justify-center avatar my-10">
@@ -303,4 +307,13 @@ const envoyerFormulaire = () => {
       statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.';
     });
 };
+
+const isVisible = ref(true);
+
+// Utiliser un effet pour masquer après 10 secondes
+onMounted(() => {
+  setTimeout(() => {
+    isVisible.value = false; // Masquer le paragraphe
+  }, 10000); // 10000ms = 10 secondes
+});
 </script>

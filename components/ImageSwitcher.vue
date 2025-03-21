@@ -5,7 +5,7 @@
       alt="Image"
       class="transition-all duration-500"
       :class="{
-        'opacity-0': isChanging,
+        'opacity-100': isChanging,
         'opacity-100': !isChanging
       }"
     />
@@ -18,7 +18,7 @@ import { ref, onMounted } from 'vue';
 // Définir les images à afficher
 const images = [
   '/bibi.jpg', // Image initiale
-  '/Aikido.jpg', // Image après 10 secondes
+  '/aikido.jpg', // Image après 10 secondes
 ];
 
 // Gestion de l'état de l'image affichée
@@ -50,6 +50,6 @@ onMounted(() => {
 <style scoped>
 /* Appliquer des transitions pour adoucir le changement d'image */
 img {
-  transition: opacity 1s ease;
+  transition: opacity 1s ease-in-out;
 }
 </style>
