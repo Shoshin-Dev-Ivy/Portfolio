@@ -4,6 +4,7 @@
   </Head>
   <div class="flex flex-col mb-20">
     <div class="flex">
+      <p></p>
       <h1 class="flex justify-start text-2xl text-sky-700 mx-28 my-4 dark:text-white 2xl:ml-50">Pierre Tinard</h1>
       <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 ml- mr-4">{{ $t("Developpeur")}}</h2>
       <h2 class="text-3xl my-3 mr-16 font-black text-orange-400">{{ $t("Web") }}</h2>
