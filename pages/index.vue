@@ -124,34 +124,34 @@
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
         </div>
         <div class="flex flex-col w-auto px-20 dark:bg-sky-100 rounded-2xl -mt-4">
-          <div class="flex">
+          <div class="flex justify-center mx-auto">
             <div class="flex flex-col">
               <p class="flex justify-center text-xl text-orange-400 font-black mt-4">{{ $t("Frontend") }}</p>
-              <div class="flex">
-                <Icon name="logos:html-5" class="my-6 mr-4 size-16 " />
-                <Icon name="logos:css-3" class="my-6 size-16" />
+              <div class="flex justify-center mx-auto">
+                <Icon name="logos:html-5" class="my-4 mr-4 size-16 " />
+                <Icon name="logos:css-3" class="my-4 size-16" />
               </div>
-              <div class="flex">
-                <Icon name="logos:vue" class="my-6 mr-4 size-16" />
-                <Icon name="logos:nuxt" class="my-6 size-16" />
+              <div class="flex justify-center mx-auto">
+                <Icon name="logos:vue" class="my-6 mr-4 -ml-4 size-16" />
+                <Icon name="logos:nuxt" class="my-10 size-18" />
               </div>
-              <div class="flex">
-                <Icon name="logos:typescript-icon" class="my-4 mr-6 -ml-1 size-16" />
+              <div class="flex justify-center mx-auto">
+                <Icon name="logos:typescript-icon" class="my-4 mr-4 -ml-4 size-16" />
                 <Icon name="skill-icons:tailwindcss-light" class="my-4 size-16" />
               </div>
-              <Icon name="devicon:javascript" class="ml-10 my-4 mr-6 size-16" />
+              <Icon name="devicon:javascript" class="ml-10 my-4 size-16" />
             </div>
           </div>
           <div class="flex">
             <div class="flex flex-col">
-              <p class="flex justify-center text-xl text-orange-400 font-black mt-4">{{ $t("Backend") }}</p>
-              <div class="flex">
-                <Icon name="logos:python" class="my-6 size-16 mt-8 -ml-4 mr-4" />
-                <Icon name="logos:nodejs" class="ml-4 my-8 size-16" />
+              <p class="flex justify-center mx-auto text-xl text-orange-400 font-black mt-4">{{ $t("Backend") }}</p>
+              <div class="flex justify-center mx-auto">
+                <Icon name="logos:python" class="my-6 mx-auto pr-4 size-16 mt-8" />
+                <Icon name="logos:nodejs" class="my-8 mx-auto size-16" />
               </div>
-              <div class="flex">
-                <Icon name="logos:mongodb" class="-ml-8 mt-2 my-2 mr-6 size-18" />
-                <Icon name="logos:mysql" class="ml-2 my-2 -mt-6 size-16" />
+              <div class="flex justify-center mx-auto">
+                <Icon name="logos:mongodb" class="my-2 mx-auto size-18" />
+                <Icon name="logos:mysql" class="my-2 mx-auto -mt-6 size-16" />
               </div>
             </div>
           </div>
@@ -248,7 +248,7 @@
         </div>
         <section class="bg-sky-600 dark:bg-sky-800 w-auto mx-auto flex justify-center rounded-2xl -mt-4 -my-14 mb-4 pt-4">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
-            <h2 class="mb-4 -mt-6 text-3xl tracking-tight text-center text-white">{{ $t("Echangeons")}}</h2>
+            <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
                 <label for="email" class="block mb-2 text-lg font-medium text-white">{{ $t("Email") }}</label>
@@ -267,7 +267,7 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("News")}}</h2>
         </div>
-        <p class="ml-2 text-black dark:text-white">{{ $t("News1") }}</p>
+        <p class="ml-2 -mt-4 text-black dark:text-white">{{ $t("News1") }}</p>
         <p class="ml-2 text-black dark:text-white">{{ $t("News2") }}</p>
         <p class="ml-2 text-black dark:text-white">{{ $t("News3") }}</p>
       </div>
