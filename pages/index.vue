@@ -1,21 +1,17 @@
 <template>
   <Head>
     <Title>Shoshin Web Services</Title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
   <div class="flex flex-col">
-    <div class="flex flex-col">
-        <!-- Afficher le paragraphe pendant 10 secondes -->
-        <p v-if="isVisible" class="text-xl text-black dark:text-white -mt-10 mx-auto justify-center items-center">{{ $t("ShoshinDefinition") }}</p>
-        <p v-if="isVisible" class="text-xl text-black dark:text-white mx-auto justify-center items-center">{{ $t("ShoshinDefinition2") }}</p>
-    </div>
-    <div class="flex flex-col">
-        <h1 class="flex text-2xl text-sky-700 -mt-4 mx-auto dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
+    <div class="flex flex-col justify-center">
+        <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
         <div class="flex mx-auto">
           <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
-        <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
+          <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
         </div>
     </div>
-    <div class="flex justify-center avatar my-10">
+    <div class="flex justify-center avatar my-10 mt-4">
       <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
@@ -127,12 +123,12 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
         </div>
-        <div class="flex flex-col px-20 dark:bg-sky-100 rounded-2xl -mt-4 max-w-xs">
+        <div class="flex flex-col w-auto px-20 dark:bg-sky-100 rounded-2xl -mt-4">
           <div class="flex">
             <div class="flex flex-col">
-              <p class="text-xl text-orange-400 font-black ml-6 mt-4">{{ $t("Frontend") }}</p>
+              <p class="flex justify-center text-xl text-orange-400 font-black mt-4">{{ $t("Frontend") }}</p>
               <div class="flex">
-                <Icon name="logos:html-5" class="my-6 mr-4 size-16" />
+                <Icon name="logos:html-5" class="my-6 mr-4 size-16 " />
                 <Icon name="logos:css-3" class="my-6 size-16" />
               </div>
               <div class="flex">
@@ -148,7 +144,7 @@
           </div>
           <div class="flex">
             <div class="flex flex-col">
-              <p class="text-xl text-orange-400 font-black ml-6 mt-4">{{ $t("Backend") }}</p>
+              <p class="flex justify-center text-xl text-orange-400 font-black mt-4">{{ $t("Backend") }}</p>
               <div class="flex">
                 <Icon name="logos:python" class="my-6 size-16 mt-8 -ml-4 mr-4" />
                 <Icon name="logos:nodejs" class="ml-4 my-8 size-16" />
@@ -178,8 +174,8 @@
         <div>
           <h3 class="ml-22 -mt-6 mb-6">{{ $t("Aperçu") }}</h3>
         </div>
-        <div class="container-projets grid grid-cols-2 justify-items-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 mb-26">
-          <div class="card bg-sky-600 dark:bg-sky-800 w-80 h-96 shadow-xl grid grid-rows-2 mr-4">
+        <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 mb-26">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
@@ -187,7 +183,7 @@
               <p>Nuxt.js, Tailwind.css, Typescrypt</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure>
               <img src="assets/images/homePortfolioLightMode.png" alt="home Portfolio" class="object-cover w-full h-full" />
             </figure>
@@ -197,7 +193,7 @@
               <p>Nuxt.js, Tailwind.css, Typescrypt</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeGroupomania.jpg" alt="home Groupomania" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P7 Groupomania</h2>
@@ -205,7 +201,7 @@
               <p>MySQL, Node.js, JavaScript</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeHotTakes.jpg" alt="home Hot Takes" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P6 Hot Takes</h2>
@@ -213,7 +209,7 @@
               <p>Node.js, NoSQl (MongoDB)</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeKanap.jpg" alt="home Kanap" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P5 Kanap</h2>
@@ -221,7 +217,7 @@
               <p>JavaScript</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeLaChouetteAgence.jpg" alt="home La Chouette Agence" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P4 La Chouette Agence</h2>
@@ -229,7 +225,7 @@
               <p>SEO</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeOhmyfood.jpg" alt="home Ohmyfood" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P3 Ohmyfood</h2>
@@ -237,7 +233,7 @@
               <p>CSS et responsive</p>
             </div>
           </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-80 shadow-xl grid grid-rows-2 mr-4">
+          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeReservia.jpg" alt="home Reservia" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P2 Reservia</h2>
@@ -246,11 +242,11 @@
             </div>
           </div>
         </div>
-        <div class="flex" id="3">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
+        <div class="flex my-10" id="3">
+          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
+          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
-        <section class="bg-sky-600 dark:bg-sky-800 max-w-md mx-auto flex justify-center rounded-2xl -mt-4 pt-4 mr-4">
+        <section class="bg-sky-600 dark:bg-sky-800 w-auto mx-auto flex justify-center rounded-2xl -mt-4 -my-14 mb-4 pt-4">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
             <h2 class="mb-4 -mt-6 text-3xl tracking-tight text-center text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
@@ -262,9 +258,9 @@
                 <label for="message" class="block mb-2 text-lg font-medium text-white">{{ $t("Message")}}</label>
                 <textarea rows="6" v-model="form.message" required class="block p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
-              <button type="submit" class="m-auto -mb-8 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
+              <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
             </form>
-            <p class="mt-6 -mb-12 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
+            <p class="my-2 -mx-4 -mb-4 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
           </div>
         </section>
         <div class="flex items-start">
@@ -282,6 +278,7 @@
 <script setup>
 import emailjs from 'emailjs-com';
 import ImageSwitcher from '~/components/ImageSwitcher.vue';
+import LogoWithDefinition from '~/components/LogoWithDefinition.vue';
 
 const form = ref({
   email: '',
