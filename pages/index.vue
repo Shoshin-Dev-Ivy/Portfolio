@@ -1,17 +1,18 @@
 <template>
   <Head>
     <Title>Shoshin Web Services</Title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
-  <div class="flex flex-col">
-    <div class="flex flex-col justify-center">
+  <div class="flex flex-col" lang="fr">
+    <div class="flex flex-col justify-center md:mt-20">
         <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
         <div class="flex mx-auto">
           <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
           <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
         </div>
     </div>
-    <div class="flex justify-center avatar my-10 mt-4">
+    <div class="flex justify-center avatar my-10 mt-4 md:mt-20 md:mb-20">
       <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
@@ -78,6 +79,7 @@
                   <div class="text-lg font-black text-orange-400"> {{ $t("Brevet") }}</div>
                    {{ $t("Animation") }} <br />
                    {{ $t("Pedagogie") }} <br />
+                   => {{ $t("Diplome") }} , N° 16-10-18.<br />
                    {{ $t("Experience") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
@@ -100,7 +102,9 @@
                   <time class="font-mono font-black italic"> {{ $t("2006") }}</time>
                   <div class="text-lg font-black text-orange-400">{{ $t("Lait") }}</div>
                    {{ $t("Fabrication") }}
-                  <br />{{ $t("Fromages") }} <br />ENILV La Roche-sur-Foron. <br /> {{ $t("Diplome") }}
+                  <br />{{ $t("Fromages") }} <br />
+                  ENILV La Roche-sur-Foron. <br />
+                  => {{ $t("Diplome") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -112,7 +116,7 @@
               <div class="text-lg font-black text-orange-400">{{ $t("DAEU") }}</div>
                   {{ $t("Equivalence") }} <br />
                   {{ $t("Epreuves") }} <br />
-                   {{ $t("Diplome") }}
+                  => {{ $t("Diplome") }}
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -123,35 +127,29 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
         </div>
-        <div class="flex flex-col w-auto px-20 dark:bg-sky-100 rounded-2xl -mt-4">
-          <div class="flex justify-center mx-auto">
-            <div class="flex flex-col">
-              <p class="flex justify-center text-xl text-orange-400 font-black mt-4">{{ $t("Frontend") }}</p>
-              <div class="flex justify-center mx-auto">
-                <Icon name="logos:html-5" class="my-4 mr-4 size-16 " />
-                <Icon name="logos:css-3" class="my-4 size-16" />
+        <div class="flex flex-col w-auto items-center dark:bg-sky-100 rounded-2xl -mt-4 md:max-w-96 md:mx-auto">
+          <div class="flex">
+            <div class="flex flex-col items-center">
+              <p class="flex justify-center text-xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
+              <div class="grid grid-cols-2 gap-y-10 gap-x-14">
+                <Icon name="logos:html-5" class="size-16" />
+                <Icon name="logos:css-3" class="size-16" />
+                <Icon name="logos:vue" class="size-16" />
+                <Icon name="logos:nuxt" class="size-16" />
+                <Icon name="logos:typescript-icon" class="size-16" />
+                <Icon name="skill-icons:tailwindcss-light" class="size-16" />
               </div>
-              <div class="flex justify-center mx-auto">
-                <Icon name="logos:vue" class="my-6 mr-4 -ml-4 size-16" />
-                <Icon name="logos:nuxt" class="my-10 size-18" />
-              </div>
-              <div class="flex justify-center mx-auto">
-                <Icon name="logos:typescript-icon" class="my-4 mr-4 -ml-4 size-16" />
-                <Icon name="skill-icons:tailwindcss-light" class="my-4 size-16" />
-              </div>
-              <Icon name="devicon:javascript" class="ml-10 my-4 size-16" />
+              <Icon name="devicon:javascript" class="size-16 my-10" />
             </div>
           </div>
           <div class="flex">
             <div class="flex flex-col">
-              <p class="flex justify-center mx-auto text-xl text-orange-400 font-black mt-4">{{ $t("Backend") }}</p>
-              <div class="flex justify-center mx-auto">
-                <Icon name="logos:python" class="my-6 mx-auto pr-4 size-16 mt-8" />
-                <Icon name="logos:nodejs" class="my-8 mx-auto size-16" />
-              </div>
-              <div class="flex justify-center mx-auto">
-                <Icon name="logos:mongodb" class="my-2 mx-auto size-18" />
-                <Icon name="logos:mysql" class="my-2 mx-auto -mt-6 size-16" />
+              <p class="flex justify-center text-xl text-orange-400 font-black mb-8">{{ $t("Backend") }}</p>
+              <div class="grid grid-cols-2 gap-y-10 gap-x-14">
+                <Icon name="logos:python" class="size-16" />
+                <Icon name="logos:nodejs" class="size-16" />
+                <Icon name="logos:mongodb" class="size-16" />
+                <Icon name="logos:mysql" class="size-16" />
               </div>
             </div>
           </div>
@@ -172,7 +170,7 @@
           <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
         </div>
         <div>
-          <h3 class="ml-22 -mt-6 mb-6">{{ $t("Aperçu") }}</h3>
+          <h3 class="ml-22 -mt-6 mb-6 md:mb-10">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
@@ -230,7 +228,7 @@
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P3 Ohmyfood</h2>
               <p>{{ $t("Projet3") }}</p>
-              <p>CSS et responsive</p>
+              <p>{{ $t("Projet3Techno") }}</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
@@ -238,7 +236,7 @@
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P2 Reservia</h2>
               <p>{{ $t("Projet2") }}</p>
-              <p>HTML CSS et responsive</p>
+              <p>{{ $t("Projet2Techno") }}</p>
             </div>
           </div>
         </div>
@@ -246,7 +244,7 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
-        <section class="bg-sky-600 dark:bg-sky-800 w-auto mx-auto flex justify-center rounded-2xl -mt-4 -my-14 mb-4 pt-4">
+        <section class="bg-sky-600 dark:bg-sky-800 w-auto mx-auto flex justify-center rounded-2xl -mt-4 -my-14 mb-4 pt-4 md:max-w-96">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">

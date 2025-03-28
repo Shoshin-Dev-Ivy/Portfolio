@@ -26,6 +26,14 @@ export default {
       // => @media (max-width: 640px) { ... }
     }
   },
+ 
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('lang-fr', '&[lang="fr"]');
+      addVariant('lang-en', '&[lang="en"]');
+      addVariant('lang-ja', '&[lang="ja"]');
+    },
+  ],
   theme: {
     fontFamily: {
       'sans': ['ui-sans-serif', 'system-ui',],
