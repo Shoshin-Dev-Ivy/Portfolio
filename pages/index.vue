@@ -12,7 +12,7 @@
           <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
         </div>
     </div>
-    <div class="flex justify-center avatar my-10 mt-4 md:mt-20 md:mb-20">
+    <div class="flex justify-center avatar my-10 mt-4 md:mt-24 md:mb-26">
       <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
