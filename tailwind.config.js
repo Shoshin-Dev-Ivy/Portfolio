@@ -10,7 +10,7 @@ export default {
   ],
   theme: {
     screens: {
-      '2xl': {'max': '1536x'},
+      '2xl': {'max': '1536px'},
       // => @media (max-width: 1536px) { ... }
 
       'xl': {'max': '1280px'},

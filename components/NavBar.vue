@@ -1,13 +1,14 @@
 <template>
     <div class="w-auto md:w-full">
         <nav class="flex-col md:grid grid-cols-4 md:items-center md:justify-items-center md:gap-2 md:w-auto">
-                <div class="flex mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly">
-                    <LogoWithDefinition class="-ml-4 text-black dark:text-white"/>
-                    <div class="flex justify-self-start">
-                        <h1 class=" md:mt-10 text-2xl text-orange-400 px-2 md:mx-auto">{ <p class="text-sky-700 dark:text-white px-1">{{ $t("Shoshin") }}</p>
-                        <p class="text-orange-400 font-black px-1">{{ $t("Web") }} </p> 
-                        <p class="text-2xl text-sky-700 dark:text-white px-1">{{ $t("Services") }}</p> }
-                        </h1>
+                <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly">
+                    <LogoWithDefinition class="-ml-4  text-black dark:text-white"/>
+                    <div class="content-center">
+                        <div class="flex justify-items-normal md:mt-10 text-2xl text-orange-400 px-2 md:mx-auto">{ 
+                            <p class="text-sky-700 dark:text-white px-1">{{ $t("Shoshin") }}</p>
+                            <p class="text-orange-400 font-black px-1">{{ $t("Web") }} </p> 
+                            <p class="text-2xl text-sky-700 dark:text-white px-1">{{ $t("Services") }}</p> }
+                        </div>
                     </div>
                 </div>                
             <div class="justify-self-center md:mt-10">
@@ -18,10 +19,10 @@
                 </a>
             </div>
             <div>
-                <div class="justify-items-center my-4 mx-auto md:justify-items-center md:my-10">
+                <div class="justify-items-center my-10 mx-auto md:justify-items-center md:my-10">
                     <ModeSwitch />
                 </div> 
-                <div class="justify-self-center">
+                <div class="justify-self-center my-10">
                 <button @click="setLocale('fr')" class="dark:text-white text-2xl px-4"><img src="assets/images/FlagFR.png" alt="drapeau français" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
                 <button @click="setLocale('en')" class="dark:text-white text-2xl px-4"><img src="assets/images/FlagEN.png" alt="drapeau anglais" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400" /></button>
                 <button @click="setLocale('ja')" class="dark:text-white text-2xl px-4"><img src="assets/images/FlagJP.png" alt="drapeau japonais" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
