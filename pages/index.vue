@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
   <div class="flex flex-col" lang="fr">
-    <div class="flex flex-col justify-center md:mt-20">
+    <div class="flex flex-col justify-center md:mt-24 md:-mb-20">
         <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
         <div class="flex mx-auto">
           <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
           <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
         </div>
     </div>
-    <div class="flex justify-center avatar my-10 mt-4 md:mt-24 md:mb-26">
+    <div class="flex justify-center avatar my-10 mt-4 md:mt-24 md:mb-26 2xl:my-4 md:my-4 2xl:mt-24">
       <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
