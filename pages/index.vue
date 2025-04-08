@@ -6,22 +6,20 @@
   </Head>
   <div class="flex flex-col" lang="fr">
     <div class="flex flex-col justify-center md:mt-24 md:-mb-20">
-        <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
-        <div class="flex mx-auto">
-          <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
-          <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
-        </div>
+      <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
+      <div class="flex mx-auto">
+        <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
+        <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
+      </div>
     </div>
-    <div class="flex justify-center avatar my-10 mt-4 md:mt-24 md:mb-26 2xl:my-4 md:my-4 2xl:mt-24">
+    <div class="flex justify-center flex-col avatar my-10 mt-4 md:mt-24 md:mb-26 2xl:my-4 md:my-4 2xl:mt-24">
       <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
     </div>
-    <div class="flex justify-center mb-4">
-      <p class="text-2xl">{{ $t("Tagline1") }}</p>
-    </div>
-    <div class="flex justify-center">
-      <p class="text-2xl">{{ $t("Tagline2") }}</p>
+    <div class="grid grid-col-1 place-items-center mx-auto">
+        <h1 class="text-2xl text-sky-700 mt-2 dark:text-white 2xl:ml-50">{{ $t("Tagline1") }}</h1>
+        <h2 class="text-2xl my-3 text-sky-700 mt-2 dark:text-white 2xl:ml-50">{{ $t("Tagline2") }}</h2>
     </div>
     <div>
       <div>
@@ -55,7 +53,9 @@
                   P4 => {{ $t("P4") }} <br />
                   P5 => {{ $t("P5") }} <br />
                   P6 => {{ $t("P6") }} <br />
+                  {{ $t("P6Techno") }} <br />
                   P7 => {{ $t("P7")}} <br />
+                  {{ $t("P7Techno") }} <br />
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -154,15 +154,15 @@
             </div>
           </div>
         </div>
-        <div>
-          <div class="flex">
-            <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
-            <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Prestations")}}</h2>
-          </div>
-          <ul class="-mt-8 list-disc">
+        <div class="flex">
+          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
+          <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Prestations")}}</h2>
+        </div>
+        <div class="flex justify-center mx-auto">
+            <ul class="-mt-8 list-disc">
             <li class="ml-20">SaaS</li>
             <li class="ml-20">API / API REST</li>
-            <li class="ml-20">{{$t("BDD")}} MySQL / NoSQL(MongoDB)</li>
+            <li class="ml-20">{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
           </ul>
         </div>
         <div class="flex" id="2">
@@ -170,7 +170,7 @@
           <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
         </div>
         <div>
-          <h3 class="ml-22 -mt-6 mb-6 md:mb-10">{{ $t("Aperçu") }}</h3>
+          <h3 class="ml-22 -mt-6 mb-6 md:mb-10 md:flex justify-center xl:justify-center">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
@@ -265,9 +265,9 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("News")}}</h2>
         </div>
-        <p class="ml-2 -mt-4 text-black dark:text-white">{{ $t("News1") }}</p>
-        <p class="ml-2 text-black dark:text-white">{{ $t("News2") }}</p>
-        <p class="ml-2 text-black dark:text-white">{{ $t("News3") }}</p>
+        <p class="ml-2 -mt-4 md:flex justify-center text-black dark:text-white">{{ $t("News1") }}</p>
+        <p class="ml-2 md:flex justify-center text-black dark:text-white">{{ $t("News2") }}</p>
+        <p class="ml-2 md:flex justify-center text-black dark:text-white">{{ $t("News3") }}</p>
       </div>
     </div>
   </div>
@@ -276,7 +276,6 @@
 <script setup>
 import emailjs from 'emailjs-com';
 import ImageSwitcher from '~/components/ImageSwitcher.vue';
-import LogoWithDefinition from '~/components/LogoWithDefinition.vue';
 
 const form = ref({
   email: '',

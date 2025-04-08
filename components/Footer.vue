@@ -26,13 +26,13 @@
                 </a>
                 </li>
         </ul>
-        <div class="flex flex-col justify-center mx-auto mt-4 lg:flex justify-items-normal lg:w-full">
-                <p class="flex mx-auto text-sky-700 dark:text-white">
+        <div class="flex flex-col justify-center md:flex-row mt-4 lg:flex justify-items-normal lg:w-full">
+                <p class="flex mx-auto md:mx-0 md:mr-6 text-sky-700 dark:text-white">
                 <Icon name="lucide:copyright" class="mr-2 -my-0"/>{{ $t("2025") }} - {{ $t("Shoshin") }} {{ $t("Web") }}  {{ $t("Services") }}
                 </p>
-                <p class="flex mx-auto text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
+                <p class="flex mx-auto md:mx-0 text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
         </div>
-        <div class="flex flex-col justify-center mx-auto mt-4 lg:flex justify-items-normal lg:w-full">
+        <div class="flex flex-col justify-center mx-auto mt-4 md:flex-row lg:flex justify-items-normal lg:w-full">
                 <a class="flex justify-center text-sky-700 dark:text-white" aria-label="Cliquez ici pour aller suur la page des mentions légales">
                         <NuxtLink :to="{ path: localePath('/mentionsLegales') }">{{ $t("Mentions") }}</NuxtLink>
                 </a >

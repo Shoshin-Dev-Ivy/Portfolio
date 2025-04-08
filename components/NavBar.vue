@@ -1,17 +1,17 @@
 <template>
     <div class="w-auto">
-        <nav class="md:grid grid-cols-2 md:items-center md:justify-items-center 2xl:grid-cols-8 2xl:grid-rows-1">
-            <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly">
+        <nav class="md:grid grid-cols-2 md:items-center md:justify-items-center 2xl:grid-cols-8 2xl:gap-2">
+            <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
                 <LogoWithDefinition class="-ml-4  text-black dark:text-white"/>
                 <div class="content-center">
-                    <div class="flex justify-items-normal md:mt-10 text-2xl text-orange-400 px-2 md:mx-auto">{ 
+                    <div class="flex justify-items-normal md:mt-10 text-2xl text-orange-400 px-2 md:mx-auto 2xl:mt-0">{ 
                         <p class="text-sky-700 dark:text-white px-1">{{ $t("Shoshin") }}</p>
                         <p class="text-orange-400 font-black px-1">{{ $t("Web") }} </p> 
                         <p class="text-2xl text-sky-700 dark:text-white px-1">{{ $t("Services") }}</p> }
                     </div>
                 </div>
             </div> 
-            <div>
+            <div class="2xl:hidden">
                 <button @click = "toggleMenu"  value = "hamburger"  
                 class ="flex flex-col justify-around justify-self-center h-8 w-8 p-1 my-4 ml-2 mb-16 rounded md:hidden"> 
                 <!-- Icône Hamburger (3 lignes) --> 
@@ -21,7 +21,7 @@
                 </button> 
                 <template  v-if = "isMenuOpen"  class="flex flex-col pt-8"> 
                 <!-- Éléments de menu --> 
-                <a class="flex justify-center text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 py-2" 
+                <a class="flex justify-center -mt-10 text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 py-2" 
                 aria-label="Cliquez ici pour revenir suur la page d'accueil"><NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
                 </a> 
                 <a class="flex justify-center text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 py-2" 
@@ -35,7 +35,7 @@
                 </a> 
                 </template>
             </div>            
-            <div class="hidden md:block md:col-span-full md:justify-items-center md:items-center md:-mt-26">
+            <div class="hidden md:block md:col-span-full md:justify-items-center md:items-center md:-mt-26 2xl:col-span-4 2xl:grid 2xl:grid-cols-4 2xl:gap-2 2xl:mt-0">
                 <button class="text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 mx-6 -mt-2" 
                 aria-label="Cliquez ici pour revenir suur la page d'accueil">
                 <NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
@@ -53,14 +53,14 @@
                     <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
                 </button>
             </div>
-            <div class="justify-self-center md:mt-10">
+            <div class="justify-self-center md:mt-10 2xl:col-span-1 2xl:mt-0">
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
                     <button class="justify-items-center text-sky-700 text-2xl dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-2 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse">
                         {{ $t("RDV") }}
                     </button>
                 </a>
             </div>
-            <div>
+            <div class="2xl:col-span-1">
                 <div class="justify-items-center my-10 mx-auto md:justify-items-center md:my-10">
                     <ModeSwitch />
                 </div> 
@@ -75,6 +75,8 @@
 </template>
 
 <script setup lang="ts">
+import LogoWithDefinition from '~/components/LogoWithDefinition.vue';
+
 const localePath = useLocalePath()
 const { setLocale } = useI18n()
 import { ref } from 'vue';
