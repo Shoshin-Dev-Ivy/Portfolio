@@ -2,13 +2,11 @@
     <div class="w-auto">
         <nav class="md:grid grid-cols-2 md:items-center md:justify-items-center 2xl:grid-cols-8 2xl:gap-2">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
-                <LogoWithDefinition class="-ml-4  text-black dark:text-white"/>
-                <div class="content-center">
-                    <div class="flex justify-items-normal md:mt-10 text-2xl text-orange-400 px-2 md:mx-auto 2xl:mt-0">{ 
-                        <p class="text-sky-700 dark:text-white px-1">{{ $t("Shoshin") }}</p>
-                        <p class="text-orange-400 font-black px-1">{{ $t("Web") }} </p> 
-                        <p class="text-2xl text-sky-700 dark:text-white px-1">{{ $t("Services") }}</p> }
-                    </div>
+                <LogoWithDefinition class="text-black dark:text-white"/>
+                <div class="flex items-center mx-11 md:mx-0 md:mt-10  text-2xl text-orange-400 px-2 2xl:mt-0">{ 
+                    <p class="text-sky-700 dark:text-white px-1">{{ $t("Shoshin") }}</p>
+                    <p class="text-orange-400 font-black px-1">{{ $t("Web") }} </p> 
+                    <p class="text-2xl text-sky-700 dark:text-white px-1">{{ $t("Services") }}</p> }
                 </div>
             </div> 
             <div class="2xl:hidden">

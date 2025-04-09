@@ -12,12 +12,12 @@
         <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
       </div>
     </div>
-    <div class="flex justify-center flex-col avatar my-10 mt-4 md:mt-24 md:mb-26 2xl:my-4 md:my-4 2xl:mt-24">
+    <div class="flex justify-center flex-col avatar mt-4 mb-4 md:mt-28 lg:mt-18 2xl:my-4 2xl:mt-24">
       <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
     </div>
-    <div class="grid grid-col-1 place-items-center mx-auto">
+    <div class="">
         <h1 class="text-2xl text-sky-700 mt-2 dark:text-white 2xl:ml-50">{{ $t("Tagline1") }}</h1>
         <h2 class="text-2xl my-3 text-sky-700 mt-2 dark:text-white 2xl:ml-50">{{ $t("Tagline2") }}</h2>
     </div>
@@ -172,7 +172,7 @@
         <div>
           <h3 class="ml-22 -mt-6 mb-6 md:mb-10 md:flex justify-center xl:justify-center">{{ $t("Aperçu") }}</h3>
         </div>
-        <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-1/2 m-auto max-lg:grid-cols-1 mb-26">
+        <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
@@ -244,17 +244,17 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
-        <section class="bg-sky-600 dark:bg-sky-800 w-auto mx-auto flex justify-center rounded-2xl -mt-4 -my-14 mb-4 pt-4 md:max-w-96">
+        <section class="bg-sky-600 dark:bg-sky-800 mx-auto flex justify-center rounded-2xl w-auto md:w-auto md:mx-32 lg:w-auto lg:mx-48 2xl:w-auto 2xl:mx-96 -mt-4 -my-14 mb-4 pt-4">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
-                <label for="email" class="block mb-2 text-lg font-medium text-white">{{ $t("Email") }}</label>
-                <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
+                <label for="email" class="mb-2 text-lg font-medium text-white">{{ $t("Email") }}</label>
+                <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
-                <label for="message" class="block mb-2 text-lg font-medium text-white">{{ $t("Message")}}</label>
-                <textarea rows="6" v-model="form.message" required class="block p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+                <label for="message" class=" mb-2 text-lg font-medium text-white">{{ $t("Message")}}</label>
+                <textarea rows="6" v-model="form.message" required class="p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
               <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
             </form>
@@ -267,7 +267,7 @@
         </div>
         <p class="ml-2 -mt-4 md:flex justify-center text-black dark:text-white">{{ $t("News1") }}</p>
         <p class="ml-2 md:flex justify-center text-black dark:text-white">{{ $t("News2") }}</p>
-        <p class="ml-2 md:flex justify-center text-black dark:text-white">{{ $t("News3") }}</p>
+        <p class="ml-2 md:mb-4 md:flex justify-center text-black dark:text-white">{{ $t("News3") }}</p>
       </div>
     </div>
   </div>

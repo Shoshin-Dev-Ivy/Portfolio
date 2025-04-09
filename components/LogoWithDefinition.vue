@@ -5,7 +5,7 @@
         src="/assets/images/logo.svg"
         alt="Logo"
         @click="showDefinition"
-        class="md:rounded-full md:h-16 w-16 my-8 mx-2 ml-8 rounded-full border-2 border-sky-700 dark:border-orange-400 cursor-pointer"
+        class="md:rounded-full md:h-16 w-16 my-10 md:my-6 mx-2 ml-12 rounded-full border-2 border-sky-700 dark:border-orange-400 cursor-pointer"
       />
   
       <!-- Définition qui apparaît pendant 10 secondes -->

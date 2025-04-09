@@ -1,6 +1,6 @@
 <template>
         <div class="flex justify-center mx-auto">
-                <img src="assets/images/logo.svg"alt="logo" class="flex h-16 w-16 my-8 mx-2 rounded-full border-2 border-sky-700 dark:border-orange-400"/>
+                <img src="assets/images/logo.svg"alt="logo" class="flex h-16 w-16 my-6 mx-2 rounded-full border-2 border-sky-700 dark:border-orange-400"/>
                 <div class="flex text-2xl text-orange-400 mt-10 mb-10">{ 
                         <p class="flex text-sky-700 mx-1 dark:text-white">{{ $t("Shoshin") }}</p>
                         <p class="flex text-2xl text-orange-400 font-black mx-1">{{ $t("Web") }}</p> 
@@ -41,7 +41,7 @@
                         <NuxtLink :to="{ path: localePath('/confidentialite') }">{{ $t("Confidentialite") }}</NuxtLink>
                 </a>
         </div>  
-<div class="bg-sky-50 dark:bg-sky-900 flex justify-center mt-4 mr-auto md:justify-end md:-mt-14 md:mr-4">
+<div class="bg-sky-50 dark:bg-sky-900 flex justify-center mt-4 mr-auto md:justify-end md:-mt-16 md:mr-8">
         <ScrollToTop /> 
 </div>
 </template>
