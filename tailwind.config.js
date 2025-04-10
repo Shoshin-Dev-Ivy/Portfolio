@@ -22,7 +22,7 @@ export default {
       'md': {'max': '768px'},
       // => @media (max-width: 768px) { ... }
 
-      'sm': {'max': '370px'},
+      'sm': {'max': '540px'},
       // => @media (max-width: 640px) { ... }
     }
   },

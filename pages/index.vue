@@ -17,9 +17,11 @@
         <ImageSwitcher />
       </div>
     </div>
-    <div class="">
-        <h1 class="text-2xl text-sky-700 mt-2 dark:text-white 2xl:ml-50">{{ $t("Tagline1") }}</h1>
-        <h2 class="text-2xl my-3 text-sky-700 mt-2 dark:text-white 2xl:ml-50">{{ $t("Tagline2") }}</h2>
+    <div class="flex items-center mx-auto sm:items-center sm:mx-auto md:items-center md:mx-auto lg:items-center lg:mx-auto xl:items-center xl:mx-auto 2xl:items-center 2xl:mx-auto">
+      <h1 class="text-2xl text-sky-700 mt-2 dark:text-white">{{ $t("Tagline1") }}</h1>
+    </div>
+    <div class="flex items-center mx-auto sm:items-center sm:mx-auto md:items-center md:mx-auto lg:items-center lg:mx-auto xl:items-center xl:mx-auto 2xl:items-center 2xl:mx-auto">
+      <h2 class="text-2xl my-3 text-sky-700 mt-2 dark:text-white">{{ $t("Tagline2") }}</h2>
     </div>
     <div>
       <div>
@@ -244,17 +246,17 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
-        <section class="bg-sky-600 dark:bg-sky-800 mx-auto flex justify-center rounded-2xl w-auto md:w-auto md:mx-32 lg:w-auto lg:mx-48 2xl:w-auto 2xl:mx-96 -mt-4 -my-14 mb-4 pt-4">
+        <section class="bg-sky-600 dark:bg-sky-800 mx-auto flex justify-center rounded-2xl w-auto md:w-auto md:mx-32 lg:w-96 lg:justify-items-center lg:mx-48 2xl:w-96 -mt-4 -my-14 mb-4 pt-4">
           <div class="py-8 lg:py-16 px-8 justify-items-center">
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
-                <label for="email" class="mb-2 text-lg font-medium text-white">{{ $t("Email") }}</label>
-                <input v-model="form.email" type="email" required class="shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
+                <label for="email" class="text-lg font-medium text-white">{{ $t("Email") }}</label>
+                <input v-model="form.email" type="email" required class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
-                <label for="message" class=" mb-2 text-lg font-medium text-white">{{ $t("Message")}}</label>
-                <textarea rows="6" v-model="form.message" required class="p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+                <label for="message" class="text-lg font-medium text-white">{{ $t("Message")}}</label>
+                <textarea rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
               <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
             </form>
