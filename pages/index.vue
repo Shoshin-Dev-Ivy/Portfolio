@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
+  <div class="flex justify-center mx-auto py-6">
+    <div v-if="show" :class=" {'opacity-100': show,'opacity-0': !show,'transition-opacity duration-2000': true}" class="p-4 rounded-lg">
+      <p class="text-xl mb-4 text-sky-700 dark:text-white">{{ $t("ShoshinDefinition") }}</p>
+      <p class="text-xl text-sky-700 dark:text-white">{{ $t("ShoshinDefinition2") }}</p>
+    </div>
+  </div>
   <div class="flex flex-col" lang="fr">
     <div class="flex flex-col justify-center md:mt-24 md:-mb-20">
       <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
@@ -17,12 +23,10 @@
         <ImageSwitcher />
       </div>
     </div>
-    <div class="flex items-center mx-auto sm:items-center sm:mx-auto md:items-center md:mx-auto lg:items-center lg:mx-auto xl:items-center xl:mx-auto 2xl:items-center 2xl:mx-auto">
-      <h1 class="text-2xl text-sky-700 mt-2 dark:text-white">{{ $t("Tagline1") }}</h1>
-    </div>
-    <div class="flex items-center mx-auto sm:items-center sm:mx-auto md:items-center md:mx-auto lg:items-center lg:mx-auto xl:items-center xl:mx-auto 2xl:items-center 2xl:mx-auto">
-      <h2 class="text-2xl my-3 text-sky-700 mt-2 dark:text-white">{{ $t("Tagline2") }}</h2>
-    </div>
+    <div class="flex flex-col text-center">
+      <p class="text-2xl text-sky-700 dark:text-white">{{ $t("Tagline1") }}</p>
+      <p class="text-2xl text-sky-700 dark:text-white">{{ $t("Tagline2") }}</p>
+    </div> 
     <div>
       <div>
         <div>
@@ -160,41 +164,41 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Prestations")}}</h2>
         </div>
-        <div class="flex justify-center mx-auto">
-            <ul class="-mt-8 list-disc">
-            <li class="ml-20">SaaS</li>
-            <li class="ml-20">API / API REST</li>
-            <li class="ml-20">{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
+        <div class="text-center">
+            <ul class="-mt-8">
+            <li>SaaS</li>
+            <li>API / API REST</li>
+            <li>{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
           </ul>
         </div>
         <div class="flex" id="2">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
         </div>
-        <div>
-          <h3 class="ml-22 -mt-6 mb-6 md:mb-10 md:flex justify-center xl:justify-center">{{ $t("Aperçu") }}</h3>
+        <div class="text-center md:text-center xl:text-center">
+          <h3 class="-mt-6 mb-6 md:mb-10">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-fill sm:object-fill md:md:object-fill w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
               <p>{{ $t("ProjetBussac") }}</p>
-              <p>Nuxt.js, Tailwind.css, Typescrypt</p>
+              <p>Nuxt.js, Tailwind.css, TypeScript</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure>
-              <img src="assets/images/homePortfolioLightMode.png" alt="home Portfolio" class="object-cover w-full h-full" />
+              <img src="assets/images/homeSWSlightMode.jpg" alt="home Portfolio" class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} {{ $t("Portfolio") }}</h2>
               <p>{{ $t("ProjetPortfolio") }}</p>
-              <p>Nuxt.js, Tailwind.css, Typescrypt</p>
+              <p>Nuxt.js, Tailwind.css, TypeScript</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeGroupomania.jpg" alt="home Groupomania" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeGroupomania.jpg" alt="home Groupomania" class="oobject-fill sm:object-fill md:md:object-fill w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P7 Groupomania</h2>
               <p>{{ $t("Projet7") }}</p>
@@ -246,8 +250,8 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
-        <section class="bg-sky-600 dark:bg-sky-800 mx-auto flex justify-center rounded-2xl w-auto md:w-auto md:mx-32 lg:w-96 lg:justify-items-center lg:mx-48 2xl:w-96 -mt-4 -my-14 mb-4 pt-4">
-          <div class="py-8 lg:py-16 px-8 justify-items-center">
+        <section class="bg-sky-600 dark:bg-sky-800 mx-auto rounded-2xl w-auto md:w-96 lg:w-96 lg:content-center  2xl:w-96 -mt-4 -my-14 mb-4 pt-4">
+          <div class="py-8 lg:py-16 px-8">
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
@@ -267,9 +271,11 @@
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("News")}}</h2>
         </div>
-        <p class="ml-2 -mt-4 md:flex justify-center text-black dark:text-white">{{ $t("News1") }}</p>
-        <p class="ml-2 md:flex justify-center text-black dark:text-white">{{ $t("News2") }}</p>
-        <p class="ml-2 md:mb-4 md:flex justify-center text-black dark:text-white">{{ $t("News3") }}</p>
+        <div class="flex flex-col text-center md:flex-col">
+          <p class="ml-2 -mt-4 text-black dark:text-white">{{ $t("News1") }}</p>
+          <p class="ml-2 text-black dark:text-white">{{ $t("News2") }}</p>
+          <p class="ml-2 md:mb-4 text-black dark:text-white">{{ $t("News3") }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -278,13 +284,15 @@
 <script setup>
 import emailjs from 'emailjs-com';
 import ImageSwitcher from '~/components/ImageSwitcher.vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
 
 const form = ref({
-  email: '',
-  message: '',
-});
-
-const statusMessage = ref('');
+   email: '',
+   message: '',
+ });
+ 
+ const statusMessage = ref('');
 
 const envoyerFormulaire = () => {
   const serviceID = 'contact_service'; // Remplace par ton Service ID EmailJS
@@ -310,12 +318,22 @@ const envoyerFormulaire = () => {
     });
 };
 
-const isVisible = ref(true);
+const show = ref(false);
 
-// Utiliser un effet pour masquer après 10 secondes
-onMounted(() => {
+const handleShowDefinitions = () => {
+  show.value = true;
   setTimeout(() => {
-    isVisible.value = false; // Masquer le paragraphe
-  }, 10000); // 10000ms = 10 secondes
+    show.value = false;
+  }, 20000);
+};
+
+onMounted(() => {
+  window.addEventListener('show-definitions', handleShowDefinitions);
 });
+
+onBeforeUnmount(() => {
+  window.removeEventListener('show-definitions', handleShowDefinitions);
+});
+
 </script>
+

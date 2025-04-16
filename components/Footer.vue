@@ -11,7 +11,7 @@
                 <h2 class="text-2xl text-sky-700 font-black dark:text-white my-10 mr-4">{{ $t("Developpeur") }}</h2>
                 <h2 class="text-3xl text-orange-400 font-black my-9">{{ $t("Web") }}</h2>
         </div>
-        
+
         <ul class="flex justify-center mx-auto -mt-1">
                 <li>
                         <a href="https://www.linkedin.com/in/pierre-tinard-867200207/" target="_blank">
@@ -37,13 +37,10 @@
                         <NuxtLink :to="{ path: localePath('/mentionsLegales') }">{{ $t("Mentions") }}</NuxtLink>
                 </a >
                 <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
-                <a class="flex justify-center text-sky-700 dark:text-white ml-1" aria-label="Cliquez ici pour aller suur la page des mentions légales">
+                <a class="flex justify-center text-sky-700 dark:text-white" aria-label="Cliquez ici pour aller suur la page des mentions légales">
                         <NuxtLink :to="{ path: localePath('/confidentialite') }">{{ $t("Confidentialite") }}</NuxtLink>
                 </a>
-        </div>  
-<div class="bg-sky-50 dark:bg-sky-900 flex justify-center mt-4 mr-auto md:justify-end md:-mt-16 md:mr-8">
-        <ScrollToTop /> 
-</div>
+        </div>
 </template>
 
 

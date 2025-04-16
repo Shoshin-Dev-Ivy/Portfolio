@@ -2,11 +2,14 @@
     <div class="w-auto">
         <nav class="md:grid grid-cols-2 md:items-center md:justify-items-center 2xl:grid-cols-8 2xl:gap-2">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
-                <LogoWithDefinition class="text-black dark:text-white"/>
-                <div class="flex items-center mx-11 md:mx-0 md:mt-10  text-2xl text-orange-400 px-2 2xl:mt-0">{ 
-                    <p class="text-sky-700 dark:text-white px-1">{{ $t("Shoshin") }}</p>
-                    <p class="text-orange-400 font-black px-1">{{ $t("Web") }} </p> 
-                    <p class="text-2xl text-sky-700 dark:text-white px-1">{{ $t("Services") }}</p> }
+                <div class="flex justify-center mx-auto">
+                    <img src="assets/images/logo.svg" alt="Logo" class="h-16 w-16 my-6 mx-2 rounded-full border-2 border-sky-700 dark:border-orange-400 cursor-pointer" @click="showDefinitions" />
+                    <div class="flex text-2xl text-orange-400 mt-10 mb-10">
+                        { 
+                        <p class="flex text-sky-700 mx-1 dark:text-white">{{ $t("Shoshin") }}</p>
+                        <p class="flex text-2xl text-orange-400 font-black mx-1">{{ $t("Web") }}</p> 
+                        <p class="flex text-sky-700 dark:text-white mx-1">{{ $t("Services") }}</p> } 
+                    </div>
                 </div>
             </div> 
             <div class="2xl:hidden">
@@ -51,15 +54,15 @@
                     <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
                 </button>
             </div>
-            <div class="justify-self-center md:mt-10 2xl:col-span-1 2xl:mt-0">
+            <div class="flex justify-center md:mt-2">
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
-                    <button class="justify-items-center text-sky-700 text-2xl dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-2 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse">
+                    <button class="justify-items-center text-sky-700 text-xl dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-6 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse">
                         {{ $t("RDV") }}
                     </button>
                 </a>
             </div>
             <div class="2xl:col-span-1">
-                <div class="justify-items-center my-10 mx-auto md:justify-items-center md:my-10">
+                <div class="2xl:col-span-1 justify-items-center my-10 md:justify-items-center md:my-10">
                     <ModeSwitch />
                 </div> 
                 <div class="justify-self-center my-10">
@@ -73,7 +76,6 @@
 </template>
 
 <script setup lang="ts">
-import LogoWithDefinition from '~/components/LogoWithDefinition.vue';
 
 const localePath = useLocalePath()
 const { setLocale } = useI18n()
@@ -81,6 +83,11 @@ import { ref } from 'vue';
 const isMenuOpen = ref(false);
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
+};
+
+const showDefinitions = () => {
+  const event = new CustomEvent('show-definitions');
+  window.dispatchEvent(event);
 };
 </script>
 

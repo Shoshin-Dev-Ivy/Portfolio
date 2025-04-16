@@ -1,30 +1,42 @@
-// components/ScrollToTop.vue
 <template>
-  <button v-if="isVisible" class="scroll-to-top" @click="scrollToTop">
-    <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400" />
-  </button>
+  <div>
+    <NuxtPage />
+    <button v-show="showButton" @click="scrollToTop" class="fixed bottom-6 right-6 z-50 p-3 transition-all duration-900 opacity-0 translate-y-6" :class="{ 'opacity-100 translate-y-0': showButton }">
+    <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" />
+    </button>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue'
 
-const isVisible = ref(false);
+const showButton = ref(false)
 
-// Function to check scroll position
 const handleScroll = () => {
-  isVisible.value = window.scrollY > 200; // Show button after scrolling down 200px
-};
+  // Détection si le footer est visible (ou tout en bas de la page)
+  const scrollY = window.scrollY
+  const windowHeight = window.innerHeight
+  const bodyHeight = document.body.offsetHeight
 
-// Function to scroll to the top smoothly
+  const scrollPosition = scrollY + windowHeight
+  const nearBottom = scrollPosition >= bodyHeight - 100 // marge de 100px
+
+  showButton.value = nearBottom
+}
+
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-});
+  window.addEventListener('scroll', handleScroll)
+})
 
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
+
+      <!-- <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" /> -->
+    
+
