@@ -1,55 +1,43 @@
 <template>
-  <div class="flex object-cover w-full h-full">
-    <img
-      :src="currentImage"
-      alt="Image"
-      class="transition-all duration-500"
-      :class="{
-        'opacity-100': isChanging,
-        'opacity-100': !isChanging
-      }"
-    />
+  <div class="relative w-full h-full overflow-hidden">
+    <NuxtImg :src="currentImage"
+      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-[3000ms] ease-in-out"
+      :class="{ 'opacity-0': fadingOut, 'opacity-100': !fadingOut }"
+      alt="Image switcher"/>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
 
-// Définir les images à afficher
-const images = [
-  '/bibi.jpg', // Image initiale
-  '/aikido.jpg', // Image après 10 secondes
-];
+const image1 = '/images/bibi.jpg'
+const image2 = '/images/aikido.jpg'
 
-// Gestion de l'état de l'image affichée
-const currentImage = ref(images[0]);
-const isChanging = ref(false);
-
-// Fonction pour changer d'image après 10 secondes
-const changeImage = () => {
-  isChanging.value = true;
-
-  // Attendre 10 secondes puis changer l'image
-  setTimeout(() => {
-    currentImage.value = images[1];
-
-    // Attendre encore 10 secondes puis revenir à l'image initiale
-    setTimeout(() => {
-      currentImage.value = images[0];
-      isChanging.value = false;
-    }, 10000);
-  }, 10000);
-};
+const currentImage = ref(image1)
+const fadingOut = ref(false)
 
 onMounted(() => {
-  // Lancer la fonction au montage du composant
-  changeImage();
-});
+  // Start fade to image2
+  setTimeout(() => {
+    fadingOut.value = true
+    setTimeout(() => {
+      currentImage.value = image2
+      fadingOut.value = false
+
+      // Wait 10 seconds then return permanently to image1
+      setTimeout(() => {
+        fadingOut.value = true
+        setTimeout(() => {
+          currentImage.value = image1
+          fadingOut.value = false
+        }, 3000) // duration of fade
+      }, 10000) // 10 seconds show aikido
+
+    }, 3000) // duration of fade
+  }, 100) // slight delay on mount
+})
 </script>
 
 <style scoped>
-/* Appliquer des transitions pour adoucir le changement d'image */
-img {
-  transition: opacity 1s ease;
-}
+/* Optionally, make sure transition is smooth in all browsers */
 </style>

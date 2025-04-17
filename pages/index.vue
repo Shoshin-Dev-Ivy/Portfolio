@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
   <div class="flex justify-center mx-auto py-6">
-    <div v-if="show" :class=" {'opacity-100': show,'opacity-0': !show,'transition-opacity duration-2000': true}" class="p-4 rounded-lg">
-      <p class="text-xl mb-4 text-sky-700 dark:text-white">{{ $t("ShoshinDefinition") }}</p>
-      <p class="text-xl text-sky-700 dark:text-white">{{ $t("ShoshinDefinition2") }}</p>
+    <Transition
+    enter-active-class="transition-opacity duration-[20000ms] ease-in-out"
+    leave-active-class="transition-opacity duration-[20000ms] ease-in-out"
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+  >
+    <div
+      v-if="show"
+      class="p-4 rounded-lg opacity-100 text-xl text-sky-700 dark:text-white"
+    >
+      <p class="mb-4">{{ $t("ShoshinDefinition") }}</p>
+      <p>{{ $t("ShoshinDefinition2") }}</p>
     </div>
+  </Transition>
   </div>
   <div class="flex flex-col" lang="fr">
     <div class="flex flex-col justify-center md:mt-24 md:-mb-20">
@@ -27,6 +39,7 @@
       <p class="text-2xl text-sky-700 dark:text-white">{{ $t("Tagline1") }}</p>
       <p class="text-2xl text-sky-700 dark:text-white">{{ $t("Tagline2") }}</p>
     </div> 
+    <ImageSwitcher />
     <div>
       <div>
         <div>
@@ -283,9 +296,8 @@
 
 <script setup>
 import emailjs from 'emailjs-com';
-import ImageSwitcher from '~/components/ImageSwitcher.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-
+import ImageSwitcher from '~/components/ImageSwitcher.vue'
 
 const form = ref({
    email: '',
@@ -318,22 +330,25 @@ const envoyerFormulaire = () => {
     });
 };
 
-const show = ref(false);
+const show = ref(false)
 
 const handleShowDefinitions = () => {
-  show.value = true;
+  show.value = true
   setTimeout(() => {
-    show.value = false;
-  }, 20000);
-};
+    show.value = false
+  }, 20000) // Visible pendant 20 secondes
+}
 
 onMounted(() => {
-  window.addEventListener('show-definitions', handleShowDefinitions);
-});
+  window.addEventListener('show-definitions', handleShowDefinitions)
+})
 
 onBeforeUnmount(() => {
-  window.removeEventListener('show-definitions', handleShowDefinitions);
-});
-
+  window.removeEventListener('show-definitions', handleShowDefinitions)
+})
 </script>
+
+<style scoped>
+
+</style>
 

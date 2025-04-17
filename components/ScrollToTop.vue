@@ -1,27 +1,22 @@
+<!-- components/ScrollToTop.vue -->
 <template>
-  <div>
-    <NuxtPage />
-    <button v-show="showButton" @click="scrollToTop" class="fixed bottom-6 right-6 z-50 p-3 transition-all duration-900 opacity-0 translate-y-6" :class="{ 'opacity-100 translate-y-0': showButton }">
-    <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" />
+  <Transition name="fade-up-slow">
+    <button v-if="visible" @click="scrollToTop" class="fixed bottom-1 right-1 px-4 py-2 transition-opacity">
+      <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" />
     </button>
-  </div>
+  </Transition>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-const showButton = ref(false)
+const visible = ref(false)
 
-const handleScroll = () => {
-  // Détection si le footer est visible (ou tout en bas de la page)
-  const scrollY = window.scrollY
-  const windowHeight = window.innerHeight
-  const bodyHeight = document.body.offsetHeight
-
-  const scrollPosition = scrollY + windowHeight
-  const nearBottom = scrollPosition >= bodyHeight - 100 // marge de 100px
-
-  showButton.value = nearBottom
+const checkScroll = () => {
+  const scrollPosition = window.scrollY + window.innerHeight
+  const pageHeight = document.documentElement.scrollHeight
+  // Show when close to the bottom (e.g. 200px from the bottom)
+  visible.value = scrollPosition >= pageHeight - 200
 }
 
 const scrollToTop = () => {
@@ -29,14 +24,30 @@ const scrollToTop = () => {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', checkScroll)
 })
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', checkScroll)
 })
 </script>
 
-      <!-- <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" /> -->
-    
+<style scoped>
+.fade-up-slow-enter-active,
+.fade-up-slow-leave-active {
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.fade-up-slow-enter-from,
+.fade-up-slow-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-up-slow-enter-to,
+.fade-up-slow-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 
+
+ <!-- <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" /> -->

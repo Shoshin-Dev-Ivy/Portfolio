@@ -48,9 +48,6 @@ export default {
         '100%': { opacity: '1', transform: 'translateY(0)' },
       },
     },
-    animation: {
-      'fade-in-up': 'fade-in-up 0.5s ease-out',
-    },
   },
   darkMode: ['class', '[data-theme="dark"]'],
   plugins: [require('daisyui'),],

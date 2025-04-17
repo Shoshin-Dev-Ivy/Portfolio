@@ -6,10 +6,11 @@
     </NuxtLayout>
     <CookieBanner />
     <Footer class="mt-auto" />
+    <ScrollToTop />
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"> 
 import CookieBanner from '~/components/CookieBanner.vue'
-
+import ScrollToTop from '~/components/ScrollToTop.vue'
 </script>
