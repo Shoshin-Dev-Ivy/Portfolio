@@ -17,7 +17,7 @@
     </div>
 </template>
   
-<script setup lang="ts">
+<script setup lang="ts" defer>
 import { Switch } from "@headlessui/vue"
 import { SunIcon, MoonIcon } from "@heroicons/vue/24/solid"
   

@@ -10,7 +10,14 @@
   </div>
 </template>
 
-<script setup lang="ts"> 
+<script setup lang="ts" defer> 
 import CookieBanner from '~/components/CookieBanner.vue'
 import ScrollToTop from '~/components/ScrollToTop.vue'
+import { useHead } from '@vueuse/head'
+
+useHead({
+  htmlAttrs: {
+    lang: 'fr' // Remplace 'fr' par la langue de ton choix
+  }
+})
 </script>

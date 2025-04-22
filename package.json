@@ -40,7 +40,7 @@
     "@iconify-json/skill-icons": "^1.2.0",
     "@iconify-json/typcn": "^1.2.1",
     "autoprefixer": "^10.4.20",
-    "daisyui": "^4.12.14",
+    "daisyui": "^4.12.24",
     "nuxt-anchorscroll": "^1.0.3",
     "nuxt-headlessui": "^1.2.0",
     "postcss": "^8.4.49",

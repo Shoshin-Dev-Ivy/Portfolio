@@ -1,5 +1,6 @@
 <template>
     <div class="w-auto">
+        
         <nav class="md:grid grid-cols-2 md:items-center md:justify-items-center 2xl:grid-cols-8 2xl:gap-2">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
                 <div class="flex justify-center mx-auto">
@@ -14,14 +15,12 @@
             </div> 
             <div class="2xl:hidden">
                 <button @click = "toggleMenu"  value = "hamburger"  
-                class ="flex flex-col justify-around justify-self-center h-8 w-8 p-1 my-4 ml-2 mb-16 rounded md:hidden"> 
-                <!-- Icône Hamburger (3 lignes) --> 
+                class ="flex flex-col justify-around justify-self-center h-8 w-8 p-1 my-4 ml-2 mb-16 rounded md:hidden" aria-label="Toggle menu"> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 </button> 
                 <template  v-if = "isMenuOpen"  class="flex flex-col pt-8"> 
-                <!-- Éléments de menu --> 
                 <a class="flex justify-center -mt-10 text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 py-2" 
                 aria-label="Cliquez ici pour revenir suur la page d'accueil"><NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
                 </a> 
@@ -56,7 +55,7 @@
             </div>
             <div class="flex justify-center md:mt-2">
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
-                    <button class="justify-items-center text-sky-700 text-xl dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-6 py-4 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse">
+                    <button class="justify-items-center text-sky-700 text-xl dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-8 py-6 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-2">
                         {{ $t("RDV") }}
                     </button>
                 </a>
@@ -66,16 +65,16 @@
                     <ModeSwitch />
                 </div> 
                 <div class="justify-self-center my-10">
-                <button @click="setLocale('fr')" class="dark:text-white text-2xl px-4"><img src="assets/images/FlagFR.png" alt="drapeau français" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
-                <button @click="setLocale('en')" class="dark:text-white text-2xl px-4"><img src="assets/images/FlagEN.png" alt="drapeau anglais" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400" /></button>
-                <button @click="setLocale('ja')" class="dark:text-white text-2xl px-4"><img src="assets/images/FlagJP.png" alt="drapeau japonais" class="h-6 w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
+                <button @click="setLocale('fr')" class="dark:text-white text-2xl px-4"><img src="assets/images/flagFR.webp" alt="drapeau français" class="w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
+                <button @click="setLocale('en')" class="dark:text-white text-2xl px-4"><img src="assets/images/flagEN.webp" alt="drapeau anglais" class="w-7 border-2 border-sky-700 dark:border-orange-400" /></button>
+                <button @click="setLocale('ja')" class="dark:text-white text-2xl px-4"><img src="assets/images/flagJA.webp" alt="drapeau japonais" class="w-7 border-2 border-sky-700 dark:border-orange-400"/></button>
                 </div>
             </div>
         </naV>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" defer>
 
 const localePath = useLocalePath()
 const { setLocale } = useI18n()
@@ -89,6 +88,15 @@ const showDefinitions = () => {
   const event = new CustomEvent('show-definitions');
   window.dispatchEvent(event);
 };
+
+useHead({
+  meta: [
+    {
+      name: 'description',
+      content: 'Barre de navigation avec le logo, et les raccourcis Accueil, Compétences, Projets, Contact et un CTA RDV.',
+    },
+  ],
+});
 </script>
 
 <style scoped>

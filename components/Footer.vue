@@ -15,16 +15,16 @@
 
                 <ul class="flex justify-center mx-auto -mt-1">
                         <li>
-                                <a href="https://www.linkedin.com/in/pierre-tinard-867200207/" target="_blank">
+                                <span href="https://www.linkedin.com/in/pierre-tinard-867200207/" target="_blank">
                                         <Icon name="entypo-social:linkedin" class="size-8 mx-2 text-sky-700 dark:text-white hover:text-orange-400 dark:hover:text-orange-400"  
                                         aria-label="Cliquez ici pour accéder mon profil LinkedIn" />
-                                </a>
+                                </span>
                         </li>
                         <li>
-                        <a href="https://github.com/ShoshinDevIvy" target="_blank">
-                                <Icon name="mdi:github" class="size-9 mx-2 text-sky-700 dark:text-white hover:text-orange-400 dark:hover:text-orange-400" 
-                                aria-label="Cliquez ici pour accéder mon profil GitHub"/>
-                        </a>
+                                <span href="https://github.com/ShoshinDevIvy" target="_blank">
+                                        <Icon name="mdi:github" class="size-9 mx-2 text-sky-700 dark:text-white hover:text-orange-400 dark:hover:text-orange-400" 
+                                        aria-label="Cliquez ici pour accéder mon profil GitHub"/>
+                                </span>
                         </li>
                 </ul>
                 <div class="flex flex-col justify-center md:flex-row mt-4 lg:flex justify-items-normal lg:w-full">
@@ -34,20 +34,29 @@
                         <p class="flex mx-auto md:mx-0 text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
                 </div>
                 <div class="flex flex-col justify-center mx-auto mt-4 md:flex-row lg:flex justify-items-normal lg:w-full pb-4">
-                        <a class="flex justify-center text-sky-700 dark:text-white" aria-label="Cliquez ici pour aller suur la page des mentions légales">
+                        <span class="flex justify-center text-sky-700 dark:text-white" aria-label="Cliquez ici pour aller suur la page des mentions légales">
                                 <NuxtLink :to="{ path: localePath('/mentionsLegales') }">{{ $t("Mentions") }}</NuxtLink>
-                        </a >
+                        </span>
                         <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
-                        <a class="flex justify-center text-sky-700 dark:text-white" aria-label="Cliquez ici pour aller suur la page des mentions légales">
+                        <span class="flex justify-center text-sky-700 dark:text-white" aria-label="Cliquez ici pour aller suur la page des mentions légales">
                                 <NuxtLink :to="{ path: localePath('/confidentialite') }">{{ $t("Confidentialite") }}</NuxtLink>
-                        </a>
+                        </span>
                 </div>
         </footer>
 </template>
 
 
-<script setup lang="ts"> 
+<script setup lang="ts" defer> 
 const localePath = useLocalePath();
+
+useHead({
+  meta: [
+    {
+      name: 'description',
+      content: 'Pied de page, footer. ',
+    },
+  ],
+});
 </script>
 
 <style>

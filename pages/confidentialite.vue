@@ -109,5 +109,13 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" defer>
+useHead({
+  meta: [
+    {
+      name: 'description',
+      content: 'Page de la politique de confidentialité.',
+    },
+  ],
+});
 </script>

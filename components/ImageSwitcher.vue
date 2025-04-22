@@ -7,11 +7,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup defer>
 import { ref, onMounted } from 'vue'
 
-const image1 = '/images/bibi.jpg'
-const image2 = '/images/aikido.jpg'
+const image1 = '/images/bibi.webp'
+const image2 = '/images/aikido.webp'
 
 const currentImage = ref(image1)
 const fadingOut = ref(false)

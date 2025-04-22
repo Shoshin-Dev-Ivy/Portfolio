@@ -193,7 +193,7 @@
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeFGBussac.jpg" alt="Auteur" class="object-fill sm:object-fill md:md:object-fill w-full h-full" /></figure>
+            <figure><img src="assets/images/homeFGBussac.webp" alt="Auteur" class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
               <p>{{ $t("ProjetBussac") }}</p>
@@ -202,7 +202,7 @@
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure>
-              <img src="assets/images/homeSWSlightMode.jpg" alt="home Portfolio" class="object-cover w-full h-full" />
+              <img src="assets/images/homePortfolio.webp" alt="home Portfolio" class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} {{ $t("Portfolio") }}</h2>
@@ -211,7 +211,7 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeGroupomania.jpg" alt="home Groupomania" class="oobject-fill sm:object-fill md:md:object-fill w-full h-full" /></figure>
+            <figure><img src="assets/images/homeGroupomania.webp" alt="home Groupomania" class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P7 Groupomania</h2>
               <p>{{ $t("Projet7") }}</p>
@@ -219,7 +219,7 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeHotTakes.jpg" alt="home Hot Takes" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeHotTakes.webp" alt="home Hot Takes" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P6 Hot Takes</h2>
               <p>{{ $t("Projet6") }}</p>
@@ -227,7 +227,7 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeKanap.jpg" alt="home Kanap" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeKanap.webp" alt="home Kanap" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P5 Kanap</h2>
               <p>{{ $t("Projet5") }}</p>
@@ -235,7 +235,7 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeLaChouetteAgence.jpg" alt="home La Chouette Agence" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeLaChouetteAgence.webp" alt="home La Chouette Agence" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P4 La Chouette Agence</h2>
               <p>{{ $t("Projet4") }}</p>
@@ -243,7 +243,7 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeOhmyfood.jpg" alt="home Ohmyfood" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeOhmyfood.webp" alt="home Ohmyfood" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P3 Ohmyfood</h2>
               <p>{{ $t("Projet3") }}</p>
@@ -251,7 +251,7 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeReservia.jpg" alt="home Reservia" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeReservia.webp" alt="home Reservia" class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P2 Reservia</h2>
               <p>{{ $t("Projet2") }}</p>
@@ -269,13 +269,13 @@
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
                 <label for="email" class="text-lg font-medium text-white">{{ $t("Email") }}</label>
-                <input v-model="form.email" type="email" required class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
+                <input v-model="form.email" type="email" id="email" required class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
                 <label for="message" class="text-lg font-medium text-white">{{ $t("Message")}}</label>
-                <textarea rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+                <textarea id="message" rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
-              <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-900 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
+              <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
             </form>
             <p class="my-2 -mx-4 -mb-4 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
           </div>
@@ -294,7 +294,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup defer>
 import emailjs from 'emailjs-com';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import ImageSwitcher from '~/components/ImageSwitcher.vue'
@@ -346,6 +346,16 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('show-definitions', handleShowDefinitions)
 })
+
+useHead({
+  title: 'Portfolio Shoshin Web Services',
+  meta: [
+    {
+      name: 'description',
+      content: 'Page d accueil: (Home), visuel global sur le portfolio Shoshin Web Services.',
+    },
+  ],
+});
 </script>
 
 <style scoped>

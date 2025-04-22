@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup defer>
 import { ref, onMounted } from 'vue'
 
 const showBanner = ref(false)

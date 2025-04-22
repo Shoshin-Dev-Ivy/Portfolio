@@ -1,4 +1,4 @@
-<script>
+<script defer>
 import { VueReCaptcha, useReCaptcha } from "vue-recaptcha-v3";
 
 export default {
