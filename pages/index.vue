@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
+  <div class="flex justify-center mx-auto -mt-102">
+    <div class="text-center text-xl"><WelcomeMessage /></div>
+  </div>
   <div class="flex justify-center mx-auto py-6">
     <Transition
     enter-active-class="transition-opacity duration-[20000ms] ease-in-out"
@@ -11,19 +14,16 @@
     enter-from-class="opacity-0"
     enter-to-class="opacity-100"
     leave-from-class="opacity-100"
-    leave-to-class="opacity-0"
-  >
-    <div
-      v-if="show"
-      class="p-4 rounded-lg opacity-100 text-xl text-sky-700 dark:text-white"
-    >
+    leave-to-class="opacity-0">
+    <div v-if="show"
+      class="p-4 rounded-lg opacity-100 text-xl text-sky-700 dark:text-white">
       <p class="mb-4">{{ $t("ShoshinDefinition") }}</p>
       <p>{{ $t("ShoshinDefinition2") }}</p>
     </div>
   </Transition>
   </div>
   <div class="flex flex-col" lang="fr">
-    <div class="flex flex-col justify-center md:mt-24 md:-mb-20">
+    <div class="flex flex-col justify-center md:mt-24 md:-mb-20 xl:mt-10">
       <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
       <div class="flex mx-auto">
         <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
@@ -36,8 +36,8 @@
       </div>
     </div>
     <div class="flex flex-col text-center">
-      <p class="text-2xl text-sky-700 dark:text-white">{{ $t("Tagline1") }}</p>
-      <p class="text-2xl text-sky-700 dark:text-white">{{ $t("Tagline2") }}</p>
+      <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline1 /></p>
+      <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline2 /></p>
     </div> 
     <ImageSwitcher />
     <div>
@@ -298,6 +298,9 @@
 import emailjs from 'emailjs-com';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import ImageSwitcher from '~/components/ImageSwitcher.vue'
+import WelcomeMessage from '~/components/WelcomeMessage.vue'
+import DisplayTagline1 from '~/components/DisplayTagline1.vue'
+import DisplayTagline2 from '~/components/DisplayTagline2.vue'
 
 const form = ref({
    email: '',

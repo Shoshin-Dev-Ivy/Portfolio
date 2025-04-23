@@ -1,6 +1,5 @@
 <template>
     <div class="w-auto">
-        
         <nav class="md:grid grid-cols-2 md:items-center md:justify-items-center 2xl:grid-cols-8 2xl:gap-2">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
                 <div class="flex justify-center mx-auto">
@@ -55,7 +54,7 @@
             </div>
             <div class="flex justify-center md:mt-2">
                 <a href="https://calendly.com/shoshinwebservices" cta-button target="_blank">
-                    <button class="justify-items-center text-sky-700 text-xl dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-8 py-6 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-2">
+                    <button class="justify-items-center text-sky-700 text-lg dark:text-white hover:bg-gradient-to-r from-orange-400 -mt-4 px-8 py-6 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-2">
                         {{ $t("RDV") }}
                     </button>
                 </a>
