@@ -175,7 +175,7 @@
         </div>
         <div class="flex">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
-          <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Prestations")}}</h2>
+          <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Services")}}</h2>
         </div>
         <div class="text-center">
             <ul class="-mt-8">
