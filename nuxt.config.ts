@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -22,17 +21,22 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@dargmuesli/nuxt-cookie-control',
     '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
     i18n: {
     vueI18n: './i18n.config.ts', // if you are using custom path, default
     locales: [
       { code: 'fr', language: 'fr-FR' },
       { code: 'en', language: 'en-US' },
-      { code: 'ja', language: 'ja-JA' }
+      { code: 'ja', language: 'ja-JA' },
     ],
     defaultLocale: 'fr',
   },
   colorMode: {
     preference: 'light',
   },
+  site: { 
+    url: 'http://localhost:3000', 
+    name: 'Portfolio Shoshin Web Services' 
+    }, 
 });

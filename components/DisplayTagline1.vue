@@ -1,6 +1,6 @@
 <template>
     <div v-if="localeReady" class="flex items-center justify-center z-50">
-        <div class="text-2xl text-sky-700 dark:text-white px-6 py-4 rounded-2xl animate-fade">
+        <div class="text-2xl text-sky-700 dark:text-white px-6 rounded-2xl animate-fade">
             {{ $t("Tagline1") }}
         </div>
     </div>

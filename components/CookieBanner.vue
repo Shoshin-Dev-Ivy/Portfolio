@@ -1,5 +1,5 @@
 <template>
-  <div v-if="showBanner" class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center shadow-lg z-50">
+  <div v-if="showBanner" class="fixed bottom-0 left-0 w-full bg-sky-700 text-white p-4 flex justify-between items-center shadow-lg z-50">
     <div>
       <p>Nous utilisons des cookies pour améliorer votre expérience. Acceptez-vous notre politique de cookies ?</p>
     </div>

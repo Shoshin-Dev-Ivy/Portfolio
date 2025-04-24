@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
-  <div class="flex justify-center mx-auto -mt-102">
-    <div class="text-center text-xl"><WelcomeMessage /></div>
+  <div class="flex justify-center mx-auto -mt-12">
+    <div class="text-center text-xl mt-6"><WelcomeMessage /></div>
   </div>
   <div class="flex justify-center mx-auto py-6">
     <Transition
@@ -17,14 +17,14 @@
     leave-to-class="opacity-0">
     <div v-if="show"
       class="p-4 rounded-lg opacity-100 text-xl text-sky-700 dark:text-white">
-      <p class="mb-4">{{ $t("ShoshinDefinition") }}</p>
-      <p>{{ $t("ShoshinDefinition2") }}</p>
+      <p class="mb-4 text-center">{{ $t("ShoshinDefinition") }}</p>
+      <p class="text-center">{{ $t("ShoshinDefinition2") }}</p>
     </div>
   </Transition>
   </div>
   <div class="flex flex-col" lang="fr">
     <div class="flex flex-col justify-center md:mt-24 md:-mb-20 xl:mt-10">
-      <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
+      <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white lg:-mt-10 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
       <div class="flex mx-auto">
         <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
         <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
@@ -193,7 +193,7 @@
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeFGBussac.webp" alt="Auteur" class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/JardinierFGBussac.webp" alt="Auteur" class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
               <p>{{ $t("ProjetBussac") }}</p>
@@ -275,9 +275,9 @@
                 <label for="message" class="text-lg font-medium text-white">{{ $t("Message")}}</label>
                 <textarea id="message" rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
-              <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg font-medium text-center text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
+              <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg text-center font-black text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
             </form>
-            <p class="my-2 -mx-4 -mb-4 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
+            <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
           </div>
         </section>
         <div class="flex items-start">
@@ -323,7 +323,7 @@ const envoyerFormulaire = () => {
     .send(serviceID, templateID, templateParams, publicKey)
     .then((response) => {
       console.log('Message envoyé avec succès', response);
-      statusMessage.value = 'Votre message a bien été envoyé !!';
+      statusMessage.value = 'Votre message a bien été envoyé!';
       form.value.email = '';
       form.value.message = '';
     })
@@ -356,6 +356,7 @@ useHead({
     {
       name: 'description',
       content: 'Page d accueil: (Home), visuel global sur le portfolio Shoshin Web Services.',
+      author: 'Pierre Tinard',
     },
   ],
 });
