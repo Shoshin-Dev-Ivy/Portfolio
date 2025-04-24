@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     preference: 'light',
   },
   site: { 
-    url: 'http://localhost:3000', 
+    url: 'https://localhost', 
     name: 'Portfolio Shoshin Web Services' 
     }, 
 });

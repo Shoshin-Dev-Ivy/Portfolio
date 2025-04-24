@@ -34,12 +34,12 @@
                         <p class="flex mx-auto md:mx-0 text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
                 </div>
                 <div class="flex flex-col justify-center mx-auto mt-4 md:flex-row lg:flex justify-items-normal lg:w-full pb-4">
-                        <NuxtLink :to="localePath('/mentionsLegales')" class="flex justify-center text-sky-700 dark:text-white"
+                        <NuxtLink :to="localePath('/section/mentionslegales')" class="flex justify-center text-sky-700 dark:text-white"
                         aria-label="Cliquez ici pour aller sur la page des mentions légales">
                         {{ $t("Mentions") }}
                         </NuxtLink>
                         <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
-                        <NuxtLink :to="localePath('/confidentialite')" class="flex justify-center text-sky-700 dark:text-white"
+                        <NuxtLink :to="localePath('/section/confidentialite')" class="flex justify-center text-sky-700 dark:text-white"
                         aria-label="Cliquez ici pour aller sur la page de confidentialité">
                         {{ $t("Confidentialite") }}
                         </NuxtLink>
