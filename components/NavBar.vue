@@ -24,33 +24,49 @@
                 <a class="flex justify-center -mt-10 text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 py-2" 
                 aria-label="Cliquez ici pour revenir suur la page d'accueil"><NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
                 </a> 
+                <a class="flex justify-center text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 py-2"
+                aria-label="Cliquez ici pour accéder à la partie services">
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Services") }}</NuxtLink>
+                </a>
                 <a class="flex justify-center text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 py-2" 
-                aria-label="Cliquez ici pour accéder à la partie skills"><NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Skills") }}</NuxtLink>
+                aria-label="Cliquez ici pour accéder à la partie skills"><NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Skills") }}</NuxtLink>
                 </a> 
+                <a class="flex justify-center text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 py-2"                 
+                aria-label="Cliquez ici pour accéder à la partie parcours">
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Parcours") }}</NuxtLink>
+                </a>
                 <a class="flex justify-center text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 py-2 md:flex-wrap" 
-                aria-label="Cliquez ici pour accéder à la partie portfolio"><NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Projets") }}</NuxtLink>
+                aria-label="Cliquez ici pour accéder à la partie portfolio"><NuxtLink :to="{ path: localePath('/'), hash:'#4' }">{{ $t("Projets") }}</NuxtLink>
                 </a> 
                 <a class="flex justify-center mb-10 text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 py-2" 
-                aria-label="Cliquez ici pour accéder à la partie contact"><NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
+                aria-label="Cliquez ici pour accéder à la partie contact"><NuxtLink :to="{ path: localePath('/'), hash:'#5' }">{{ $t("Contact") }}</NuxtLink>
                 </a> 
                 </template>
             </div>            
             <div class="hidden md:block md:col-span-full md:justify-items-center md:items-center md:-mt-26 2xl:col-span-4 2xl:grid 2xl:grid-cols-4 2xl:gap-2 2xl:mt-0">
                 <button class="text-orange-400 font-black hover:underline dark:text-white text-2xl  hover:underline-offset-8 mx-6 -mt-2" 
                 aria-label="Cliquez ici pour revenir suur la page d'accueil">
-                <NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}</NuxtLink>
+                </button>
+                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" 
+                aria-label="Cliquez ici pour accéder à la partie services">
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Services") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2"                 
                 aria-label="Cliquez ici pour accéder à la partie skills">
-                    <NuxtLink :to="{ path: localePath('/'), hash:'#1' }">{{ $t("Skills") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Skills") }}</NuxtLink>
+                </button>
+                <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2"                 
+                aria-label="Cliquez ici pour accéder à la partie parcours">
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Parcours") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2" 
                 aria-label="Cliquez ici pour accéder à la partie projets">
-                    <NuxtLink :to="{ path: localePath('/'), hash:'#2' }">{{ $t("Projets") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#4' }">{{ $t("Projets") }}</NuxtLink>
                 </button>
                 <button class="text-orange-400 font-black dark:text-white text-2xl h hover:underline hover:underline-offset-8 mx-6 -mt-2" 
                 aria-label="Cliquez ici pour accéder à la partie contact">
-                    <NuxtLink :to="{ path: localePath('/'), hash:'#3' }">{{ $t("Contact") }}</NuxtLink>
+                    <NuxtLink :to="{ path: localePath('/'), hash:'#5' }">{{ $t("Contact") }}</NuxtLink>
                 </button>
             </div>
             <div class="flex justify-center md:mt-2">

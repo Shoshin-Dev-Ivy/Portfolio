@@ -40,10 +40,52 @@
       <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline2 /></p>
     </div> 
     <ImageSwitcher />
+    <div class="flex" id="1">
+      <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
+      <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Services")}}</h2>
+    </div>
+    <div class="text-center">
+        <ul class="-mt-8">
+        <li>SaaS</li>
+        <li>API / API REST</li>
+        <li>{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
+      </ul>
+    </div>
+    <div class="flex" id="2">
+      <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
+      <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
+    </div>
+    <div class="flex flex-col w-auto items-center dark:bg-sky-100 rounded-2xl -mt-4 md:max-w-96 md:mx-auto">
+      <div class="flex">
+        <div class="flex flex-col items-center">
+          <p class="flex justify-center text-xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
+          <div class="grid grid-cols-2 gap-y-10 gap-x-14">
+            <Icon name="logos:html-5" class="size-16" />
+            <Icon name="logos:css-3" class="size-16" />
+            <Icon name="logos:vue" class="size-16" />
+            <Icon name="logos:nuxt" class="size-16" />
+            <Icon name="logos:typescript-icon" class="size-16" />
+            <Icon name="skill-icons:tailwindcss-light" class="size-16" />
+          </div>
+          <Icon name="devicon:javascript" class="size-16 my-10" />
+        </div>
+      </div>
+      <div class="flex">
+        <div class="flex flex-col">
+          <p class="flex justify-center text-xl text-orange-400 font-black mb-8">{{ $t("Backend") }}</p>
+          <div class="grid grid-cols-2 gap-y-10 gap-x-14">
+            <Icon name="logos:python" class="size-16" />
+            <Icon name="logos:nodejs" class="size-16" />
+            <Icon name="logos:mongodb" class="size-16" />
+            <Icon name="logos:mysql" class="size-16" />
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
       <div>
         <div>
-          <div class="flex flex-col">
+          <div class="flex flex-col" id="3">
             <div class="flex items-start">
               <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
               <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Parcours") }}</h2>
@@ -142,49 +184,8 @@
             </ul>
           </div>
         </div>
-        <div class="flex" id="1">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
-          <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
-        </div>
-        <div class="flex flex-col w-auto items-center dark:bg-sky-100 rounded-2xl -mt-4 md:max-w-96 md:mx-auto">
-          <div class="flex">
-            <div class="flex flex-col items-center">
-              <p class="flex justify-center text-xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
-              <div class="grid grid-cols-2 gap-y-10 gap-x-14">
-                <Icon name="logos:html-5" class="size-16" />
-                <Icon name="logos:css-3" class="size-16" />
-                <Icon name="logos:vue" class="size-16" />
-                <Icon name="logos:nuxt" class="size-16" />
-                <Icon name="logos:typescript-icon" class="size-16" />
-                <Icon name="skill-icons:tailwindcss-light" class="size-16" />
-              </div>
-              <Icon name="devicon:javascript" class="size-16 my-10" />
-            </div>
-          </div>
-          <div class="flex">
-            <div class="flex flex-col">
-              <p class="flex justify-center text-xl text-orange-400 font-black mb-8">{{ $t("Backend") }}</p>
-              <div class="grid grid-cols-2 gap-y-10 gap-x-14">
-                <Icon name="logos:python" class="size-16" />
-                <Icon name="logos:nodejs" class="size-16" />
-                <Icon name="logos:mongodb" class="size-16" />
-                <Icon name="logos:mysql" class="size-16" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
-          <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Services")}}</h2>
-        </div>
-        <div class="text-center">
-            <ul class="-mt-8">
-            <li>SaaS</li>
-            <li>API / API REST</li>
-            <li>{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
-          </ul>
-        </div>
-        <div class="flex" id="2">
+       
+        <div class="flex" id="4">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
         </div>
@@ -259,7 +260,7 @@
             </div>
           </div>
         </div>
-        <div class="flex my-10" id="3">
+        <div class="flex my-10" id="5">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
