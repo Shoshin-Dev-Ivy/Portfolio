@@ -55,7 +55,7 @@
       <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
       <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
     </div>
-    <div class="flex flex-col items-center dark:bg-sky-100 rounded-2xl -mt-4 md:max-w-96 w-auto md:w-auto md:mx-auto">
+      <div class="flex flex-col items-center md:mx-auto md:w-96 dark:bg-sky-100 rounded-2xl -mt-4">
       <div class="flex">
         <div class="flex flex-col items-center">
           <p class="flex justify-center text-xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
