@@ -40,7 +40,7 @@
       <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline2 /></p>
     </div> 
     <ImageSwitcher />
-    <div class="flex" id="1">
+    <div class="flex" id="item-1">
       <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
       <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Services")}}</h2>
     </div>
@@ -51,11 +51,11 @@
         <li>{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
       </ul>
     </div>
-    <div class="flex" id="2">
+    <div class="flex" id="item-2">
       <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
       <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
     </div>
-    <div class="flex flex-col w-auto items-center dark:bg-sky-100 rounded-2xl -mt-4 md:max-w-96 md:mx-auto">
+    <div class="flex flex-col items-center dark:bg-sky-100 rounded-2xl -mt-4 md:max-w-96 w-auto md:w-auto md:mx-auto">
       <div class="flex">
         <div class="flex flex-col items-center">
           <p class="flex justify-center text-xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
@@ -85,7 +85,7 @@
     <div>
       <div>
         <div>
-          <div class="flex flex-col" id="3">
+          <div class="flex flex-col" id="item-3">
             <div class="flex items-start">
               <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
               <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Parcours") }}</h2>
@@ -185,7 +185,7 @@
           </div>
         </div>
        
-        <div class="flex" id="4">
+        <div class="flex" id="item-4">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
           <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
         </div>
@@ -260,7 +260,7 @@
             </div>
           </div>
         </div>
-        <div class="flex my-10" id="5">
+        <div class="flex my-10" id="item-5">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>

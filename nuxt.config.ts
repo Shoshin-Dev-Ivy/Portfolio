@@ -41,6 +41,7 @@ export default defineNuxtConfig({
     name: 'Portfolio Shoshin Web Services' 
     }, 
     runtimeConfig: {
-      maintenanceMode: process.env.MAINTENANCE_MODE || 'false'
+      RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
+      maintenanceMode: process.env.MAINTENANCE_MODE || 'false',
     }
 });
