@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: [{ src: '~/plugins/vue-recaptcha-v3.js', mode: 'client'  }],
+  plugins: [{ src: '~/plugins/vue-recaptcha-v3.js', ssr: false  }],
   modules: [
     '@nuxt/icon',
     '@nuxtjs/color-mode',
@@ -41,7 +41,10 @@ export default defineNuxtConfig({
     name: 'Portfolio Shoshin Web Services' 
     }, 
     runtimeConfig: {
-      RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
-      maintenanceMode: process.env.MAINTENANCE_MODE || 'false',
-    }
+      public: {
+        RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
+        EMAILJS_PUBLIC_KEY: process.env.EMAILJS_PUBLIC_KEY,
+        maintenanceMode: process.env.MAINTENANCE_MODE || 'false', // Place it under public
+      },
+    },
 });

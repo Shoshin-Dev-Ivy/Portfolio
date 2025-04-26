@@ -260,7 +260,7 @@
             </div>
           </div>
         </div>
-        <div class="flex my-10" id="item-5">
+        <div class="flex my-12" id="item-5">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
         </div>
@@ -273,12 +273,19 @@
                 <input v-model="form.email" type="email" id="email" required class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
               </div>
               <div>
-                <label for="message" class="text-lg font-medium text-white">{{ $t("Message")}}</label>
+                <label for="message" class="text-lg font-medium text-white">{{ $t("Message") }}</label>
                 <textarea id="message" rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
               </div>
-              <button type="submit" class="m-auto -mb-4 py-3 px-5 text-lg text-center font-black text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900dark:focus:ring-primary-800">{{ $t("Submit") }}</button>
+              <!-- Honeypot -->
+              <div style="display: none;">
+                <input v-model="form.botField" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <button type="submit" :disabled="isSubmitting" class="m-auto -mb-4 py-3 px-5 text-lg text-center font-black text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900 dark:focus:ring-primary-800">
+                <span v-if="isSubmitting">Envoi en cours...</span>
+                <span v-else>{{ $t("Submit") }}</span>
+              </button>
+              <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage" :style="{ color: isSubmitting ? 'blue' : 'green' }">{{ statusMessage }}</p>
             </form>
-            <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage">{{ statusMessage }}</p>
           </div>
         </section>
         <div class="flex items-start">
@@ -302,26 +309,65 @@ import ImageSwitcher from '~/components/ImageSwitcher.vue'
 import WelcomeMessage from '~/components/WelcomeMessage.vue'
 import DisplayTagline1 from '~/components/DisplayTagline1.vue'
 import DisplayTagline2 from '~/components/DisplayTagline2.vue'
+import { useReCaptcha } from 'vue-recaptcha-v3'
 
 const form = ref({
-   email: '',
-   message: '',
- });
- 
- const statusMessage = ref('');
+  email: '',
+  message: '',
+  botField: '', // champ piège !
+});
 
-const envoyerFormulaire = () => {
-  const serviceID = 'contact_service'; // Remplace par ton Service ID EmailJS
-  const templateID = 'contact_form'; // Remplace par ton Template ID EmailJS
-  const publicKey = 'fCIqpwTs_3L1C-9No'; // Remplace par ta public key
+const statusMessage = ref('');
+const isSubmitting = ref(false);
+const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
+
+// Fonction de validation côté client pour l'email et le message
+const validateForm = () => {
+  if (!form.value.email || !form.value.message) {
+    statusMessage.value = 'Tous les champs sont requis.';
+    return false;
+  }
+  // Simple validation d'email
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(form.value.email)) {
+    statusMessage.value = 'L\'email est invalide.';
+    return false;
+  }
+  return true;
+};
+
+const envoyerFormulaire = async () => {
+  if (form.value.botField !== '') {
+    // Un robot a tenté de remplir le champ caché
+    console.warn("Bot détecté. Soumission bloquée.");
+    return;
+  }
+
+  // Validation du formulaire
+  if (!validateForm()) return;
+
+  // Validation de reCAPTCHA
+  const token = await executeRecaptcha("contact_form");
+  if (!token) {
+    statusMessage.value = "Erreur reCAPTCHA. Veuillez réessayer.";
+    return;
+  }
+
+  isSubmitting.value = true;
+
+  const serviceID = 'contact_service';
+  const templateID = 'contact_form';
+  const config = useRuntimeConfig();
+  const publicKey = process.env.EMAILJS_PUBLIC_KEY;
+  console.log('Public Key:', publicKey); 
 
   const templateParams = {
     email: form.value.email,
     message: form.value.message,
+    'g-recaptcha-response': token,
   };
 
-  emailjs
-    .send(serviceID, templateID, templateParams, publicKey)
+  emailjs.send(serviceID, templateID, templateParams, publicKey)
     .then((response) => {
       console.log('Message envoyé avec succès', response);
       statusMessage.value = 'Votre message a bien été envoyé!';
@@ -331,8 +377,12 @@ const envoyerFormulaire = () => {
     .catch((error) => {
       console.error("Erreur lors de l'envoi", error);
       statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.';
+    })
+    .finally(() => {
+      isSubmitting.value = false;
     });
 };
+
 
 const show = ref(false)
 
@@ -356,7 +406,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Page d accueil: (Home), visuel global sur le portfolio Shoshin Web Services.',
+      content: 'Page d accueil: visuel sur l activité et les services proposés Shoshin Web Services.',
       author: 'Pierre Tinard',
     },
   ],
