@@ -1,7 +1,7 @@
 <template>
         <footer>
                 <div class="flex justify-center mx-auto">
-                        <img src="assets/images/logo.svg"alt="logo" class="flex h-16 w-16 my-6 mx-2 rounded-full border-2 border-sky-700 dark:border-orange-400"/>
+                        <img src="assets/images/logo.svg" alt="logo" class="flex h-16 w-16 my-6 mx-2 rounded-full border-2 border-sky-700 dark:border-orange-400"/>
                         <div class="flex text-2xl text-orange-400 mt-10 mb-10 -ml-1">
                                 <p class="font-black text-orange-400">{</p> 
                                 <p class="flex text-sky-700 mx-1 dark:text-white">{{ $t("Shoshin") }}</p>
@@ -48,7 +48,7 @@
 </template>
 
 
-<script setup lang="ts" defer> 
+<script setup lang="ts"> 
 const localePath = useLocalePath();
 
 useHead({

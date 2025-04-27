@@ -1,16 +1,16 @@
 <template>
   <Head>
     <Title>Shoshin Web Services</Title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Meta charset="UTF-8" />
+    <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </Head>
   <div class="flex justify-center mx-auto -mt-12">
     <div class="text-center text-xl mt-6"><WelcomeMessage /></div>
   </div>
   <div class="flex justify-center mx-auto py-6">
     <Transition
-    enter-active-class="transition-opacity duration-[20000ms] ease-in-out"
-    leave-active-class="transition-opacity duration-[20000ms] ease-in-out"
+    enter-active-class="transition-opacity duration-[10000ms] ease-in-out"
+    leave-active-class="transition-opacity duration-[10000ms] ease-in-out"
     enter-from-class="opacity-0"
     enter-to-class="opacity-100"
     leave-from-class="opacity-100"
@@ -22,9 +22,9 @@
     </div>
   </Transition>
   </div>
-  <div class="flex flex-col" lang="fr">
-    <div class="flex flex-col justify-center md:mt-24 md:-mb-20 xl:mt-10">
-      <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white lg:-mt-10 2xl:ml-50">{{ $t("PierreTinard") }}</h1>
+  <div class="flex flex-col">
+    <div class="flex flex-col justify-center md:mt-24 md:-mb-20 lg:-mt-2 xl:mt-2">
+      <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white  2xl:ml-50">{{ $t("PierreTinard") }}</h1>
       <div class="flex mx-auto">
         <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
         <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
@@ -39,16 +39,15 @@
       <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline1 /></p>
       <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline2 /></p>
     </div> 
-    <ImageSwitcher />
     <div class="flex" id="item-1">
       <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
       <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Services")}}</h2>
     </div>
     <div class="text-center">
         <ul class="-mt-8">
-        <li>SaaS</li>
-        <li>API / API REST</li>
-        <li>{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
+        <li class="text-lg text-sky-700 dark:text-white">SaaS</li>
+        <li class="text-lg text-sky-700 dark:text-white">API / API REST</li>
+        <li class="text-lg text-sky-700 dark:text-white">{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
       </ul>
     </div>
     <div class="flex" id="item-2">
@@ -150,7 +149,9 @@
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
                   <time class="font-mono font-black italic">{{ $t("2007") }} / {{ $t("2018") }}</time>
-                  <div class="text-lg font-black text-orange-400"> {{ $t("Vente") }}</div>
+                  <div class="text-lg font-black flex-wrap text-orange-400"> {{ $t("Vente") }}</div>
+                  {{ $t("Duree") }} <br>
+                  {{ $t("Commerce") }} <br>
                   {{ $t("Responsabilites") }} <br />
                  {{ $t("Activites") }}
                 </div>
@@ -194,7 +195,8 @@
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/JardinierFGBussac.webp" alt="Auteur" class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/JardinierFGBussac.webp" alt="Aperçu de l'univers littéraire de F-G Bussac" 
+              class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
               <p>{{ $t("ProjetBussac") }}</p>
@@ -203,7 +205,8 @@
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure>
-              <img src="assets/images/homePortfolio.webp" alt="home Portfolio" class="object-cover w-full h-full" />
+              <img src="assets/images/homePortfolio.webp" alt="Aperçu de la page d'accueil du portfolio Shoshin Web Services" 
+              class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} {{ $t("Portfolio") }}</h2>
@@ -212,7 +215,8 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeGroupomania.webp" alt="home Groupomania" class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeGroupomania.webp" alt="Aperçu de la page d'accueil Groupomania" 
+              class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P7 Groupomania</h2>
               <p>{{ $t("Projet7") }}</p>
@@ -220,15 +224,17 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeHotTakes.webp" alt="home Hot Takes" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeHotTakes.webp" alt="Aperçu de la page d'accueil Hot Takes" 
+              class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P6 Hot Takes</h2>
               <p>{{ $t("Projet6") }}</p>
-              <p>Node.js, NoSQl (MongoDB)</p>
+              <p>Node.js, NoSQL (MongoDB)</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeKanap.webp" alt="home Kanap" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeKanap.webp" alt="Aperçu de la page d'accueil Kanap" 
+              class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P5 Kanap</h2>
               <p>{{ $t("Projet5") }}</p>
@@ -236,7 +242,8 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeLaChouetteAgence.webp" alt="home La Chouette Agence" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeLaChouetteAgence.webp" alt="Aperçu de la page d'accueil La Chouette Agence" 
+              class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P4 La Chouette Agence</h2>
               <p>{{ $t("Projet4") }}</p>
@@ -244,7 +251,8 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeOhmyfood.webp" alt="home Ohmyfood" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeOhmyfood.webp" alt="Aperçu de la page d'accueil Ohmyfood" 
+              class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P3 Ohmyfood</h2>
               <p>{{ $t("Projet3") }}</p>
@@ -252,7 +260,8 @@
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeReservia.webp" alt="home Reservia" class="object-cover w-full h-full" /></figure>
+            <figure><img src="assets/images/homeReservia.webp" alt="Aperçu de la page d'accueil Reservia" 
+              class="object-cover w-full h-full" /></figure>
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} P2 Reservia</h2>
               <p>{{ $t("Projet2") }}</p>
@@ -275,6 +284,7 @@
               <div>
                 <label for="message" class="text-lg font-medium text-white">{{ $t("Message") }}</label>
                 <textarea id="message" rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+                <p class="text-white">{{ form.message.length }} / 250 {{ $t("Caracteres") }}</p>
               </div>
               <!-- Honeypot -->
               <div style="display: none;">
@@ -302,7 +312,7 @@
   </div>
 </template>
 
-<script setup defer>
+<script setup>
 import emailjs from 'emailjs-com';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import ImageSwitcher from '~/components/ImageSwitcher.vue'
@@ -408,6 +418,10 @@ useHead({
       name: 'description',
       content: 'Page d accueil: visuel sur l activité et les services proposés Shoshin Web Services.',
       author: 'Pierre Tinard',
+    },
+    {
+      name: 'keywords',
+      content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard',
     },
   ],
 });

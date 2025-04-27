@@ -33,7 +33,7 @@
     
 </template>
 
-<script setup lang="ts" defer>
+<script setup lang="ts">
 useHead({
   meta: [
     {

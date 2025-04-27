@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@dargmuesli/nuxt-cookie-control',
     '@nuxt/image',
-    '@nuxtjs/sitemap'
   ],
     i18n: {
     vueI18n: './i18n.config.ts', // if you are using custom path, default
@@ -36,10 +35,6 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light',
   },
-  site: { 
-    url: 'https://localhost', 
-    name: 'Portfolio Shoshin Web Services' 
-    }, 
     runtimeConfig: {
       public: {
         RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
@@ -47,4 +42,4 @@ export default defineNuxtConfig({
         maintenanceMode: process.env.MAINTENANCE_MODE || 'false', // Place it under public
       },
     },
-});
+})
