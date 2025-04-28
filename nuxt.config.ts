@@ -8,19 +8,22 @@ export default defineNuxtConfig({
     head: {
       title: 'Shoshin Web Services',
       meta: [
-        { name: 'description', content: 'Des services web de qualité avec des solutions évolutives.' },
+        // Ne pas définir de meta description ici
         { property: 'og:title', content: 'Shoshin Web Services' },
         { property: 'og:description', content: 'Des services web de qualité avec des solutions évolutives.' },
         { property: 'og:image', content: 'https://www.shoshin-web-services.com/images/HomeSWS.webp' },
-        { property: "og:image:width", content: "1200" },
-        { property: "og:image:height", content: "630" },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
         { property: 'og:url', content: 'https://www.shoshin-web-services.com' },
         { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Shoshin Web Services' },
+
+        // Twitter meta tags
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Shoshin Web Services' },
-        { property: 'og:description', content: 'Des services web de qualité avec des solutions évolutives.' },
         { name: 'twitter:description', content: 'Des services web de qualité avec des solutions évolutives.' },
-        { name: 'twitter:image', content: 'https://shoshin-web-services.com/images/HomeSWS.webp' },
+        { name: 'twitter:image', content: 'https://www.shoshin-web-services.com/images/HomeSWS.webp' },
+        { name: 'twitter:url', content: 'https://www.shoshin-web-services.com' },
       ],
     }
   },
