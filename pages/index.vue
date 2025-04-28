@@ -10,7 +10,7 @@
   <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
   <meta property="og:title" content="Shoshin Web Services" />
   <meta property="og:description" content="Des services web de qualité avec des solutions évolutives." />
-  <meta property="og:image" content="https://www.shoshin-web-services.com//images/HomeSWS.webp" />
+  <meta property="og:image" content="https://www.shoshin-web-services.com/images/HomeSWS.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://www.shoshin-web-services.com" />
