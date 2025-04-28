@@ -3,6 +3,29 @@
   <title>Shoshin Web Services</title>
   <meta charSet="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Meta description pour SEO -->
+  <meta name="description" content="Des services web de qualité avec des solutions évolutives." />
+
+  <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="Shoshin Web Services" />
+  <meta property="og:description" content="Des services web de qualité avec des solutions évolutives." />
+  <meta property="og:image" content="https://shoshin-web-services.com//images/HomeSWS.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://shoshin-web-services.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Shoshin Web Services" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shoshin Web Services" />
+  <meta name="twitter:description" content="Des services web de qualité avec des solutions évolutives." />
+  <meta name="twitter:image" content="https://shoshin-web-services.com/images/HomeSWS.webp" />
+  <meta name="twitter:url" content="https://shoshin-web-services.com" />
+
+  <!-- Canonical URL (recommandé pour le SEO) -->
+  <link rel="canonical" href="https://shoshin-web-services.com" />
 </Head>
   <div class="flex justify-center mx-auto -mt-12">
     <div class="text-center text-xl mt-6"><WelcomeMessage /></div>
@@ -204,7 +227,7 @@
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
             <figure>
-              <img src="assets/images/homePortfolio.webp" alt="Aperçu de la page d'accueil du portfolio Shoshin Web Services" 
+              <img src="assets/images/HomeSWS.webp" alt="Aperçu de la page d'accueil du portfolio Shoshin Web Services" 
               class="object-cover w-full h-full" />
             </figure>
             <div class="card-body">
