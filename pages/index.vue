@@ -433,13 +433,16 @@ onBeforeUnmount(() => {
   window.removeEventListener('show-definitions', handleShowDefinitions)
 })
 
-useHead({
-  title: 'Portfolio Shoshin Web Services',
+uuseHead({
+  title: 'Shoshin Web Services',
   meta: [
     {
       name: 'description',
-      content: 'Page d accueil: visuel sur l activité et les services proposés Shoshin Web Services.',
-      author: 'Pierre Tinard',
+      content: 'Des services web de qualité avec des solutions évolutives.',
+    },
+    {
+      name: 'author',
+      content: 'Pierre Tinard',
     },
     {
       name: 'keywords',
