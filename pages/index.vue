@@ -337,11 +337,12 @@
 <script setup>
 import emailjs from 'emailjs-com';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import ImageSwitcher from '~/components/ImageSwitcher.vue'
-import WelcomeMessage from '~/components/WelcomeMessage.vue'
-import DisplayTagline1 from '~/components/DisplayTagline1.vue'
-import DisplayTagline2 from '~/components/DisplayTagline2.vue'
-import { useReCaptcha } from 'vue-recaptcha-v3'
+import ImageSwitcher from '~/components/ImageSwitcher.vue';
+import WelcomeMessage from '~/components/WelcomeMessage.vue';
+import DisplayTagline1 from '~/components/DisplayTagline1.vue';
+import DisplayTagline2 from '~/components/DisplayTagline2.vue';
+import { useReCaptcha } from 'vue-recaptcha-v3';
+import { useHead } from '#imports';
 
 const form = ref({
   email: '',
@@ -433,7 +434,7 @@ onBeforeUnmount(() => {
   window.removeEventListener('show-definitions', handleShowDefinitions)
 })
 
-uuseHead({
+useHead({
   title: 'Shoshin Web Services',
   meta: [
     {
