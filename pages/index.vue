@@ -1,9 +1,9 @@
 <template>
-  <Head>
-    <Title>Shoshin Web Services</Title>
-    <Meta charset="UTF-8" />
-    <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </Head>
+<Head>
+  <title>Shoshin Web Services</title>
+  <meta charSet="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</Head>
   <div class="flex justify-center mx-auto -mt-12">
     <div class="text-center text-xl mt-6"><WelcomeMessage /></div>
   </div>
@@ -26,8 +26,7 @@
     <div class="flex flex-col justify-center md:mt-24 md:-mb-20 lg:-mt-2 xl:mt-2">
       <h1 class="flex text-2xl text-sky-700 mx-auto mt-2 dark:text-white  2xl:ml-50">{{ $t("PierreTinard") }}</h1>
       <div class="flex mx-auto">
-        <h2 class="text-2xl text-sky-700 font-black dark:text-white my-4 -ml-4 mr-4">{{ $t("Developpeur") }}</h2>
-        <h2 class="text-3xl my-3 font-black text-orange-400">{{ $t("Web") }}</h2>
+        <h2 class="text-2xl text-orange-400 font-black my-4">{{ $t("DevWeb") }}</h2>
       </div>
     </div>
     <div class="flex justify-center flex-col avatar mt-4 mb-4 md:mt-28 lg:mt-18 2xl:my-4 2xl:mt-24">
@@ -104,7 +103,7 @@
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
                   <time class="font-mono font-black italic">{{ $t("2021") }} / {{ $t("2023") }} </time>
-                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} {{ $t("Developpeur") }} {{ $t("Web") }}</div>
+                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} {{ $t("DevWeb") }}</div>
                   (OpenClassrooms) => {{ $t("Diplome") }}, <br />
                   {{ $t("Certification") }} => RNCP code 326T. <br />
                   <br />P1 => {{ $t("P1") }} <br />

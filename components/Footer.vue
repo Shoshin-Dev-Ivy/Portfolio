@@ -11,8 +11,7 @@
                         </div>
                 </div>
                 <div class="flex justify-center mx-auto -mt-12">
-                        <h2 class="text-2xl text-sky-700 font-black dark:text-white my-10 mr-4">{{ $t("Developpeur") }}</h2>
-                        <h2 class="text-3xl text-orange-400 font-black my-9">{{ $t("Web") }}</h2>
+                        <h2 class="text-2xl text-orange-400 text-center font-black my-10">{{ $t("DevWeb") }}</h2>
                 </div>
 
                 <ul class="flex justify-center mx-auto -mt-1">

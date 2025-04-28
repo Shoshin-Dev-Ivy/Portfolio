@@ -4,6 +4,23 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  app: {
+    head: {
+      title: 'Shoshin Web Services',
+      meta: [
+        { name: 'description', content: 'Bienvenue sur mon portfolio professionnel. Découvrez mes projets et réalisations, les services proposés' },
+        { property: 'og:title', content: 'Shoshin Web Services' },
+        { property: 'og:description', content: 'Bienvenue sur mon portfolio professionnel. Découvrez mes projets et réalisations, les services proposés.' },
+        { property: 'og:image', content: 'https://shoshin-web-services.com/image-de-preview.jpg' },
+        { property: 'og:url', content: 'https://shoshin-web-services.com' },
+        { property: 'og:type', content: 'website' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'Mon Portfolio - [Ton Nom]' },
+        { name: 'twitter:description', content: 'Bienvenue sur mon portfolio professionnel. Découvrez mes projets et réalisations, les services proposés.' },
+        { name: 'twitter:image', content: 'https://shoshin-web-services.com/image-de-preview.jpg' },
+      ],
+    }
+  },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
