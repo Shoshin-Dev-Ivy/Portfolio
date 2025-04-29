@@ -45,7 +45,7 @@
       <p class="mb-4 text-center">{{ $t("ShoshinDefinition") }}</p>
       <p class="text-center">{{ $t("ShoshinDefinition2") }}</p>
     </div>
-  </Transition>
+    </Transition>
   </div>
   <div class="flex flex-col">
     <div class="flex flex-col justify-center md:mt-24 md:-mb-20 lg:-mt-2 xl:mt-2">
@@ -302,23 +302,33 @@
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
               <div>
+                <label for="name" class="text-lg font-medium text-white">{{ $t("Nom") }}</label>
+                <input v-model="form.name" type="text" id="name" required
+                class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"/>
+              </div>
+              <div>
                 <label for="email" class="text-lg font-medium text-white">{{ $t("Email") }}</label>
-                <input v-model="form.email" type="email" id="email" required class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full md:w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" />
+                <input v-model="form.email" type="email" id="email" required
+                class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"/>
               </div>
               <div>
                 <label for="message" class="text-lg font-medium text-white">{{ $t("Message") }}</label>
-                <textarea id="message" rows="6" v-model="form.message" required class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"></textarea>
+                <textarea id="message" rows="6" maxlength="250" v-model="form.message" required
+                class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                </textarea>
                 <p class="text-white">{{ form.message.length }} / 250 {{ $t("Caracteres") }}</p>
               </div>
-              <!-- Honeypot -->
               <div style="display: none;">
                 <input v-model="form.botField" type="text" tabindex="-1" autocomplete="off" />
               </div>
-              <button type="submit" :disabled="isSubmitting" class="m-auto -mb-4 py-3 px-5 text-lg text-center font-black text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900 dark:focus:ring-primary-800">
+              <button type="submit" :disabled="isSubmitting"
+              class="m-auto -mb-4 py-3 px-5 text-lg text-center font-black text-orange-400 rounded-lg bg-sky-50 sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:bg-sky-900 dark:focus:ring-primary-800">
                 <span v-if="isSubmitting">Envoi en cours...</span>
                 <span v-else>{{ $t("Submit") }}</span>
               </button>
-              <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage" :style="{ color: isSubmitting ? 'blue' : 'white' }">{{ statusMessage }}</p>
+              <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage" :style="{ color: isSubmitting ? 'blue' : 'white' }">
+                {{ statusMessage }}
+              </p>
             </form>
           </div>
         </section>
@@ -337,7 +347,6 @@
 </template>
 
 <script setup>
-import emailjs from 'emailjs-com'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useHead, useRuntimeConfig } from '#imports'
 import ImageSwitcher from '~/components/ImageSwitcher.vue'
@@ -347,12 +356,9 @@ import DisplayTagline2 from '~/components/DisplayTagline2.vue'
 
 // Accès aux variables d’environnement publiques
 const config = useRuntimeConfig()
-const serviceID = config.public.EMAILJS_SERVICE_ID
-const templateID = config.public.EMAILJS_TEMPLATE_ID
-const publicKey = config.public.EMAILJS_PUBLIC_KEY
-
 
 const form = ref({
+  name: '',
   email: '',
   message: '',
   botField: '', // Champ anti-bot caché
@@ -384,17 +390,29 @@ const envoyerFormulaire = async () => {
 
   isSubmitting.value = true
 
-  const templateParams = {
-    from_email: form.value.email,
-    message: form.value.message,
-  }
-
   try {
-    const response = await emailjs.send(serviceID, templateID, templateParams, publicKey)
-    console.log('Message envoyé avec succès', response)
-    statusMessage.value = 'Votre message a bien été envoyé !'
-    form.value.email = ''
-    form.value.message = ''
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: 'Visiteur du site',
+        email: form.value.email,
+        message: form.value.message,
+      })
+    })
+
+    const data = await response.json()
+
+    if (response.ok) {
+      console.log('Message envoyé avec succès', data)
+      statusMessage.value = 'Votre message a bien été envoyé !'
+      form.value.email = ''
+      form.value.message = ''
+    } else {
+      throw new Error(data.message || 'Erreur inconnue.')
+    }
   } catch (error) {
     console.error("Erreur lors de l'envoi", error)
     statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.'
@@ -402,6 +420,7 @@ const envoyerFormulaire = async () => {
     isSubmitting.value = false
   }
 }
+
 
 // Affichage temporaire de la section "définitions"
 const show = ref(false)

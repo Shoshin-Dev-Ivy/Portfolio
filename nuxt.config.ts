@@ -59,9 +59,6 @@ export default defineNuxtConfig({
   },
     runtimeConfig: {
       public: {
-        EMAILJS_SERVICE_ID: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        EMAILJS_PUBLIC_KEY: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY,
         maintenanceMode: process.env.MAINTENANCE_MODE || 'false', // Place it under public
       },
     },
