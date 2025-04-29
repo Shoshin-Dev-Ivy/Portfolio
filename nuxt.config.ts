@@ -34,7 +34,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: [{ src: '~/plugins/vue-recaptcha-v3.js', ssr: false  }],
   modules: [
     '@nuxt/icon',
     '@nuxtjs/color-mode',
@@ -60,8 +59,9 @@ export default defineNuxtConfig({
   },
     runtimeConfig: {
       public: {
-        RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
-        EMAILJS_PUBLIC_KEY: process.env.EMAILJS_PUBLIC_KEY,
+        EMAILJS_SERVICE_ID: process.env.NUXT_PUBLIC_EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID: process.env.NUXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        EMAILJS_PUBLIC_KEY: process.env.NUXT_PUBLIC_EMAILJS_PUBLIC_KEY,
         maintenanceMode: process.env.MAINTENANCE_MODE || 'false', // Place it under public
       },
     },

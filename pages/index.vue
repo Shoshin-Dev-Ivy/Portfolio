@@ -10,12 +10,14 @@
   <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
   <meta property="og:title" content="Shoshin Web Services" />
   <meta property="og:description" content="Des services web de qualité avec des solutions évolutives." />
+  <meta property="og:author" content="Pierre Tinard">
   <meta property="og:image" content="https://www.shoshin-web-services.com/images/HomeSWS.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://www.shoshin-web-services.com" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shoshin Web Services" />
+  <meta property="keywords" content="Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -316,7 +318,7 @@
                 <span v-if="isSubmitting">Envoi en cours...</span>
                 <span v-else>{{ $t("Submit") }}</span>
               </button>
-              <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage" :style="{ color: isSubmitting ? 'blue' : 'green' }">{{ statusMessage }}</p>
+              <p class="my-6 text-center -mb-4 text-white text-lg" v-if="statusMessage" :style="{ color: isSubmitting ? 'blue' : 'white' }">{{ statusMessage }}</p>
             </form>
           </div>
         </section>
@@ -335,95 +337,79 @@
 </template>
 
 <script setup>
-import emailjs from 'emailjs-com';
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-import ImageSwitcher from '~/components/ImageSwitcher.vue';
-import WelcomeMessage from '~/components/WelcomeMessage.vue';
-import DisplayTagline1 from '~/components/DisplayTagline1.vue';
-import DisplayTagline2 from '~/components/DisplayTagline2.vue';
-import { useReCaptcha } from 'vue-recaptcha-v3';
-import { useHead } from '#imports';
+import emailjs from 'emailjs-com'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useHead, useRuntimeConfig } from '#imports'
+import ImageSwitcher from '~/components/ImageSwitcher.vue'
+import WelcomeMessage from '~/components/WelcomeMessage.vue'
+import DisplayTagline1 from '~/components/DisplayTagline1.vue'
+import DisplayTagline2 from '~/components/DisplayTagline2.vue'
+
+// Accès aux variables d’environnement publiques
+const config = useRuntimeConfig()
+const serviceID = config.public.EMAILJS_SERVICE_ID
+const templateID = config.public.EMAILJS_TEMPLATE_ID
+const publicKey = config.public.EMAILJS_PUBLIC_KEY
+
 
 const form = ref({
   email: '',
   message: '',
-  botField: '', // champ piège !
-});
+  botField: '', // Champ anti-bot caché
+})
 
-const statusMessage = ref('');
-const isSubmitting = ref(false);
-const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
+const statusMessage = ref('')
+const isSubmitting = ref(false)
 
-// Fonction de validation côté client pour l'email et le message
 const validateForm = () => {
   if (!form.value.email || !form.value.message) {
-    statusMessage.value = 'Tous les champs sont requis.';
-    return false;
+    statusMessage.value = 'Tous les champs sont requis.'
+    return false
   }
-  // Simple validation d'email
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
   if (!emailRegex.test(form.value.email)) {
-    statusMessage.value = 'L\'email est invalide.';
-    return false;
+    statusMessage.value = "L'email est invalide."
+    return false
   }
-  return true;
-};
+  return true
+}
 
 const envoyerFormulaire = async () => {
   if (form.value.botField !== '') {
-    // Un robot a tenté de remplir le champ caché
-    console.warn("Bot détecté. Soumission bloquée.");
-    return;
+    console.warn('Bot détecté. Soumission bloquée.')
+    return
   }
 
-  // Validation du formulaire
-  if (!validateForm()) return;
+  if (!validateForm()) return
 
-  // Validation de reCAPTCHA
-  const token = await executeRecaptcha("contact_form");
-  if (!token) {
-    statusMessage.value = "Erreur reCAPTCHA. Veuillez réessayer.";
-    return;
-  }
-
-  isSubmitting.value = true;
-
-  const serviceID = 'contact_service';
-  const templateID = 'contact_form';
-  const config = useRuntimeConfig();
-  const publicKey = process.env.EMAILJS_PUBLIC_KEY;
-  console.log('Public Key:', publicKey); 
+  isSubmitting.value = true
 
   const templateParams = {
-    email: form.value.email,
+    from_email: form.value.email,
     message: form.value.message,
-    'g-recaptcha-response': token,
-  };
+  }
 
-  emailjs.send(serviceID, templateID, templateParams, publicKey)
-    .then((response) => {
-      console.log('Message envoyé avec succès', response);
-      statusMessage.value = 'Votre message a bien été envoyé!';
-      form.value.email = '';
-      form.value.message = '';
-    })
-    .catch((error) => {
-      console.error("Erreur lors de l'envoi", error);
-      statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.';
-    })
-    .finally(() => {
-      isSubmitting.value = false;
-    });
-};
+  try {
+    const response = await emailjs.send(serviceID, templateID, templateParams, publicKey)
+    console.log('Message envoyé avec succès', response)
+    statusMessage.value = 'Votre message a bien été envoyé !'
+    form.value.email = ''
+    form.value.message = ''
+  } catch (error) {
+    console.error("Erreur lors de l'envoi", error)
+    statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.'
+  } finally {
+    isSubmitting.value = false
+  }
+}
 
-
+// Affichage temporaire de la section "définitions"
 const show = ref(false)
-
 const handleShowDefinitions = () => {
   show.value = true
   setTimeout(() => {
     show.value = false
-  }, 20000) // Visible pendant 20 secondes
+  }, 20000)
 }
 
 onMounted(() => {
@@ -437,23 +423,10 @@ onBeforeUnmount(() => {
 useHead({
   title: 'Shoshin Web Services',
   meta: [
-    {
-      name: 'description',
-      content: 'Des services web de qualité avec des solutions évolutives.',
-    },
-    {
-      name: 'author',
-      content: 'Pierre Tinard',
-    },
-    {
-      name: 'keywords',
-      content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard',
-    },
+    { name: 'description', content: 'Des services web de qualité avec des solutions évolutives.' },
+    { name: 'author', content: 'Pierre Tinard' },
+    { name: 'keywords', content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard' }
   ],
-});
+})
 </script>
-
-<style scoped>
-
-</style>
 
