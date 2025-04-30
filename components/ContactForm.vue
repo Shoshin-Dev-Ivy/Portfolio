@@ -1,8 +1,26 @@
+<template>
+  <form @submit.prevent="submitForm">
+    <input v-model="form.name" type="text" placeholder="Votre nom" required />
+    <input v-model="form.email" type="email" placeholder="Votre email" required />
+    <textarea v-model="form.message" placeholder="Votre message" required ></textarea>
+    <button type="submit" :disabled="isSubmitting">
+      {{ isSubmitting ? 'Envoi...' : 'Envoyer' }}
+    </button>
+    <p v-if="submissionMessage" style="color: white;">{{ submissionMessage }}</p>
+    <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
+  </form>
+</template>
+
 <script setup>
 import { ref } from 'vue'
 import { useReCaptcha } from 'vue-recaptcha-v3'
 
-const form = ref({ name: '' })
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+})
+
 const submissionMessage = ref(null)
 const errorMessage = ref(null)
 const isSubmitting = ref(false)
@@ -13,10 +31,10 @@ const submitForm = async () => {
   isSubmitting.value = true
   await recaptchaLoaded()
 
-  const token = await executeRecaptcha("contact")
+  const token = await executeRecaptcha('contact')
 
   if (!token) {
-    errorMessage.value = "Invalid reCAPTCHA. Please try again."
+    errorMessage.value = 'Invalid reCAPTCHA. Please try again.'
     submissionMessage.value = null
     isSubmitting.value = false
     alert(errorMessage.value)
@@ -24,44 +42,34 @@ const submitForm = async () => {
   }
 
   try {
-    const captchaResponse = await fetch("https://api.x.com/api/captcha", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ recaptcha_token: token }),
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: form.value.name,
+        email: form.value.email,
+        message: form.value.message,
+        recaptchaToken: token
+      })
     })
 
-    if (!captchaResponse.ok) {
-      errorMessage.value = "CAPTCHA validation failed. Please try again."
-      submissionMessage.value = null
-      isSubmitting.value = false
-      alert(errorMessage.value)
-      return
-    }
-
-    const formData = new FormData()
-    formData.append("name", form.value.name)
-    formData.append("recaptchaToken", token)
-
-    const formSubmitResponse = await fetch("https://api.x.com/api/contact", {
-      method: "POST",
-      body: formData,
-    })
-
-    if (formSubmitResponse.ok) {
-      submissionMessage.value = "Contact form submitted successfully!"
+    if (response.ok) {
+      submissionMessage.value = 'Message envoyé avec succès !'
       errorMessage.value = null
       resetForm()
       alert(submissionMessage.value)
     } else {
-      const error = await formSubmitResponse.json()
-      errorMessage.value = error.message || "Error submitting form."
+      const error = await response.json()
+      errorMessage.value = error.message || 'Erreur lors de l’envoi.'
       submissionMessage.value = null
       alert(errorMessage.value)
     }
 
-  } catch (error) {
-    console.error("Submission error:", error)
-    errorMessage.value = "An error occurred while submitting the form."
+  } catch (err) {
+    console.error('Erreur lors de l\’envoi du formulaire:', err);
+    errorMessage.value = 'Une erreur est survenue.'
     submissionMessage.value = null
     alert(errorMessage.value)
   } finally {
@@ -71,17 +79,7 @@ const submitForm = async () => {
 
 const resetForm = () => {
   form.value.name = ''
+  form.value.email = ''
+  form.value.message = ''
 }
 </script>
-
-<template>
-  <form @submit.prevent="submitForm">
-    <input v-model="form.name" type="text" placeholder="Your name" required />
-    <button type="submit" :disabled="isSubmitting">
-      {{ isSubmitting ? 'Envoi...' : 'Envoyer' }}
-    </button>
-
-    <p v-if="submissionMessage" style="color: green;">{{ submissionMessage }}</p>
-    <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
-  </form>
-</template>

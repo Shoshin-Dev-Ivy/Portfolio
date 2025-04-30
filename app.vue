@@ -1,5 +1,6 @@
 <template>
   <div class="bg-sky-50 dark:bg-sky-900 mb-0 bg-cover box-shadow font-roboto">
+    <ClientOnly>
     <Header />
     <NuxtLayout>
       <NuxtPage />
@@ -7,6 +8,7 @@
     <CookieBanner />
     <Footer class="mt-auto" />
     <ScrollToTop />
+    </ClientOnly>
   </div>
 </template>
 
@@ -23,3 +25,9 @@ useHead({
   }
 })
 </script>
+
+<style>
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+</style>

@@ -21,10 +21,12 @@
     "@supabase/supabase-js": "^2.47.10",
     "emailjs-com": "^3.2.0",
     "js-cookie": "^3.0.5",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.10.1",
     "nuxt": "^3.14.1592",
+    "sanitize-html": "^2.16.0",
     "vue": "latest",
     "vue-cookies": "^1.8.5",
-    "vue-recaptcha": "^3.0.0-alpha.6",
     "vue-recaptcha-v3": "^2.0.1",
     "vue-router": "latest"
   },

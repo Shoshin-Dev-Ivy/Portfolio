@@ -1,5 +1,6 @@
 <template>
     <div class="w-auto">
+        <ClientOnly>
         <nav class="md:grid grid-cols-2 md:row-span-4 md:items-center md:justify-items-center 2xl:grid-cols-2 2xl:gap-2">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto 
             md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
@@ -114,6 +115,7 @@
                 </div>
             </div>
         </nav>
+    </ClientOnly>
     </div>
 </template>
 

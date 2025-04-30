@@ -29,6 +29,7 @@
   <!-- Canonical URL (recommandé pour le SEO) -->
   <link rel="canonical" href="https://www.shoshin-web-services.com" />
 </Head>
+<ClientOnly>
   <div class="flex justify-center mx-auto -mt-12">
     <div class="text-center text-xl mt-6"><WelcomeMessage /></div>
   </div>
@@ -300,7 +301,11 @@
         <section class="bg-sky-600 dark:bg-sky-800 mx-auto rounded-2xl w-auto md:w-96 lg:w-96 lg:content-center  2xl:w-96 -mt-4 -my-14 mb-4 pt-4">
           <div class="py-8 lg:py-16 px-8">
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
+            <ClientOnly>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
+              <div v-if="isRecaptchaLoaded">
+                <vue-recaptcha sitekey="your-site-key" v-model="form.recaptchaToken" size="invisible" />
+              </div>
               <div>
                 <label for="name" class="text-lg font-medium text-white">{{ $t("Nom") }}</label>
                 <input v-model="form.name" type="text" id="name" required
@@ -330,6 +335,7 @@
                 {{ statusMessage }}
               </p>
             </form>
+            </ClientOnly>
           </div>
         </section>
         <div class="flex items-start">
@@ -344,11 +350,12 @@
       </div>
     </div>
   </div>
+</ClientOnly>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { useHead, useRuntimeConfig } from '#imports'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { useHead, useRuntimeConfig, useState } from '#imports'
 import ImageSwitcher from '~/components/ImageSwitcher.vue'
 import WelcomeMessage from '~/components/WelcomeMessage.vue'
 import DisplayTagline1 from '~/components/DisplayTagline1.vue'
@@ -357,16 +364,18 @@ import DisplayTagline2 from '~/components/DisplayTagline2.vue'
 // Accès aux variables d’environnement publiques
 const config = useRuntimeConfig()
 
-const form = ref({
+// Utilisation de useState pour la SSR-friendly
+const form = useState('form', () => ({
   name: '',
   email: '',
   message: '',
   botField: '', // Champ anti-bot caché
-})
+}))
 
 const statusMessage = ref('')
 const isSubmitting = ref(false)
 
+// Validation du formulaire
 const validateForm = () => {
   if (!form.value.email || !form.value.message) {
     statusMessage.value = 'Tous les champs sont requis.'
@@ -380,6 +389,7 @@ const validateForm = () => {
   return true
 }
 
+// Fonction handleSubmit intégrant reCAPTCHA V3
 const envoyerFormulaire = async () => {
   if (form.value.botField !== '') {
     console.warn('Bot détecté. Soumission bloquée.')
@@ -389,24 +399,32 @@ const envoyerFormulaire = async () => {
   if (!validateForm()) return
 
   isSubmitting.value = true
+  statusMessage.value = ''
 
   try {
+    // Appel reCAPTCHA v3
+    const recaptchaToken = await grecaptcha.execute(config.public.recaptchaSiteKey, {
+      action: 'submit',
+    })
+
+    // Envoi au backend avec le token
     const response = await fetch('/api/send', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         name: 'Visiteur du site',
         email: form.value.email,
         message: form.value.message,
-      })
+        recaptchaToken,
+      }),
     })
 
     const data = await response.json()
+    console.log('Réponse brute :', data)
 
     if (response.ok) {
-      console.log('Message envoyé avec succès', data)
       statusMessage.value = 'Votre message a bien été envoyé !'
       form.value.email = ''
       form.value.message = ''
@@ -414,15 +432,14 @@ const envoyerFormulaire = async () => {
       throw new Error(data.message || 'Erreur inconnue.')
     }
   } catch (error) {
-    console.error("Erreur lors de l'envoi", error)
+    console.error("Erreur lors de l'envoi :", error)
     statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.'
   } finally {
     isSubmitting.value = false
   }
 }
 
-
-// Affichage temporaire de la section "définitions"
+// Section temporaire (définitions)
 const show = ref(false)
 const handleShowDefinitions = () => {
   show.value = true
@@ -431,21 +448,38 @@ const handleShowDefinitions = () => {
   }, 20000)
 }
 
+// Initialisation
 onMounted(() => {
+  nextTick(() => {
+    if (form.value.message === undefined) {
+      form.value.message = ''
+    }
+  })
   window.addEventListener('show-definitions', handleShowDefinitions)
+
+  // Important : charger reCAPTCHA si pas déjà fait
+  if (typeof grecaptcha === 'undefined') {
+    const script = document.createElement('script')
+    script.src = `https://www.google.com/recaptcha/api.js?render=${config.public.recaptchaSiteKey}`
+    script.async = true
+    document.head.appendChild(script)
+  }
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('show-definitions', handleShowDefinitions)
 })
 
+// Métadonnées SEO
 useHead({
   title: 'Shoshin Web Services',
   meta: [
     { name: 'description', content: 'Des services web de qualité avec des solutions évolutives.' },
     { name: 'author', content: 'Pierre Tinard' },
-    { name: 'keywords', content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard' }
+    { name: 'keywords', content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard' },
   ],
 })
 </script>
 
+<style scoped>
+</style>
