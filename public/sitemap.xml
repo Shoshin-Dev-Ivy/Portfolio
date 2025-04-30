@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Page d’accueil -->
+  <url>
+    <loc>https://shoshin-web-services.com/</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoshin-web-services.com/en/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shoshin-web-services.com/ja/" />
+  </url>
+  <url>
+    <loc>https://shoshin-web-services.com/en/</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoshin-web-services.com/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shoshin-web-services.com/ja/" />
+  </url>
+  <url>
+    <loc>https://shoshin-web-services.com/ja/</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoshin-web-services.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoshin-web-services.com/en/" />
+  </url>
+
+  <!-- Page Politique de confidentialité -->
+  <url>
+    <loc>https://shoshin-web-services.com/confidentialite</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoshin-web-services.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shoshin-web-services.com/ja/privacy" />
+  </url>
+  <url>
+    <loc>https://shoshin-web-services.com/en/privacy</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoshin-web-services.com/confidentialite" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shoshin-web-services.com/ja/privacy" />
+  </url>
+  <url>
+    <loc>https://shoshin-web-services.com/ja/privacy</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoshin-web-services.com/confidentialite" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoshin-web-services.com/en/privacy" />
+  </url>
+  
+    <!-- Page Mentions légales -->
+  <url>
+    <loc>https://shoshin-web-services.com/mentions-legales</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoshin-web-services.com/en/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shoshin-web-services.com/ja/legal-notice" />
+  </url>
+  <url>
+    <loc>https://shoshin-web-services.com/en/legal-notice</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoshin-web-services.com/mentions-legales" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://shoshin-web-services.com/ja/legal-notice" />
+  </url>
+  <url>
+    <loc>https://shoshin-web-services.com/ja/legal-notice</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://shoshin-web-services.com/mentions-legales" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://shoshin-web-services.com/en/legal-notice" />
+  </url>
+</urlset>

@@ -5,9 +5,11 @@ import { readBody, createError, getRequestHeader } from 'h3'
 import fetch from 'node-fetch'
 
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY
+const ENABLE_BCC = process.env.ENABLE_BCC === 'true'
+const BCC_EMAIL = process.env.MAIL_BCC || process.env.MAIL_USER
+
 const ipRateLimitMap = new Map()
 
-// Rate limit basé sur IP
 function isRateLimited(ip, maxRequests = 5, windowMs = 60 * 1000) {
   const now = Date.now()
   const entry = ipRateLimitMap.get(ip) || { count: 0, timestamp: now }
@@ -39,14 +41,12 @@ export default defineEventHandler(async (event) => {
   }
 
   const body = await readBody(event)
-  const { email, message, recaptchaToken } = body || {}
+  const { name, email, message, recaptchaToken } = body || {}
 
   if (!email || !message || !recaptchaToken) {
     throw createError({ statusCode: 400, message: 'Champs manquants.' })
   }
 
-  
-  // ✅ Requête POST bien formée vers l’API Google
   try {
     const recaptchaRes = await fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'POST',
@@ -55,19 +55,14 @@ export default defineEventHandler(async (event) => {
     })
 
     const recaptchaData = await recaptchaRes.json()
-    console.log('Réponse Google reCAPTCHA:', recaptchaData)
-    console.log('Score reCAPTCHA reçu :', recaptchaData.score)
-
     if (!recaptchaData.success) {
       throw createError({
         statusCode: 400,
         message: `Échec de la vérification reCAPTCHA (${recaptchaData['error-codes']?.join(', ')})`,
       })
     }
-    
-    // 🧠 Vérifie le score : seuil minimum recommandé = 0.5
+
     if (recaptchaData.score !== undefined && recaptchaData.score < 0.5) {
-      console.warn(`Score reCAPTCHA trop bas : ${recaptchaData.score}`)
       throw createError({
         statusCode: 403,
         message: 'Comportement suspect détecté par reCAPTCHA.',
@@ -78,7 +73,7 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500, message: 'Erreur de vérification reCAPTCHA.' })
   }
 
-  // Sanitize input
+  const cleanName = sanitizeHtml(name || 'Visiteur du site', { allowedTags: [], allowedAttributes: {} }).trim()
   const cleanEmail = sanitizeHtml(email, { allowedTags: [], allowedAttributes: {} }).trim()
   const cleanMessage = sanitizeHtml(message, { allowedTags: [], allowedAttributes: {} }).trim()
 
@@ -87,14 +82,44 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: 'Email invalide.' })
   }
 
-  // Envoi de l’email
   try {
+    // Email principal (admin)
     await transporter.sendMail({
       from: process.env.MAIL_USER,
       to: process.env.MAIL_TO,
       subject: 'Nouveau message depuis le site',
-      text: `Message de : ${cleanEmail}\n\n${cleanMessage}`,
-      html: `<p><strong>Message de :</strong> ${cleanEmail}</p><p>${cleanMessage}</p>`,
+      text: `Message de : ${cleanName} <${cleanEmail}>\n\n${cleanMessage}`,
+      html: `<p><strong>Message de :</strong> ${cleanName} (${cleanEmail})</p><p>${cleanMessage}</p>`,
+    })
+
+    // Email de confirmation à l'utilisateur
+    await transporter.sendMail({
+      from: process.env.MAIL_USER,
+      to: cleanEmail,
+      ...(ENABLE_BCC && { bcc: BCC_EMAIL }), // BCC facultatif
+      subject: 'Confirmation de votre message à Shoshin Web Services',
+      text: `Bonjour ${cleanName},
+
+Merci pour votre message ! Nous l'avons bien reçu et reviendrons vers vous sous peu.
+
+Voici un rappel de votre message :
+------------------------------
+${cleanMessage}
+------------------------------
+
+Cordialement,
+Pierre Tinard
+Shoshin Web Services
+`,
+      html: `
+        <p>Bonjour ${cleanName},</p>
+        <p>Merci pour votre message ! <br> Nous l'avons bien reçu et reviendrons vers vous sous peu.</p>
+        <p><strong>Votre message :</strong></p>
+        <blockquote style="border-left: 4px solid #ccc; margin: 1em 0; padding-left: 1em; color: #555;">
+          ${cleanMessage}
+        </blockquote>
+        <p>Cordialement,<br>Pierre Tinard<br><strong>Shoshin Web Services</strong></p>
+      `,
     })
 
     return { success: true, message: 'Votre message a bien été envoyé.' }
@@ -103,4 +128,3 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500, message: "Erreur lors de l'envoi du message." })
   }
 })
-

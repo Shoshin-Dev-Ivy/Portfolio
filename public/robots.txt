@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://shoshin-web-services.com/sitemap.xml

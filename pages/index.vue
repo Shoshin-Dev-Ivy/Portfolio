@@ -307,18 +307,18 @@
                 <vue-recaptcha sitekey="your-site-key" v-model="form.recaptchaToken" size="invisible" />
               </div>
               <div>
-                <label for="name" class="text-lg font-medium text-white">{{ $t("Nom") }}</label>
-                <input v-model="form.name" type="text" id="name" required
+                <label for="name" name="name" class="text-lg font-medium text-white">{{ $t("Nom") }}</label>
+                <input v-model="form.name" type="text" id="name" :placeholder="$t('EntrezNom')"
                 class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"/>
               </div>
               <div>
                 <label for="email" class="text-lg font-medium text-white">{{ $t("Email") }}</label>
-                <input v-model="form.email" type="email" id="email" required
+                <input v-model="form.email" type="email" id="email" required :placeholder="$t('EntrezEmail')"
                 class="mt-4 shadow-sm bg-sky-50 border-gray-300 text-base rounded-lg focus:ring-primary-500 focus:border-primary-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"/>
               </div>
               <div>
                 <label for="message" class="text-lg font-medium text-white">{{ $t("Message") }}</label>
-                <textarea id="message" rows="6" maxlength="250" v-model="form.message" required
+                <textarea id="message" rows="6" maxlength="250" v-model="form.message" required :placeholder="$t('EntrezMessage')"
                 class="mt-4 p-2.5 w-full text-base text-gray-900 bg-sky-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                 </textarea>
                 <p class="text-white">{{ form.message.length }} / 250 {{ $t("Caracteres") }}</p>
@@ -414,7 +414,7 @@ const envoyerFormulaire = async () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: 'Visiteur du site',
+        name: form.value.name || 'Visiteur du site', // valeur par défaut au cas où,
         email: form.value.email,
         message: form.value.message,
         recaptchaToken,
