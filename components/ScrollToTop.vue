@@ -1,7 +1,7 @@
 <!-- components/ScrollToTop.vue -->
 <template>
   <Transition name="fade-up-slow">
-    <button v-if="visible" @click="scrollToTop" class="fixed bottom-1 right-1  py-2 transition-opacity">
+    <button v-if="visible" @click="scrollToTop" class="fixed bottom-1 right-1 px-4  py-4 transition-opacity">
       <Icon name="material-symbols:arrow-circle-up-outline-rounded" class="size-16 bg-orange-400 p-3 rounded-full shadow-lg transition-all" />
     </button>
   </Transition>

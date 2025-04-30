@@ -70,9 +70,9 @@
     </div>
     <div class="text-center">
         <ul class="-mt-8">
-        <li class="text-lg text-sky-700 dark:text-white">SaaS</li>
-        <li class="text-lg text-sky-700 dark:text-white">API / API REST</li>
-        <li class="text-lg text-sky-700 dark:text-white">{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
+        <li class="text-xl text-sky-700 dark:text-white">SaaS</li>
+        <li class="text-xl text-sky-700 dark:text-white">API / API REST</li>
+        <li class="text-xl text-sky-700 dark:text-white">{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
       </ul>
     </div>
     <div class="flex" id="item-2">
@@ -216,7 +216,7 @@
           <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
         </div>
         <div class="text-center md:text-center xl:text-center">
-          <h3 class="-mt-6 mb-6 md:mb-10">{{ $t("Aperçu") }}</h3>
+          <h3 class="text-xl -mt-6 mb-6 md:mb-10">{{ $t("Aperçu") }}</h3>
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
