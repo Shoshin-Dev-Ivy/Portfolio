@@ -45,18 +45,17 @@
                         </NuxtLink>
                 </div>
                 <div>
-                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">Ce site est protégé par reCAPTCHA.</p>
-                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">La <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">politique de confidentialité</a></p>
-                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">et les <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">conditions d'utilisation</a> de Google s'appliquent.</p>    
+                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
+                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">{{ $t('Confidentialite') }}</a></p>
+                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}</p>    
                 </div>
         </ClientOnly>
         </footer>
-</template>
+</template>{}
 
 
 <script setup lang="ts"> 
 const localePath = useLocalePath();
-
 useHead({
   meta: [
     {
