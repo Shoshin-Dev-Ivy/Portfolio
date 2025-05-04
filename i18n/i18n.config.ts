@@ -3,6 +3,8 @@ export default defineI18nConfig(() => ({
   locale: 'fr',
   messages: {
     fr: {
+      ToLight: "Mode clair",
+      ToDark: "Mode sombre",
       Shoshin: "Shoshin",
       Hello: "Bonjour, bienvenue !",
       ShoshinDefinition: "Shoshin: esprit du débutant dans le Budō (Aïkido), il s'agit rester humble quelque soit son niveau...",
@@ -211,6 +213,8 @@ export default defineI18nConfig(() => ({
       Charte87: "Nous vous rappelons que vous pouvez contacter la CNIL directement sur le site internet de la CNIL, ou par courrier à l’adresse suivante : Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715, 75334 PARIS CEDEX 07.",
     },
     en: {
+      ToLight: "Clear mode",
+      ToDark: "Dark mode",
       Shoshin: "Shoshin",
       Hello: "Hello, welcome !",
       ShoshinDefinition: "Shoshin: the spirit of the beginner in Budō (Aikido), remaining humble regardless of your level...",
@@ -419,6 +423,8 @@ export default defineI18nConfig(() => ({
       Charte87: "We remind you that you can contact the CNIL directly on the CNIL website, or by mail to the following address: Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715, 75334 PARIS CEDEX 07.",
     },
     ja: {
+      ToLight: "クリアモード",
+      ToDark: "ダークモード",
       Shoshin: "初心",
       Hello: "こんにちは、ようこそ ！",
       ShoshinDefinition: "尚心（しょうしん）：武道（合気道）の初心者の精神は、レベルを問わず謙虚であり続けること...",

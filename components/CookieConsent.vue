@@ -6,7 +6,7 @@
   >
     <div>
       <p>{{ $t('MessageCookie') }}</p>
-      <NuxtLink to="/section/confidentialite" class="underline ml-2">
+      <NuxtLink to="/section/confidentialite" class="hover:underline decoration-white underline-offset-4 ml-2">
         {{ $t('Confidentialite') }}
       </NuxtLink>
       <div>
