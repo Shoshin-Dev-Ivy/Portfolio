@@ -28,12 +28,12 @@
                         </li>
                 </ul>
                 <div class="flex flex-col justify-center mx-auto mt-4 md:flex-row lg:flex justify-items-normal lg:w-full pb-4">
-                        <NuxtLink :to="localePath('/section/mentionslegales')" class="flex justify-center text-sky-700 dark:text-white"
+                        <NuxtLink :to="localePath('/section/mentionslegales')" class="flex justify-center text-sky-700 dark:text-white hover:underline"
                         aria-label="Cliquez ici pour aller sur la page des mentions légales">
                         {{ $t("Mentions") }}
                         </NuxtLink>
                         <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
-                        <NuxtLink :to="localePath('/section/confidentialite')" class="flex justify-center text-sky-700 dark:text-white"
+                        <NuxtLink :to="localePath('/section/confidentialite')" class="flex justify-center text-sky-700 dark:text-white hover:underline"
                         aria-label="Cliquez ici pour aller sur la page de confidentialité">
                         {{ $t("Confidentialite") }}
                         </NuxtLink>
@@ -46,10 +46,14 @@
                 </div>
                 <div>
                         <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
-                        <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">{{ $t('Confidentialite') }}</a></p>
-                        <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}</p>    
+                        <div class="lg:flex flex-row space-x-2 justify-center">
+                                <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="hover:underline">{{ $t('Confidentialite') }}</a>
+                                </p>
+                                <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="hover:underline">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}
+                                </p>
+                        </div>
                 </div>
-                <div class="flex flex-col justify-center md:flex-row mt-4 lg:flex justify-items-normal lg:w-full">
+                <div class="flex flex-col justify-center md:flex-row pb-4 lg:flex justify-items-normal lg:w-full">
                         <p class="flex mx-auto md:mx-0 md:mr-6 text-sky-700 dark:text-white">
                         <Icon name="lucide:copyright" class="mr-2 -my-0"/>{{ $t("2025") }} - {{ $t("Shoshin") }} {{ $t("Web") }}  {{ $t("Services") }}
                         </p>

@@ -402,34 +402,40 @@ const envoyerFormulaire = async () => {
   statusMessage.value = ''
 
   try {
-    // Appel reCAPTCHA v3
-    const recaptchaToken = await grecaptcha.execute(config.public.recaptchaSiteKey, {
-      action: 'submit',
-    })
+    // Vérification du consentement pour reCAPTCHA
+    const consent = JSON.parse(localStorage.getItem('userConsent') || '{}')
+    if (consent.recaptcha) {
+      // Appel reCAPTCHA v3 uniquement si l'utilisateur a donné son consentement
+      const recaptchaToken = await grecaptcha.execute(config.public.recaptchaSiteKey, {
+        action: 'submit',
+      })
 
-    // Envoi au backend avec le token
-    const response = await fetch('/api/send', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: form.value.name || 'Visiteur du site', // valeur par défaut au cas où,
-        email: form.value.email,
-        message: form.value.message,
-        recaptchaToken,
-      }),
-    })
+      // Envoi au backend avec le token
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.value.name || 'Visiteur du site', // valeur par défaut au cas où,
+          email: form.value.email,
+          message: form.value.message,
+          recaptchaToken,
+        }),
+      })
 
-    const data = await response.json()
-    console.log('Réponse brute :', data)
+      const data = await response.json()
+      console.log('Réponse brute :', data)
 
-    if (response.ok) {
-      statusMessage.value = 'Votre message a bien été envoyé !'
-      form.value.email = ''
-      form.value.message = ''
+      if (response.ok) {
+        statusMessage.value = 'Votre message a bien été envoyé !'
+        form.value.email = ''
+        form.value.message = ''
+      } else {
+        throw new Error(data.message || 'Erreur inconnue.')
+      }
     } else {
-      throw new Error(data.message || 'Erreur inconnue.')
+      statusMessage.value = 'reCAPTCHA n\'a pas été activé.'
     }
   } catch (error) {
     console.error("Erreur lors de l'envoi :", error)
@@ -457,8 +463,9 @@ onMounted(() => {
   })
   window.addEventListener('show-definitions', handleShowDefinitions)
 
-  // Important : charger reCAPTCHA si pas déjà fait
-  if (typeof grecaptcha === 'undefined') {
+  // Charger reCAPTCHA si consentement donné et script non déjà chargé
+  const consent = JSON.parse(localStorage.getItem('userConsent') || '{}')
+  if (consent.recaptcha && typeof grecaptcha === 'undefined') {
     const script = document.createElement('script')
     script.src = `https://www.google.com/recaptcha/api.js?render=${config.public.recaptchaSiteKey}`
     script.async = true
@@ -480,6 +487,3 @@ useHead({
   ],
 })
 </script>
-
-<style scoped>
-</style>

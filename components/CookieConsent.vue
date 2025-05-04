@@ -9,6 +9,11 @@
       <NuxtLink to="/section/confidentialite" class="underline ml-2">
         {{ $t('Confidentialite') }}
       </NuxtLink>
+      <div>
+        <NuxtLink to="/section/confidentialite" class="">
+          {{ $t('reCAPTCHAFormulaire') }}
+        </NuxtLink>
+      </div>
     </div>
     <div class="flex space-x-4">
       <button @click="acceptCookies" class="bg-green-500 hover:bg-green-600 text-black px-4 py-2 rounded">
@@ -56,6 +61,10 @@
             <span>{{ $t('Maps') }}</span>
             <input type="checkbox" v-model="consent.maps" class="h-5 w-5 text-blue-600" />
           </label>
+          <label class="flex justify-between items-center">
+            <span>reCAPTCHA v3</span>
+            <input type="checkbox" v-model="consent.recaptcha" class="h-5 w-5 text-blue-600" />
+          </label>
         </div>
         <div class="mt-4 flex justify-between">
           <button @click="showModal = false" class="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded">
@@ -83,10 +92,11 @@ const consent = ref({
   youtube: false,
   facebook: false,
   maps: false,
+  recaptcha: false,
 })
 
 const CONSENT_KEY = 'userConsent'
-const EXPIRATION_DAYS = 180 // 6 mois
+const EXPIRATION_DAYS = 180
 
 function saveConsent() {
   const payload = {
@@ -127,6 +137,7 @@ function acceptCookies() {
     youtube: true,
     facebook: true,
     maps: true,
+    recaptcha: true,
   }
   saveConsent()
   loadConsentBasedScripts(consent.value)
@@ -141,6 +152,7 @@ function refuseCookies() {
     youtube: false,
     facebook: false,
     maps: false,
+    recaptcha: false,
   }
   saveConsent()
   showBanner.value = false
@@ -175,21 +187,18 @@ function loadConsentBasedScripts(consent: typeof consent.value) {
 
   if (consent.marketing) {
     loadScript('https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX', 'ads-js')
-    // Ajouter ici votre balise marketing personnalisée si besoin
-  }
-
-  if (consent.youtube) {
-    // Les iframes YouTube devront être conditionnelles dans le template également
-    // Exemple : v-if="consent.youtube"
   }
 
   if (consent.facebook) {
     loadScript('https://connect.facebook.net/en_US/fbevents.js', 'fb-pixel')
-    // Ajouter ici votre pixel config si nécessaire
   }
 
   if (consent.maps) {
     loadScript('https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY', 'google-maps')
+  }
+
+  if (consent.recaptcha) {
+    loadScript('https://www.google.com/recaptcha/api.js?render=RECAPTCHA_SITE_KEY', 'recaptcha-js')
   }
 }
 
@@ -200,4 +209,3 @@ onMounted(() => {
   })
 })
 </script>
-
