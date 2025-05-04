@@ -381,7 +381,7 @@ const validateForm = () => {
     statusMessage.value = 'Tous les champs sont requis.'
     return false
   }
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+  const emailRegex = /^(?!\.)(?!.*\.\.)[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]+(?<!\.)@(?!\-)(?!.*\-\-)[a-zA-Z0-9\-]+(?<!\-)\.[a-zA-Z]{2,}$/
   if (!emailRegex.test(form.value.email)) {
     statusMessage.value = "L'email est invalide."
     return false

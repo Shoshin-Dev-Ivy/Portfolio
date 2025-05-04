@@ -27,12 +27,6 @@
                                 </a> 
                         </li>
                 </ul>
-                <div class="flex flex-col justify-center md:flex-row mt-4 lg:flex justify-items-normal lg:w-full">
-                        <p class="flex mx-auto md:mx-0 md:mr-6 text-sky-700 dark:text-white">
-                        <Icon name="lucide:copyright" class="mr-2 -my-0"/>{{ $t("2025") }} - {{ $t("Shoshin") }} {{ $t("Web") }}  {{ $t("Services") }}
-                        </p>
-                        <p class="flex mx-auto md:mx-0 text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
-                </div>
                 <div class="flex flex-col justify-center mx-auto mt-4 md:flex-row lg:flex justify-items-normal lg:w-full pb-4">
                         <NuxtLink :to="localePath('/section/mentionslegales')" class="flex justify-center text-sky-700 dark:text-white"
                         aria-label="Cliquez ici pour aller sur la page des mentions légales">
@@ -43,11 +37,23 @@
                         aria-label="Cliquez ici pour aller sur la page de confidentialité">
                         {{ $t("Confidentialite") }}
                         </NuxtLink>
+                        <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
+                        <button @click="handleCookieModal" class="flex justify-center text-sky-700 dark:text-white hover:underline"
+                        aria-label="Modifier les préférences de cookies">
+                                {{ $t("GererCookies") }}
+                        </button>
+
                 </div>
                 <div>
-                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
-                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">{{ $t('Confidentialite') }}</a></p>
-                        <p class="text-xs text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}</p>    
+                        <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
+                        <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="underline">{{ $t('Confidentialite') }}</a></p>
+                        <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="underline">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}</p>    
+                </div>
+                <div class="flex flex-col justify-center md:flex-row mt-4 lg:flex justify-items-normal lg:w-full">
+                        <p class="flex mx-auto md:mx-0 md:mr-6 text-sky-700 dark:text-white">
+                        <Icon name="lucide:copyright" class="mr-2 -my-0"/>{{ $t("2025") }} - {{ $t("Shoshin") }} {{ $t("Web") }}  {{ $t("Services") }}
+                        </p>
+                        <p class="flex mx-auto md:mx-0 text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
                 </div>
         </ClientOnly>
         </footer>
@@ -64,6 +70,12 @@ useHead({
     },
   ],
 });
+function handleCookieModal() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent('open-cookie-modal'))
+  }
+}
+
 </script>
 
 <style>

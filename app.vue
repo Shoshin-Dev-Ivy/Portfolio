@@ -40,6 +40,7 @@ import FacebookEmbed from '~/components/ThirdParty/FacebookEmbed.vue'
 import YouTubeEmbed from '~/components/ThirdParty/YouTubeEmbed.vue'
 import GoogleMapsEmbed from '~/components/ThirdParty/GoogleMapsEmbed.vue'
 
+
 // Localisation
 const { locale } = useI18n()
 useHead({ htmlAttrs: { lang: locale } })

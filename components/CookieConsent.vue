@@ -195,6 +195,9 @@ function loadConsentBasedScripts(consent: typeof consent.value) {
 
 onMounted(() => {
   loadConsent()
+  window.addEventListener('open-cookie-modal', () => {
+    showModal.value = true
+  })
 })
 </script>
 

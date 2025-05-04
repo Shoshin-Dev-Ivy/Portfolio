@@ -77,7 +77,7 @@ export default defineEventHandler(async (event) => {
   const cleanEmail = sanitizeHtml(email, { allowedTags: [], allowedAttributes: {} }).trim()
   const cleanMessage = sanitizeHtml(message, { allowedTags: [], allowedAttributes: {} }).trim()
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  const emailRegex = /^(?!\.)(?!.*\.\.)[a-zA-Z0-9!#$%&'*+\-\/=?^_`{|}~.]+(?<!\.)@(?!\-)(?!.*\-\-)[a-zA-Z0-9\-]+(?<!\-)\.[a-zA-Z]{2,}$/
   if (!emailRegex.test(cleanEmail)) {
     throw createError({ statusCode: 400, message: 'Email invalide.' })
   }
