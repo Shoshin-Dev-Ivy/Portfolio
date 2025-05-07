@@ -29,17 +29,17 @@
                 </ul>
                 <div class="flex flex-col justify-center mx-auto mt-4 md:flex-row lg:flex justify-items-normal lg:w-full pb-4">
                         <NuxtLink :to="localePath('/section/mentionslegales')"
-                        class="flex justify-center text-sky-700 dark:text-white hover:underline decoration-white underline-offset-4"
+                        class="flex justify-center text-sky-700 dark:text-white hover:underline decoration-sky-700 dark:decoration-white underline-offset-4"
                         aria-label="Cliquez ici pour aller sur la page des mentions légales">
                         {{ $t("Mentions") }}
                         </NuxtLink>
                         <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
-                        <NuxtLink :to="localePath('/section/confidentialite')" class="flex justify-center text-sky-700 dark:text-white hover:underline decoration-white underline-offset-4"
+                        <NuxtLink :to="localePath('/section/confidentialite')" class="flex justify-center text-sky-700 dark:text-white hover:underline decoration-sky-700 dark:decoration-white underline-offset-4"
                         aria-label="Cliquez ici pour aller sur la page de confidentialité">
                         {{ $t("Confidentialite") }}
                         </NuxtLink>
                         <p class="flex justify-center text-sky-700 dark:text-white mx-1">-</p>
-                        <button @click="handleCookieModal" class="flex justify-center text-sky-700 dark:text-white hover:underline decoration-white underline-offset-4"
+                        <button @click="handleCookieModal" class="flex justify-center text-sky-700 dark:text-white hover:underline decoration-sky-700 dark:decoration-white underline-offset-4"
                         aria-label="Modifier les préférences de cookies">
                                 {{ $t("GererCookies") }}
                         </button>
@@ -48,9 +48,9 @@
                 <div>
                         <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
                         <div class="lg:flex flex-row space-x-2 justify-center">
-                                <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="hover:underline decoration-white underline-offset-4">{{ $t('Confidentialite') }}</a>
+                                <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="hover:underline decoration-sky-700 dark:decoration-white underline-offset-4">{{ $t('Confidentialite') }}</a>
                                 </p>
-                                <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="hover:underline decoration-white underline-offset-4">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}
+                                <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="hover:underline decoration-sky-700 dark:decoration-white underline-offset-4">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}
                                 </p>
                         </div>
                 </div>

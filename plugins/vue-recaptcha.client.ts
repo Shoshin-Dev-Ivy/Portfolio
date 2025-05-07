@@ -1,3 +1,4 @@
+import { defineNuxtPlugin } from '#app'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -7,6 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     siteKey: config.public.recaptchaSiteKey,
     loaderOptions: {
       autoHideBadge: true, // Ne pas afficher le badge en bas à droite
+      loadRecaptchaScript: false // ❗ Désactive le chargement automatique
     }
   })
 })

@@ -361,21 +361,19 @@ import WelcomeMessage from '~/components/WelcomeMessage.vue'
 import DisplayTagline1 from '~/components/DisplayTagline1.vue'
 import DisplayTagline2 from '~/components/DisplayTagline2.vue'
 
-// Accès aux variables d’environnement publiques
 const config = useRuntimeConfig()
 
-// Utilisation de useState pour la SSR-friendly
 const form = useState('form', () => ({
   name: '',
   email: '',
   message: '',
-  botField: '', // Champ anti-bot caché
+  botField: '',
 }))
 
 const statusMessage = ref('')
 const isSubmitting = ref(false)
+const grecaptchaReady = ref(false)
 
-// Validation du formulaire
 const validateForm = () => {
   if (!form.value.email || !form.value.message) {
     statusMessage.value = 'Tous les champs sont requis.'
@@ -389,7 +387,6 @@ const validateForm = () => {
   return true
 }
 
-// Fonction handleSubmit intégrant reCAPTCHA V3
 const envoyerFormulaire = async () => {
   if (form.value.botField !== '') {
     console.warn('Bot détecté. Soumission bloquée.')
@@ -402,40 +399,47 @@ const envoyerFormulaire = async () => {
   statusMessage.value = ''
 
   try {
-    // Vérification du consentement pour reCAPTCHA
-    const consent = JSON.parse(localStorage.getItem('userConsent') || '{}')
-    if (consent.recaptcha) {
-      // Appel reCAPTCHA v3 uniquement si l'utilisateur a donné son consentement
-      const recaptchaToken = await grecaptcha.execute(config.public.recaptchaSiteKey, {
-        action: 'submit',
-      })
+    const consent = JSON.parse(localStorage.getItem('cookieConsent') || '{}')
+    console.log('Consentement reCAPTCHA :', consent.recaptcha)
 
-      // Envoi au backend avec le token
-      const response = await fetch('/api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: form.value.name || 'Visiteur du site', // valeur par défaut au cas où,
-          email: form.value.email,
-          message: form.value.message,
-          recaptchaToken,
-        }),
-      })
+    if (!consent.recaptcha) {
+      statusMessage.value = "Veuillez accepter le cookie reCAPTCHA pour envoyer le message."
+      return
+    }
 
-      const data = await response.json()
-      console.log('Réponse brute :', data)
+    if (typeof grecaptcha === 'undefined') {
+      console.error('grecaptcha est undefined au moment du submit.')
+      statusMessage.value = "Le service reCAPTCHA n'est pas encore prêt."
+      return
+    }
 
-      if (response.ok) {
-        statusMessage.value = 'Votre message a bien été envoyé !'
-        form.value.email = ''
-        form.value.message = ''
-      } else {
-        throw new Error(data.message || 'Erreur inconnue.')
-      }
+    const token = await grecaptcha.execute(config.public.recaptchaSiteKey, {
+      action: 'submit',
+    })
+    console.log('🔐 Token reCAPTCHA obtenu :', token)
+
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: form.value.name || 'Visiteur du site',
+        email: form.value.email,
+        message: form.value.message,
+        recaptchaToken: token,
+      }),
+    })
+
+    const data = await response.json()
+    console.log('Réponse serveur :', data)
+
+    if (response.ok) {
+      statusMessage.value = 'Votre message a bien été envoyé !'
+      form.value.email = ''
+      form.value.message = ''
     } else {
-      statusMessage.value = 'reCAPTCHA n\'a pas été activé.'
+      throw new Error(data.message || 'Erreur inconnue.')
     }
   } catch (error) {
     console.error("Erreur lors de l'envoi :", error)
@@ -445,7 +449,6 @@ const envoyerFormulaire = async () => {
   }
 }
 
-// Section temporaire (définitions)
 const show = ref(false)
 const handleShowDefinitions = () => {
   show.value = true
@@ -454,22 +457,40 @@ const handleShowDefinitions = () => {
   }, 20000)
 }
 
-// Initialisation
 onMounted(() => {
   nextTick(() => {
     if (form.value.message === undefined) {
       form.value.message = ''
     }
   })
+
   window.addEventListener('show-definitions', handleShowDefinitions)
 
-  // Charger reCAPTCHA si consentement donné et script non déjà chargé
-  const consent = JSON.parse(localStorage.getItem('userConsent') || '{}')
-  if (consent.recaptcha && typeof grecaptcha === 'undefined') {
-    const script = document.createElement('script')
-    script.src = `https://www.google.com/recaptcha/api.js?render=${config.public.recaptchaSiteKey}`
-    script.async = true
-    document.head.appendChild(script)
+  const consent = JSON.parse(localStorage.getItem('cookieConsent') || '{}')
+  console.log('Consentement au mount :', consent)
+
+  if (consent.recaptcha) {
+    if (!document.querySelector('script[src^="https://www.google.com/recaptcha/api.js"]')) {
+      const script = document.createElement('script')
+      script.src = `https://www.google.com/recaptcha/api.js?render=${config.public.recaptchaSiteKey}`
+      script.async = true
+      script.defer = true
+      script.onload = () => {
+        console.log('✅ Script reCAPTCHA chargé.')
+        grecaptcha.ready(() => {
+          console.log('✅ grecaptcha prêt.')
+          grecaptchaReady.value = true
+        })
+      }
+      document.head.appendChild(script)
+    } else {
+      grecaptcha.ready(() => {
+        console.log('✅ grecaptcha prêt (sans réinjection).')
+        grecaptchaReady.value = true
+      })
+    }
+  } else {
+    console.warn('❌ Consentement reCAPTCHA non donné : script non injecté.')
   }
 })
 
@@ -477,13 +498,16 @@ onBeforeUnmount(() => {
   window.removeEventListener('show-definitions', handleShowDefinitions)
 })
 
-// Métadonnées SEO
 useHead({
   title: 'Shoshin Web Services',
   meta: [
     { name: 'description', content: 'Des services web de qualité avec des solutions évolutives.' },
     { name: 'author', content: 'Pierre Tinard' },
-    { name: 'keywords', content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard' },
+    {
+      name: 'keywords',
+      content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard',
+    },
   ],
 })
 </script>
+

@@ -1,16 +1,3 @@
-<template>
-  <form @submit.prevent="submitForm">
-    <input v-model="form.name" type="text" placeholder="Votre nom" required />
-    <input v-model="form.email" type="email" placeholder="Votre email" required />
-    <textarea v-model="form.message" placeholder="Votre message" required ></textarea>
-    <button type="submit" :disabled="isSubmitting">
-      {{ isSubmitting ? 'Envoi...' : 'Envoyer' }}
-    </button>
-    <p v-if="submissionMessage" style="color: white;">{{ submissionMessage }}</p>
-    <p v-if="errorMessage" style="color: red;">{{ errorMessage }}</p>
-  </form>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { useReCaptcha } from 'vue-recaptcha-v3'
@@ -31,7 +18,11 @@ const submitForm = async () => {
   isSubmitting.value = true
   await recaptchaLoaded()
 
+  // Récupération du token reCAPTCHA
   const token = await executeRecaptcha('contact')
+
+  // Débogage : Vérifier si le token est bien récupéré
+  console.log('reCAPTCHA Token récupéré:', token)
 
   if (!token) {
     errorMessage.value = 'Invalid reCAPTCHA. Please try again.'
@@ -40,6 +31,14 @@ const submitForm = async () => {
     alert(errorMessage.value)
     return
   }
+
+  // Débogage : Vérifier les données envoyées au serveur
+  console.log('Données envoyées au serveur:', {
+    name: form.value.name,
+    email: form.value.email,
+    message: form.value.message,
+    recaptchaToken: token
+  })
 
   try {
     const response = await fetch('/api/send', {
@@ -55,6 +54,9 @@ const submitForm = async () => {
       })
     })
 
+    // Débogage : Afficher la réponse du serveur
+    console.log('Réponse du serveur:', response)
+
     if (response.ok) {
       submissionMessage.value = 'Message envoyé avec succès !'
       errorMessage.value = null
@@ -68,7 +70,7 @@ const submitForm = async () => {
     }
 
   } catch (err) {
-    console.error('Erreur lors de l\’envoi du formulaire:', err);
+    console.error('Erreur lors de l’envoi du formulaire:', err)
     errorMessage.value = 'Une erreur est survenue.'
     submissionMessage.value = null
     alert(errorMessage.value)
@@ -83,3 +85,4 @@ const resetForm = () => {
   form.value.message = ''
 }
 </script>
+

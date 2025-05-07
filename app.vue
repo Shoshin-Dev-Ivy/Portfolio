@@ -47,6 +47,16 @@ useHead({ htmlAttrs: { lang: locale } })
 
 // Consentement
 const { consent } = useCookieConsent()
+
+useHead({
+  script: [
+    {
+      src: 'https://www.google.com/recaptcha/api.js?render=VOTRE_CLE_PUBLIQUE',
+      async: true,
+      defer: true
+    }
+  ]
+})
 </script>
 
 <style>

@@ -115,7 +115,7 @@ export default defineI18nConfig(() => ({
       Confidentialite: "La politique de confidentialité",
       GererCookies: "Gérer mes cookies",
       reCAPTCHA: "Ce site est protégé par reCAPTCHA.",
-      reCAPTCHAFormulaire: "Le formulaire de contact est protégé par reCAPTCHA: cliquer le cookie reCAPTCHA si vous refusez les autres cookies.",
+      reCAPTCHAFormulaire: "Le formulaire de contact est protégé par reCAPTCHA: cliquez sur le cookie reCAPTCHA si vous refusez les autres cookies.",
       Et: "et les",
       ConditionsUtilisation: "Conditions d'utilisation",
       De: "de",

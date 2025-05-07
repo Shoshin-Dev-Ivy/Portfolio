@@ -1,23 +1,30 @@
 <template>
-  <div v-if="consent.googlemaps">
+  <div v-if="consent.maps">
     <iframe
-      width="100%"
+      width="600"
       height="450"
-      :src="mapUrl"
-      style="border:0;"
-      allowfullscreen
+      style="border:0"
       loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      :src="mapSrc"
     ></iframe>
-  </div>
-  <div v-else>
-    <p>Google Maps est désactivé. Veuillez accepter les cookies pour voir la carte.</p>
   </div>
 </template>
 
-<script setup lang="ts">
-import { useCookieConsent } from '~/composables/useCookieConsent'
+<script setup>
+import { computed } from 'vue'
 
-const { consent } = useCookieConsent()
+const props = defineProps({
+  mapSrc: { type: String, required: true }
+})
 
-const mapUrl = 'https://www.google.com/maps/embed?pb=...'
+const consent = computed(() => {
+  try {
+    const raw = localStorage.getItem('userConsent')
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+})
 </script>

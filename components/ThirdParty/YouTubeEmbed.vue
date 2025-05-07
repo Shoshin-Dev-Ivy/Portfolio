@@ -1,24 +1,30 @@
 <template>
-  <div v-if="consent.value.youtube">
+  <div v-if="consent.youtube">
     <iframe
       width="560"
       height="315"
-      :src="videoUrl"
+      :src="`https://www.youtube-nocookie.com/embed/${videoId}`"
       title="YouTube video"
       frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
   </div>
 </template>
 
-<script setup lang="ts">
-import { onMounted } from 'vue'
-import { useCookieConsent } from '~/composables/useCookieConsent'
+<script setup>
+import { computed } from 'vue'
 
-const { consent } = useCookieConsent()
-const videoUrl = 'https://www.youtube.com/embed/VIDEO_ID'
+const props = defineProps({
+  videoId: { type: String, required: true }
+})
 
-onMounted(() => {
-  if (!consent.value.youtube) return
+const consent = computed(() => {
+  try {
+    const raw = localStorage.getItem('userConsent')
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
 })
 </script>
