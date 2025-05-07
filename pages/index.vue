@@ -400,7 +400,6 @@ const envoyerFormulaire = async () => {
 
   try {
     const consent = JSON.parse(localStorage.getItem('cookieConsent') || '{}')
-    console.log('Consentement reCAPTCHA :', consent.recaptcha)
 
     if (!consent.recaptcha) {
       statusMessage.value = "Veuillez accepter le cookie reCAPTCHA pour envoyer le message."
@@ -408,7 +407,6 @@ const envoyerFormulaire = async () => {
     }
 
     if (typeof grecaptcha === 'undefined') {
-      console.error('grecaptcha est undefined au moment du submit.')
       statusMessage.value = "Le service reCAPTCHA n'est pas encore prêt."
       return
     }
@@ -416,7 +414,6 @@ const envoyerFormulaire = async () => {
     const token = await grecaptcha.execute(config.public.recaptchaSiteKey, {
       action: 'submit',
     })
-    console.log('🔐 Token reCAPTCHA obtenu :', token)
 
     const response = await fetch('/api/send', {
       method: 'POST',
@@ -432,7 +429,6 @@ const envoyerFormulaire = async () => {
     })
 
     const data = await response.json()
-    console.log('Réponse serveur :', data)
 
     if (response.ok) {
       statusMessage.value = 'Votre message a bien été envoyé !'
@@ -442,7 +438,6 @@ const envoyerFormulaire = async () => {
       throw new Error(data.message || 'Erreur inconnue.')
     }
   } catch (error) {
-    console.error("Erreur lors de l'envoi :", error)
     statusMessage.value = 'Une erreur est survenue. Veuillez réessayer.'
   } finally {
     isSubmitting.value = false
@@ -467,7 +462,6 @@ onMounted(() => {
   window.addEventListener('show-definitions', handleShowDefinitions)
 
   const consent = JSON.parse(localStorage.getItem('cookieConsent') || '{}')
-  console.log('Consentement au mount :', consent)
 
   if (consent.recaptcha) {
     if (!document.querySelector('script[src^="https://www.google.com/recaptcha/api.js"]')) {
@@ -476,21 +470,16 @@ onMounted(() => {
       script.async = true
       script.defer = true
       script.onload = () => {
-        console.log('✅ Script reCAPTCHA chargé.')
         grecaptcha.ready(() => {
-          console.log('✅ grecaptcha prêt.')
           grecaptchaReady.value = true
         })
       }
       document.head.appendChild(script)
     } else {
       grecaptcha.ready(() => {
-        console.log('✅ grecaptcha prêt (sans réinjection).')
         grecaptchaReady.value = true
       })
     }
-  } else {
-    console.warn('❌ Consentement reCAPTCHA non donné : script non injecté.')
   }
 })
 
@@ -510,4 +499,5 @@ useHead({
   ],
 })
 </script>
+
 

@@ -18,11 +18,7 @@ const submitForm = async () => {
   isSubmitting.value = true
   await recaptchaLoaded()
 
-  // Récupération du token reCAPTCHA
   const token = await executeRecaptcha('contact')
-
-  // Débogage : Vérifier si le token est bien récupéré
-  console.log('reCAPTCHA Token récupéré:', token)
 
   if (!token) {
     errorMessage.value = 'Invalid reCAPTCHA. Please try again.'
@@ -31,14 +27,6 @@ const submitForm = async () => {
     alert(errorMessage.value)
     return
   }
-
-  // Débogage : Vérifier les données envoyées au serveur
-  console.log('Données envoyées au serveur:', {
-    name: form.value.name,
-    email: form.value.email,
-    message: form.value.message,
-    recaptchaToken: token
-  })
 
   try {
     const response = await fetch('/api/send', {
@@ -54,9 +42,6 @@ const submitForm = async () => {
       })
     })
 
-    // Débogage : Afficher la réponse du serveur
-    console.log('Réponse du serveur:', response)
-
     if (response.ok) {
       submissionMessage.value = 'Message envoyé avec succès !'
       errorMessage.value = null
@@ -70,7 +55,6 @@ const submitForm = async () => {
     }
 
   } catch (err) {
-    console.error('Erreur lors de l’envoi du formulaire:', err)
     errorMessage.value = 'Une erreur est survenue.'
     submissionMessage.value = null
     alert(errorMessage.value)
@@ -85,4 +69,3 @@ const resetForm = () => {
   form.value.message = ''
 }
 </script>
-

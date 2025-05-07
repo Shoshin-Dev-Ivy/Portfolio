@@ -3,12 +3,12 @@
     <div v-if="showBanner" class="fixed bottom-0 left-0 w-full bg-sky-700 text-white p-4 z-50 flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
         <p class="text-md">{{ $t('MessageCookie') }}</p>
-        <NuxtLink to="/section/confidentialite" class="hover:underline decoration-white underline-offset-4 ml-2">
-        {{ $t('Confidentialite') }}
-      </NuxtLink>
-      <div>
         <NuxtLink to="/section/confidentialite" class="">
           {{ $t('reCAPTCHAFormulaire') }}
+        </NuxtLink>
+      <div>
+        <NuxtLink to="/section/confidentialite" class="hover:underline decoration-white underline-offset-4 ml-2">
+        {{ $t('Confidentialite') }}
         </NuxtLink>
       </div>
       </div>
@@ -26,7 +26,7 @@
     </div>
 
     <!-- Modal de personnalisation -->
-    <div v-if="showModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+    <div v-if="showModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 text-black flex items-center justify-center">
       <div class="bg-white p-6 rounded shadow-lg w-full max-w-md">
         <h2 class="text-xl font-semibold mb-4">{{ $t('CustomizeTitle') }}</h2>
 
@@ -42,11 +42,11 @@
         </div>
 
         <div class="mt-6 flex justify-end gap-2">
-          <button @click="savePreferences" class="bg-green-600 hover:bg-green-700 text-black px-4 py-2 rounded">
-            {{ $t('Save') }}
-          </button>
           <button @click="cancel" class="bg-blue-300 hover:bg-blue-400 text-black px-4 py-2 rounded">
             {{ $t('Cancel') }}
+          </button>
+          <button @click="savePreferences" class="bg-green-600 hover:bg-green-700 text-black px-4 py-2 rounded">
+            {{ $t('Save') }}
           </button>
         </div>
       </div>
@@ -54,8 +54,8 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const showBanner = ref(false)
 const showModal = ref(false)
@@ -68,24 +68,45 @@ const consent = ref({
   recaptcha: false
 })
 
-const optionalCategories = [
+// Typage explicite pour le tableau des catégories
+const optionalCategories: { key: keyof typeof consent.value; label: string }[] = [
   { key: 'analytics', label: 'Analytics' },
   { key: 'marketing', label: 'Marketing' },
   { key: 'youtube', label: 'Youtube' },
   { key: 'facebook', label: 'Facebook' },
-  { key: 'recaptcha', label: 'Maps' } // ← Tu peux ajuster le label si besoin
+  { key: 'recaptcha', label: 'Maps' }
 ]
 
 onMounted(() => {
-  const stored = localStorage.getItem('cookieConsent')
-  if (stored) {
-    const parsed = JSON.parse(stored)
-    consent.value = parsed
-    activateServices()
-  } else {
+  try {
+    const stored = localStorage.getItem('cookieConsent')
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      if (isValid(parsed)) {
+        consent.value = parsed
+        activateServices()
+      } else {
+        showBanner.value = true
+      }
+    } else {
+      showBanner.value = true
+    }
+  } catch (e) {
+    console.warn('Erreur parsing cookieConsent', e)
     showBanner.value = true
   }
+
+  window.addEventListener('open-cookie-modal', openModal)
 })
+
+onBeforeUnmount(() => {
+  window.removeEventListener('open-cookie-modal', openModal)
+})
+
+const openModal = () => {
+  showModal.value = true
+  showBanner.value = false
+}
 
 const savePreferences = () => {
   localStorage.setItem('cookieConsent', JSON.stringify(consent.value))
@@ -100,24 +121,30 @@ const cancel = () => {
 
 const acceptAll = () => {
   for (const key in consent.value) {
-    consent.value[key] = true
+    consent.value[key as keyof typeof consent.value] = true
   }
   savePreferences()
 }
 
 const rejectAll = () => {
   for (const key in consent.value) {
-    consent.value[key] = false
+    consent.value[key as keyof typeof consent.value] = false
   }
   savePreferences()
 }
 
-// Activation conditionnelle des services
 const activateServices = () => {
-  const c = consent.value
+  // Tu peux ajouter ici les appels à des services selon le consentement
+}
 
-  
-
-  // Tu peux ajouter les autres scripts ici selon les catégories (YouTube, Facebook, etc.)
+const isValid = (data: any): data is typeof consent.value => {
+  return (
+    typeof data === 'object' &&
+    data !== null &&
+    ['analytics', 'marketing', 'youtube', 'facebook', 'recaptcha'].every(
+      (key) => typeof data[key] === 'boolean'
+    )
+  )
 }
 </script>
+
