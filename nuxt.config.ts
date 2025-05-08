@@ -68,11 +68,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,// Assure-toi d'avoir cette variable d'environnement
-      maintenanceMode: process.env.MAINTENANCE_MODE || 'false', // Accessible côté client
+      maintenanceMode: process.env.MAINTENANCE_MODE || 'true', // Accessible côté client
     },
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     MAIL_USER: process.env.MAIL_USER,  // Côté serveur uniquement
     MAIL_PASS: process.env.MAIL_PASS,  // Côté serveur uniquement
+    
     MAIL_TO: process.env.MAIL_TO      // Côté serveur uniquement
   }
 })
