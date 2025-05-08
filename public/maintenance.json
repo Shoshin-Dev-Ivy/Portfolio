@@ -1,5 +1,5 @@
 {
-    "enabled": true,
+    "enabled": false,
     "message": "Nous effectuons une mise à jour importante.",
     "expectedReturn": "2025-05-08T23:00:00"
 }
