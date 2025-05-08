@@ -4,9 +4,8 @@
       <button
         @click="toggleTheme"
         class="flex items-center justify-center w-16 h-16 rounded-full transition-colors duration-300"
-        :aria-label="enabled ? $t('theme.toLight') : $t('theme.toDark')"
+        :aria-label="tooltipText"
       >
-        <!-- Icônes affichées seulement après que le thème est bien initialisé -->
         <SunIcon
           v-if="isMounted && !enabled"
           class="w-7 h-7 text-yellow-500 hover:text-yellow-600 transition"
@@ -17,40 +16,45 @@
         />
       </button>
 
-      <!-- Infobulle traduite avec durée augmentée -->
       <div
         class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 text-xs text-white bg-black rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none whitespace-nowrap z-10"
       >
-        {{ isMounted ? (enabled ? $t('ToLight') : $t('ToDark')) : '' }}
+        {{ tooltipText }}
       </div>
     </div>
   </ClientOnly>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, computed } from 'vue'
 import { SunIcon, MoonIcon } from '@heroicons/vue/24/solid'
+import { useI18n } from 'vue-i18n' // 👈 Ajout
 
+const { t } = useI18n() // 👈 Déstructuration ici
 const { enabled, toggleTheme } = useTheme()
-
 const isMounted = ref(false)
 
-// Déterminer l'initialisation complète du composant
 onMounted(() => {
-  // Appliquer le thème correctement après le montage
   isMounted.value = true
-})
-
-watch(() => enabled, (newVal) => {
-  // Appliquer ou retirer la classe "dark" dynamiquement
-  if (newVal) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
+  const htmlHasDark = document.documentElement.classList.contains('dark')
+  if (htmlHasDark !== enabled.value) {
+    toggleTheme()
   }
 })
+
+watch(enabled, (newVal) => {
+  if (newVal) {
+    document.documentElement.classList.add('dark')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+    localStorage.setItem('theme', 'light')
+  }
+})
+
+const tooltipText = computed(() =>
+  enabled.value ? t('ToLight') : t('ToDark') // 👈 t au lieu de $t
+)
 </script>
-
-
 
 

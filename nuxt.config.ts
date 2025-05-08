@@ -13,6 +13,7 @@ export default defineNuxtConfig({
           defer: true
         }
       ],
+      plugins: ['~/plugins/disableRouterWarnings.js'],
       title: 'Shoshin Web Services',
       meta: [
         // Ne pas définir de meta description ici

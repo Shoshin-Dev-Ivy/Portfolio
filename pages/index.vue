@@ -303,9 +303,6 @@
             <h2 class="text-center w-auto mb-4 -mt-6 text-3xl tracking-tight text-white">{{ $t("Echangeons")}}</h2>
             <ClientOnly>
             <form @submit.prevent="envoyerFormulaire" class="flex flex-col space-y-8">
-              <div v-if="isRecaptchaLoaded">
-                <vue-recaptcha sitekey="your-site-key" v-model="form.recaptchaToken" size="invisible" />
-              </div>
               <div>
                 <label for="name" name="name" class="text-lg font-medium text-white">{{ $t("Nom") }}</label>
                 <input v-model="form.name" type="text" id="name" :placeholder="$t('EntrezNom')"
