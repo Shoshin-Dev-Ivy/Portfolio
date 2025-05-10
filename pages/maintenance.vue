@@ -28,7 +28,7 @@ const maintenanceData = ref<MaintenanceData>({
 
 const loadMaintenanceData = async () => {
   try {
-    const res = await fetch('/api/maintenance', { cache: 'no-store' });
+    const res = await fetch('https://www.shoshin-web-services.com/api/maintenance', { cache: 'no-store' });
     const data = await res.json();
     maintenanceData.value = {
       enabled: data.enabled ?? false,
@@ -46,8 +46,9 @@ onMounted(() => {
   const interval = setInterval(async () => {
     await loadMaintenanceData();
     if (!maintenanceData.value.enabled) {
-      window.location.href = '/'; // ou `navigateTo('/')` si tu veux garder l’historique SPA
+      window.location.href = '/';
     }
   }, 5000);
 });
 </script>
+

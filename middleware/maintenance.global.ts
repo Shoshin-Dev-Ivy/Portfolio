@@ -1,10 +1,9 @@
-// middleware/maintenance.global.ts
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return;
-  
+
   try {
-    const base = window.location.origin; // utilisation de l'URL absolue
-    const res = await fetch(`${base}/api/maintenance`, {
+    const baseUrl = 'https://www.shoshin-web-services.com'; // Domaine personnalisé configuré sur Vercel
+    const res = await fetch(`${baseUrl}/api/maintenance`, {
       cache: 'no-store',
       headers: {
         'Cache-Control': 'no-store, max-age=0',
@@ -25,3 +24,4 @@ export default defineNuxtRouteMiddleware(async (to) => {
     console.error('Erreur chargement /api/maintenance:', e);
   }
 });
+
