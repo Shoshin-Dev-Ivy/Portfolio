@@ -1,17 +1,14 @@
+// middleware/maintenance.global.ts
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return;
-
+  
   try {
-    const runtimeConfig = useRuntimeConfig();
-    const baseUrl =
-      process.env.NODE_ENV === 'production'
-        ? `https://${runtimeConfig.public.siteUrl}`
-        : window.location.origin;
-
-    const res = await fetch(`${baseUrl}/api/maintenance`, {
+    const base = window.location.origin; // utilisation de l'URL absolue
+    const res = await fetch(`${base}/api/maintenance`, {
       cache: 'no-store',
       headers: {
-        'Cache-Control': 'no-store',
+        'Cache-Control': 'no-store, max-age=0',
+        'Pragma': 'no-cache',
       },
     });
 
@@ -28,9 +25,3 @@ export default defineNuxtRouteMiddleware(async (to) => {
     console.error('Erreur chargement /api/maintenance:', e);
   }
 });
-
-
-
-
-
-
