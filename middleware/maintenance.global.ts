@@ -3,13 +3,15 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   try {
     const runtimeConfig = useRuntimeConfig();
-    const baseUrl = runtimeConfig.public.baseUrl || '';
+    const baseUrl =
+      process.env.NODE_ENV === 'production'
+        ? `https://${runtimeConfig.public.siteUrl}`
+        : window.location.origin;
 
     const res = await fetch(`${baseUrl}/api/maintenance`, {
       cache: 'no-store',
       headers: {
-        'Cache-Control': 'no-store, max-age=0',
-        'Pragma': 'no-cache',
+        'Cache-Control': 'no-store',
       },
     });
 
@@ -20,12 +22,13 @@ export default defineNuxtRouteMiddleware(async (to) => {
     }
 
     if (!data.enabled && to.path === '/maintenance') {
-      return navigateTo('/', { replace: true });
+      return navigateTo('/');
     }
   } catch (e) {
     console.error('Erreur chargement /api/maintenance:', e);
   }
 });
+
 
 
 
