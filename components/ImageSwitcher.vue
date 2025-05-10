@@ -10,7 +10,7 @@
 <script setup defer>
 import { ref, onMounted } from 'vue'
 
-const image1 = '/images/bibi.webp'
+const image1 = '/images/Bibi2.webp'
 const image2 = '/images/aikido.webp'
 
 const currentImage = ref(image1)
