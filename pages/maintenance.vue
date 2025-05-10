@@ -28,7 +28,9 @@ const maintenanceData = ref<MaintenanceData>({
 
 const loadMaintenanceData = async () => {
   try {
-    const res = await fetch('https://www.shoshin-web-services.com/api/maintenance', { cache: 'no-store' });
+    const config = useRuntimeConfig();
+    const baseUrl = config.public.siteUrl || '';
+    const res = await fetch(`${baseUrl}/api/maintenance`, { cache: 'no-store' });
     const data = await res.json();
     maintenanceData.value = {
       enabled: data.enabled ?? false,
@@ -51,4 +53,5 @@ onMounted(() => {
   }, 5000);
 });
 </script>
+
 

@@ -2,7 +2,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return;
 
   try {
-    const baseUrl = 'https://www.shoshin-web-services.com'; // Domaine personnalisé configuré sur Vercel
+    const config = useRuntimeConfig();
+    const baseUrl = config.public.siteUrl || '';
+
     const res = await fetch(`${baseUrl}/api/maintenance`, {
       cache: 'no-store',
       headers: {
@@ -24,4 +26,3 @@ export default defineNuxtRouteMiddleware(async (to) => {
     console.error('Erreur chargement /api/maintenance:', e);
   }
 });
-
