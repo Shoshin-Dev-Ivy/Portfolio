@@ -428,7 +428,7 @@ const envoyerFormulaire = async () => {
     const data = await response.json()
 
     if (response.ok) {
-      statusMessage.value = 'Votre message a bien été envoyé !'
+      statusMessage.value = 'Votre message a bien été envoyé'
       form.value.email = ''
       form.value.message = ''
     } else {

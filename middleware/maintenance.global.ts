@@ -1,28 +1,25 @@
+// middleware/maintenance.global.ts
 export default defineNuxtRouteMiddleware(async (to) => {
-  const url = useRequestURL();
-  const baseUrl = url.origin || 'http://localhost:3000';
-  const maintenanceUrl = `${baseUrl}/maintenance.json`;
-
   try {
-    const res = await fetch(maintenanceUrl, {
-      cache: 'no-store',
+    const { data } = await useFetch('/api/maintenance', {
+      server: true,
+      key: 'maintenance-check',
       headers: {
-        'Cache-Control': 'no-store, max-age=0',
-        'Pragma': 'no-cache'
-      }
+        'Cache-Control': 'no-store',
+      },
     });
-    const data = await res.json();
 
-    if (data.enabled && to.path !== '/maintenance') {
+    if (data.value?.enabled && to.path !== '/maintenance') {
       return navigateTo('/maintenance', { replace: true });
     }
 
-    if (!data.enabled && to.path === '/maintenance') {
+    if (!data.value?.enabled && to.path === '/maintenance') {
       return navigateTo('/');
     }
   } catch (e) {
-    console.error('Erreur chargement maintenance.json:', e);
+    console.error('Erreur chargement /api/maintenance:', e);
   }
 });
+
 
 

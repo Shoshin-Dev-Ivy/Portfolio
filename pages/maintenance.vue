@@ -17,10 +17,9 @@ const maintenanceData = ref({
   expectedReturn: ''
 });
 
-// Fonction pour récupérer les données du fichier maintenance.json
 const loadMaintenanceData = async () => {
   try {
-    const res = await fetch('/maintenance.json', { cache: 'no-store' });
+    const res = await fetch('/api/maintenance', { cache: 'no-store' });
     const data = await res.json();
     maintenanceData.value = {
       enabled: data.enabled || false,
@@ -28,7 +27,7 @@ const loadMaintenanceData = async () => {
       expectedReturn: data.expectedReturn || 'Merci de revenir plus tard !',
     };
   } catch (error) {
-    console.error('Erreur chargement maintenance.json:', error);
+    console.error('Erreur chargement /api/maintenance:', error);
   }
 };
 
@@ -36,14 +35,12 @@ onMounted(() => {
   loadMaintenanceData();
 });
 
-// Rechargement manuel de la page si `enabled` est à `false`
-const checkMaintenanceStatus = () => {
-  loadMaintenanceData();
+// Vérifie régulièrement si la maintenance est terminée
+setInterval(async () => {
+  await loadMaintenanceData();
   if (!maintenanceData.value.enabled) {
-    window.location.href = '/'; // Redirige vers la page d'accueil si maintenance désactivée
+    window.location.href = '/';
   }
-};
-
-// Vérification périodique (si besoin)
-setInterval(checkMaintenanceStatus, 5000);  // Vérifier toutes les 5 secondes si nécessaire
+}, 5000);
 </script>
+
