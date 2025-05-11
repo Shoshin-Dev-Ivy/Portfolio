@@ -1,16 +1,12 @@
+// middleware/maintenance.global.ts
+
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return;
 
   try {
-    const config = useRuntimeConfig();
-    const baseUrl = config.public.siteUrl || '';
-
+    const baseUrl = useRuntimeConfig().public.siteUrl || '';
     const res = await fetch(`${baseUrl}/api/maintenance`, {
       cache: 'no-store',
-      headers: {
-        'Cache-Control': 'no-store, max-age=0',
-        'Pragma': 'no-cache',
-      },
     });
 
     const data = await res.json();
