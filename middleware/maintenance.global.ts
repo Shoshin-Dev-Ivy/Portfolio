@@ -2,15 +2,16 @@ export default defineNuxtRouteMiddleware(async (to) => {
   if (to.path === '/maintenance') return;
 
   try {
-    const res = await fetch('/api/maintenance');
-    if (!res.ok) throw new Error('Réponse API invalide');
+    const url = useRequestURL();
+    const base = `${url.protocol}//${url.host}`;
 
-    const data = await res.json();
+    const res = await $fetch('/api/maintenance', { baseURL: base });
 
-    if (data.enabled) {
-    return navigateTo('/maintenance');
+    if (res?.enabled) {
+      return navigateTo('/maintenance');
     }
   } catch (err) {
-    console.error('Erreur dans middleware maintenance:', err);
+    console.error('Erreur middleware maintenance:', err);
   }
 });
+
