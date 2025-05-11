@@ -1,15 +1,13 @@
 export default defineNuxtRouteMiddleware(async () => {
-  // Ne pas exécuter côté serveur (évite erreurs dans SSR)
-  if (import.meta.server) return
+  const route = useRoute()
+  if (route.path === '/maintenance') return
 
   try {
-    const res = await fetch('/api/maintenance')
-    const data = await res.json()
-
-    if (data.enabled) {
+    const res = await $fetch('/api/maintenance')
+    if (res && res.enabled) {
       return navigateTo('/maintenance')
     }
-  } catch (err) {
-    console.error('Erreur middleware maintenance:', err)
+  } catch (error) {
+    console.error('Erreur middleware maintenance:', error)
   }
 })

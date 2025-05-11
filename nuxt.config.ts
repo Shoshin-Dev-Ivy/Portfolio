@@ -68,7 +68,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
-      siteUrl: process.env.VERCEL_URL || 'http://localhost:3000'
     },
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     MAIL_USER: process.env.MAIL_USER,  
