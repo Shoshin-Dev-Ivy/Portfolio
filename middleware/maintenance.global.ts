@@ -1,11 +1,9 @@
-// middleware/maintenance.global.ts
-
 export default defineNuxtRouteMiddleware(async (to) => {
   if (import.meta.server) return;
 
   try {
-    const baseUrl = useRuntimeConfig().public.siteUrl || '';
-    const res = await fetch(`${baseUrl}/api/maintenance`, {
+    const config = useRuntimeConfig().public;
+    const res = await fetch(`${config.siteUrl}/api/maintenance`, {
       cache: 'no-store',
     });
 
@@ -19,6 +17,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
       return navigateTo('/');
     }
   } catch (e) {
-    console.error('Erreur chargement /api/maintenance:', e);
+    console.error('Erreur lors du chargement de /api/maintenance :', e);
   }
 });
+
