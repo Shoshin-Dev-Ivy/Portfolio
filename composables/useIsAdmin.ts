@@ -7,10 +7,12 @@ export default function useIsAdmin() {
 
   const { $supabase } = useNuxtApp()
 
-  if (import.meta.client && adminKey.value && !isAdmin.value) {
+  watchEffect(() => {
+    if (import.meta.client && adminKey.value && !isAdmin.value) {
     // safe call dans le client uniquement
     void checkAdminStatus()
   }
+  })
 
   async function checkAdminStatus(): Promise<void> {
     try {
