@@ -47,9 +47,9 @@
                 <div>
                         <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
                         <div class="lg:flex flex-row space-x-2 justify-center">
-                                <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="hover:underline decoration-sky-700 dark:decoration-white underline-offset-4">{{ $t('Confidentialite') }}</a>
+                                <p class="text-base text-center text-sky-700 dark:text-white pb-4"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="hover:underline decoration-sky-700 dark:decoration-white underline-offset-4">{{ $t('Confidentialite') }}</a>
                                 </p>
-                                <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener" class="hover:underline decoration-sky-700 dark:decoration-white underline-offset-4">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}
+                                <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('Et') }} <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" class="hover:underline decoration-sky-700 dark:decoration-white underline-offset-4">{{ $t('ConditionsUtilisation') }}</a>&nbsp{{ $t('De')}} {{ $t('DeGoogle') }}
                                 </p>
                         </div>
                 </div>
@@ -96,10 +96,12 @@ function handleCookieModal() {
 const toggleMaintenance = async () => {
   await maintenanceStore.toggle()
 
+  const localePath = useLocalePath()
+
   if (maintenanceStore.enabled) {
-    navigateTo('/maintenance')
+    navigateTo(localePath('/maintenance'))
   } else {
-    navigateTo('/')
+    navigateTo(localePath('/'))
   }
 }
 

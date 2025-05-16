@@ -57,6 +57,10 @@ useHead({
     }
   ]
 })
+
+import useLanguageWatcher from '~/composables/useLanguageWatcher'
+
+useLanguageWatcher()
 </script>
 
 <style>

@@ -54,13 +54,19 @@ export default defineNuxtConfig({
     '@pinia/nuxt'
   ],
     i18n: {
-    vueI18n: './i18n.config.ts', // if you are using custom path, default
+    vueI18n: './i18n.config.ts',
     locales: [
       { code: 'fr', language: 'fr-FR' },
       { code: 'en', language: 'en-US' },
       { code: 'ja', language: 'ja-JA' },
     ],
     defaultLocale: 'fr',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+    useCookie: true,
+    cookieKey: 'i18n_redirected',
+    redirectOn: 'root',
+  }
   },
   colorMode: {
     preference: 'light',
