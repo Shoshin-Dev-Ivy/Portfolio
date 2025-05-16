@@ -1,17 +1,24 @@
-// middleware/maintenance.global.ts
 export default defineNuxtRouteMiddleware(async (to) => {
-  if (to.path === '/maintenance') return;
+  const enabled = useState<boolean>('maintenance_enabled').value
+  const isAdmin = useState<boolean>('is_admin').value
 
-  try {
-    const res = await fetch('/api/maintenance');
-    const data = await res.json();
+  if (!enabled || isAdmin) return
 
-    if (data.enabled) {
-      return navigateTo('/maintenance');
-    }
-  } catch (err) {
-    console.error('Erreur middleware maintenance:', err);
-  }
-});
+  // Si on est déjà sur /maintenance dans une langue → pas de redirection
+  if (to.name?.toString().includes('maintenance')) return
+
+  const locale = to.params?.locale || 'fr'
+  return navigateTo(`/${locale}/maintenance`)
+})
+
+
+
+
+
+
+
+
+
+
 
 

@@ -53,7 +53,7 @@
                     </NuxtLink> 
                 </div>
             </div>        
-            <div class="hidden md:flex md:flex-wrap md:col-span-6 md:mx-auto md:justify-center md:items-center gap-x-6 gap-y-8">
+            <!--<div class="hidden md:flex md:flex-wrap md:col-span-6 md:mx-auto md:justify-center md:items-center gap-x-6 gap-y-8">
                 <NuxtLink class="relative group overflow-hidden text-orange-400 font-black hover:underline dark:text-white text-2xl 
                 hover:underline-offset-8 mx-6 -mt-2 transition-transform transform hover:scale-105 duration-300" aria-label="Cliquez ici pour revenir sur la page d'accueil" 
                 :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}
@@ -84,7 +84,24 @@
                 :to="{ path: localePath('/'), hash:'#item-5' }">{{ $t("Contact") }}
                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 dark:bg-white transition-all duration-300 group-hover:w-full"></span>
                 </NuxtLink>
-            </div>
+            </div>-->
+            <div
+  class="hidden md:flex md:flex-wrap md:col-span-6 md:mx-auto md:justify-center md:items-center gap-x-6 gap-y-8"
+>
+  <NuxtLink
+    v-for="({ label, hash, aria }, index) in links"
+    :key="index"
+    :aria-label="aria"
+    :to="{ path: localePath('/'), hash }"
+    :class="[
+      'relative group overflow-hidden text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2 transition-transform transform hover:scale-105 duration-300',
+      enabled ? 'pointer-events-none select-none' : ''
+    ]"
+  >
+    {{ $t(label) }}
+    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-400 dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+  </NuxtLink>
+</div>
             <div class="flex justify-center md:mt-2">
                 <a href="https://calendly.com/shoshinwebservices" aria-label="Cliquez ici pour prendre un rendez-vous sur l'agenda Calendly" 
                 role="button"  cta-button target="_blank">
@@ -142,6 +159,21 @@ useHead({
     },
   ],
 });
+
+import { storeToRefs } from 'pinia'
+import { useMaintenanceStore } from '~/stores/maintenance'
+
+const maintenanceStore = useMaintenanceStore()
+const { enabled } = storeToRefs(maintenanceStore)
+
+const links = [
+  { label: 'Accueil', hash: '', aria: 'Cliquez ici pour revenir sur la page d\'accueil' },
+  { label: 'Services', hash: '#item-1', aria: 'Cliquez ici pour accéder à la partie services' },
+  { label: 'Skills', hash: '#item-2', aria: 'Cliquez ici pour accéder à la partie skills' },
+  { label: 'Parcours', hash: '#item-3', aria: 'Cliquez ici pour accéder à la partie parcours' },
+  { label: 'Projets', hash: '#item-4', aria: 'Cliquez ici pour accéder à la partie projets' },
+  { label: 'Contact', hash: '#item-5', aria: 'Cliquez ici pour accéder à la partie contact' },
+]
 </script>
 
 <style scoped>

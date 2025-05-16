@@ -51,10 +51,10 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@dargmuesli/nuxt-cookie-control',
     '@nuxt/image',
+    '@pinia/nuxt'
   ],
     i18n: {
     vueI18n: './i18n.config.ts', // if you are using custom path, default
-    
     locales: [
       { code: 'fr', language: 'fr-FR' },
       { code: 'en', language: 'en-US' },
@@ -68,6 +68,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY,
+      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
+      supabaseKey: process.env.NUXT_PUBLIC_SUPABASE_KEY,
     },
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     MAIL_USER: process.env.MAIL_USER,  

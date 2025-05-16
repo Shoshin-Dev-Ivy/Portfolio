@@ -43,7 +43,6 @@
                         aria-label="Modifier les préférences de cookies">
                                 {{ $t("GererCookies") }}
                         </button>
-
                 </div>
                 <div>
                         <p class="text-base text-center text-sky-700 dark:text-white pb-4">{{ $t('reCAPTCHA') }}</p>
@@ -60,28 +59,54 @@
                         </p>
                         <p class="flex mx-auto md:mx-0 text-sky-700 dark:text-white">{{ $t("Droits") }}</p>
                 </div>
+                <button v-if="isAdmin" @click="toggleMaintenance" class="text-sky-700 dark:text-white flex mx-auto py-2">
+                        {{ enabled ? $t("Desactiver") : $t("Activer") }} {{ $t("MaintenanceToggle") }}
+                </button>
         </ClientOnly>
         </footer>
-</template>{}
+</template>
+<script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { useMaintenanceStore } from '~/stores/maintenance'
 
+const isAdmin = useIsAdmin()
+const localePath = useLocalePath()
+const maintenanceStore = useMaintenanceStore()
+const { enabled } = storeToRefs(maintenanceStore)
 
-<script setup lang="ts"> 
-const localePath = useLocalePath();
 useHead({
   meta: [
     {
       name: 'description',
-      content: 'Pied de page, footer. ',
+      content: 'Pied de page, footer.',
     },
   ],
-});
+})
+
+onMounted(() => {
+  maintenanceStore.fetch()
+})
+
 function handleCookieModal() {
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent('open-cookie-modal'))
   }
 }
 
+const toggleMaintenance = async () => {
+  await maintenanceStore.toggle()
+
+  if (maintenanceStore.enabled) {
+    navigateTo('/maintenance')
+  } else {
+    navigateTo('/')
+  }
+}
+
 </script>
+
+
 
 <style>
 </style>
+
