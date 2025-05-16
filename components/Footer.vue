@@ -104,7 +104,6 @@ const toggleMaintenance = async () => {
     navigateTo(localePath('/'))
   }
 }
-
 </script>
 
 
