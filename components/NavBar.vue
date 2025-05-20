@@ -1,9 +1,9 @@
 <template>
     <div class="w-auto">
         <ClientOnly>
-        <nav class="md:grid grid-cols-2 md:row-span-4 md:items-center md:justify-items-center 2xl:grid-cols-2 2xl:gap-2">
+        <nav class="md:grid grid-cols-2 md:row-span-4 md:items-center md:justify-items-center">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto 
-            md:justify-evenly 2xl:items-center 2xl:col-span-2 2xl:mt-0">
+            md:justify-evenly">
                 <div class="flex justify-center 2xl:justify-center">
                     <img src="assets/images/logo.svg" alt="Logo" class="h-16 w-16 my-6 mx-2 rounded-full border-2 border-sky-700 dark:border-orange-400 cursor-pointer" @click="showDefinitions" />
                     <div class="flex text-2xl text-orange-400 mt-10 mb-10 -ml-1">
@@ -53,7 +53,7 @@
                     </NuxtLink> 
                 </div>
             </div>        
-            <div class="hidden md:flex md:flex-wrap md:col-span-6 md:mx-auto md:justify-center md:items-center gap-x-6 gap-y-8">
+            <div class="hidden md:flex md:flex-wrap md:col-span-6 md:mx-auto md:justify-center md:items-center gap-x-6 gap-y-8 2xl:w-full 2xl:justify-center">
               <NuxtLink v-for="({ label, hash, aria }, index) in links" :key="index" :aria-label="aria" 
               :to="{ path: localePath('/'), hash }"
               :class="[ 'relative group overflow-hidden text-orange-400 font-black dark:text-white text-2xl hover:underline hover:underline-offset-8 mx-6 -mt-2 transition-transform transform hover:scale-105 duration-300',
@@ -63,7 +63,7 @@
               </span>
               </NuxtLink>
             </div>
-            <div class="flex justify-center md:mt-2">
+            <div class="flex justify-center md:mt-20">
                 <a href="https://calendly.com/shoshinwebservices" aria-label="Cliquez ici pour prendre un rendez-vous sur l'agenda Calendly" 
                 role="button"  cta-button target="_blank">
                     <button class="justify-items-center text-sky-700 text-xl xl:text-lg dark:text-white hover:bg-gradient-to-r from-orange-400 

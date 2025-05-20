@@ -6,7 +6,17 @@
     </div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
+import { useHead } from '#imports'
+
+useHead({
+  meta: [
+    {
+      name: 'robots',
+      content: 'noindex, nofollow'
+    }
+  ]
+})
 </script>
 
 <style scoped>
