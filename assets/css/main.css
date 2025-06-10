@@ -18,46 +18,5 @@
   font-display: swap;
 }
 
-/* Correctifs uniquement pour Safari iOS */
-body.safari-ios .hamburger-menu {
-  justify-content: center !important;
-}
-
-body.safari-ios .cta-rdv {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  animation: pulse 2s infinite !important;
-}
-
-body.safari-ios .mode-switch {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-body.safari-ios .lang-switch {
-  justify-content: center !important;
-}
-
-body.safari-ios .image-switcher img {
-  border-radius: inherit !important;
-  object-fit: cover !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-body.safari-ios .parcours-section {
-  padding-top: 2rem !important;
-}
-
-body.safari-ios .timeline-item {
-  margin-bottom: 2rem !important;
-}
-
-body.safari-ios .timeline-content {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.5rem !important;
-}
-
 
 
