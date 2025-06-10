@@ -19,60 +19,64 @@
 }
 
 /* Hack pour cibler uniquement Safari iOS */
-@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+@media screen and (pointer: coarse) and (hover: none) {
+  @supports (-webkit-touch-callout: none) {
+    /* --- NavBar corrections --- */
 
-  /* --- NavBar corrections --- */
+    /* Centrage du menu hamburger */
+    .hamburger-menu {
+      display: block !important;
+      text-align: center !important;
+    }
 
-  /* Centrage du menu hamburger */
-  .hamburger-menu {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+    /* Forcer Safari iOS à centrer le CTA Rdv et lui appliquer animate-pulse */
+    .cta-rdv {
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      animation: pulse 2s infinite !important;
+    }
 
-  /* Forcer Safari iOS à centrer le CTA Rdv et lui appliquer animate-pulse */
-  .cta-rdv {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    animation: pulse 2s infinite !important; /* si tu utilises animate-pulse de Tailwind, sinon adapte */
-  }
+    /* Centrage du switch light/dark */
+    .mode-switch {
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
 
-  /* Centrage du switch light/dark */
-  .mode-switch {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+    /* Centrage des drapeaux de langue */
+    .lang-switch {
+      display: block !important;
+      text-align: center !important;
+    }
 
-  /* Centrage des drapeaux de langue */
-  .lang-switch {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+    /* --- Page index corrections --- */
 
-  /* --- Page index corrections --- */
+    /* Empêcher le débordement du rounded sur Safari */
+    .image-switcher img {
+      border-radius: inherit !important;
+      object-fit: cover !important;
+      width: 100% !important;
+      height: 100% !important;
+      display: block !important;
+    }
 
-  /* Empêcher le débordement du rounded sur Safari */
-  .image-switcher img {
-    border-radius: inherit !important;
-    object-fit: cover !important;
-    width: 100% !important;
-    height: 100% !important;
-    display: block !important;
-  }
+    /* Forcer Safari à respecter l'espace entre le H2 Parcours et la timeline */
+    .parcours-section {
+      padding-top: 2rem !important;
+    }
 
-  /* Forcer Safari à respecter l'espace entre le H2 Parcours et la timeline */
-  .parcours-section {
-    padding-top: 2rem !important; /* ajuste la valeur selon ton design */
-  }
+    /* Correction des espacements dans la timeline */
+    .timeline-item {
+      margin-bottom: 2rem !important;
+    }
 
-  /* Correction des espacements dans la timeline */
-  .timeline-item {
-    margin-bottom: 2rem !important; /* ajuste selon ton spacing */
-  }
-
-  .timeline-content {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.5rem !important; /* ajuste selon ton spacing */
+    .timeline-content {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1.5rem !important;
+    }
   }
 }
+
 
