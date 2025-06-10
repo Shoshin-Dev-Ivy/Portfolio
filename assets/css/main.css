@@ -25,31 +25,27 @@
 
   /* Centrage du menu hamburger */
   .hamburger-menu {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Forcer Safari iOS à centrer le CTA Rdv et lui appliquer animate-pulse */
   .cta-rdv {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     animation: pulse 2s infinite !important; /* si tu utilises animate-pulse de Tailwind, sinon adapte */
   }
 
   /* Centrage du switch light/dark */
   .mode-switch {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Centrage des drapeaux de langue */
   .lang-switch {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* --- Page index corrections --- */
