@@ -20,26 +20,22 @@
 
 /* Correctifs uniquement pour Safari iOS */
 body.safari-ios .hamburger-menu {
-  display: block !important;
-  text-align: center !important;
+  justify-content: center !important;
 }
 
 body.safari-ios .cta-rdv {
-  display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
   animation: pulse 2s infinite !important;
 }
 
 body.safari-ios .mode-switch {
-  display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
 
 body.safari-ios .lang-switch {
-  display: block !important;
-  text-align: center !important;
+  justify-content: center !important;
 }
 
 body.safari-ios .image-switcher img {
@@ -47,7 +43,6 @@ body.safari-ios .image-switcher img {
   object-fit: cover !important;
   width: 100% !important;
   height: 100% !important;
-  display: block !important;
 }
 
 body.safari-ios .parcours-section {
