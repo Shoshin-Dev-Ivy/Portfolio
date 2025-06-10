@@ -61,6 +61,15 @@ useHead({
 import useLanguageWatcher from '~/composables/useLanguageWatcher'
 
 useLanguageWatcher()
+
+if (typeof window !== 'undefined') {
+  const ua = window.navigator.userAgent;
+  const isSafariIOS = /iP(ad|hone|od)/.test(ua) && /WebKit/.test(ua) && !/CriOS/.test(ua) && !/FxiOS/.test(ua);
+
+  if (isSafariIOS) {
+    document.body.classList.add('safari-ios');
+  }
+}
 </script>
 
 <style>

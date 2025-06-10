@@ -18,65 +18,51 @@
   font-display: swap;
 }
 
-/* Hack pour cibler uniquement Safari iOS */
-@media screen and (pointer: coarse) and (hover: none) {
-  @supports (-webkit-touch-callout: none) {
-    /* --- NavBar corrections --- */
-
-    /* Centrage du menu hamburger */
-    .hamburger-menu {
-      display: block !important;
-      text-align: center !important;
-    }
-
-    /* Forcer Safari iOS à centrer le CTA Rdv et lui appliquer animate-pulse */
-    .cta-rdv {
-      display: block !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      animation: pulse 2s infinite !important;
-    }
-
-    /* Centrage du switch light/dark */
-    .mode-switch {
-      display: block !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-    }
-
-    /* Centrage des drapeaux de langue */
-    .lang-switch {
-      display: block !important;
-      text-align: center !important;
-    }
-
-    /* --- Page index corrections --- */
-
-    /* Empêcher le débordement du rounded sur Safari */
-    .image-switcher img {
-      border-radius: inherit !important;
-      object-fit: cover !important;
-      width: 100% !important;
-      height: 100% !important;
-      display: block !important;
-    }
-
-    /* Forcer Safari à respecter l'espace entre le H2 Parcours et la timeline */
-    .parcours-section {
-      padding-top: 2rem !important;
-    }
-
-    /* Correction des espacements dans la timeline */
-    .timeline-item {
-      margin-bottom: 2rem !important;
-    }
-
-    .timeline-content {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 1.5rem !important;
-    }
-  }
+/* Correctifs uniquement pour Safari iOS */
+body.safari-ios .hamburger-menu {
+  display: block !important;
+  text-align: center !important;
 }
+
+body.safari-ios .cta-rdv {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  animation: pulse 2s infinite !important;
+}
+
+body.safari-ios .mode-switch {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.safari-ios .lang-switch {
+  display: block !important;
+  text-align: center !important;
+}
+
+body.safari-ios .image-switcher img {
+  border-radius: inherit !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+body.safari-ios .parcours-section {
+  padding-top: 2rem !important;
+}
+
+body.safari-ios .timeline-item {
+  margin-bottom: 2rem !important;
+}
+
+body.safari-ios .timeline-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+}
+
 
 
