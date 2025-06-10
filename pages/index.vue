@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="flex justify-center flex-col avatar mt-4 mb-4 md:mt-28 lg:mt-18 2xl:my-4 2xl:mt-24">
-      <div class="w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
+      <div class="image-switcher w-48 rounded-full border-2 self-center border-sky-700 dark:border-orange-400">
         <ImageSwitcher />
       </div>
     </div>
@@ -109,13 +109,13 @@
     <div>
       <div>
         <div>
-          <div class="flex flex-col" id="item-3">
+          <div class="parcours-section flex flex-col" id="item-3">
             <div class="flex items-start">
               <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
               <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Parcours") }}</h2>
             </div>
-            <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-              <li>
+            <ul class="timeline-content timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+              <li class="timeline-item">
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
                   <time class="font-mono font-black italic">{{ $t("2024") }}</time>
@@ -124,7 +124,7 @@
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
-              <li>
+              <li class="timeline-item">
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
@@ -144,7 +144,7 @@
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
-              <li>
+              <li class="timeline-item">
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
@@ -156,7 +156,7 @@
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
-              <li>
+              <li class="timeline-item">
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
@@ -169,7 +169,7 @@
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
-              <li>
+              <li class="timeline-item">
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
@@ -182,7 +182,7 @@
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
-              <li>
+              <li class="timeline-item">
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-end mb-10">
@@ -195,7 +195,7 @@
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
-              <li>
+              <li class="timeline-item">
                 <hr class="mx-2 bg-orange-400" />
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">

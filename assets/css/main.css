@@ -17,3 +17,66 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Hack pour cibler uniquement Safari iOS */
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+
+  /* --- NavBar corrections --- */
+
+  /* Centrage du menu hamburger */
+  .hamburger-menu {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Forcer Safari iOS à centrer le CTA Rdv et lui appliquer animate-pulse */
+  .cta-rdv {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    animation: pulse 2s infinite !important; /* si tu utilises animate-pulse de Tailwind, sinon adapte */
+  }
+
+  /* Centrage du switch light/dark */
+  .mode-switch {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Centrage des drapeaux de langue */
+  .lang-switch {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* --- Page index corrections --- */
+
+  /* Empêcher le débordement du rounded sur Safari */
+  .image-switcher img {
+    border-radius: inherit !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+
+  /* Forcer Safari à respecter l'espace entre le H2 Parcours et la timeline */
+  .parcours-section {
+    padding-top: 2rem !important; /* ajuste la valeur selon ton design */
+  }
+
+  /* Correction des espacements dans la timeline */
+  .timeline-item {
+    margin-bottom: 2rem !important; /* ajuste selon ton spacing */
+  }
+
+  .timeline-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important; /* ajuste selon ton spacing */
+  }
+}
+

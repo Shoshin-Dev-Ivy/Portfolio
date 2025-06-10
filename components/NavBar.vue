@@ -17,7 +17,7 @@
             </div> 
             <div class="2xl:hidden">
                 <button @click="toggleMenu" value="hamburger"  
-                class="flex flex-col justify-around justify-self-center h-8 w-8 p-1 my-4 ml-2 mb-16 rounded md:hidden" aria-label="Toggle menu"> 
+                class="hamburger-menu flex flex-col justify-around justify-self-center h-8 w-8 p-1 my-4 ml-2 mb-16 rounded md:hidden" aria-label="Toggle menu"> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
@@ -66,18 +66,18 @@
             <div class="flex justify-center md:mt-20">
                 <a href="https://calendly.com/shoshinwebservices" aria-label="Cliquez ici pour prendre un rendez-vous sur l'agenda Calendly" 
                 role="button"  cta-button target="_blank">
-                    <button class="justify-items-center text-sky-700 text-xl xl:text-lg dark:text-white hover:bg-gradient-to-r from-orange-400 
+                    <button class="cta-rdv justify-items-center text-sky-700 text-xl xl:text-lg dark:text-white hover:bg-gradient-to-r from-orange-400 
                     -mt-4 px-8 py-6 border-solid border-2 border-orange-400 hover:border-sky-700 dark:hover:border-white font-black rounded-xl animate-pulse focus:outline-none focus:ring-2 focus:ring-sky-700 focus:ring-offset-2">
                         {{ $t("RDV") }}
                     </button>
                 </a>
             </div>
             <div class="2xl:col-span-1">
-                <div class="2xl:col-span-1 justify-items-center my-10 md:justify-items-center md:my-10">
+                <div class="mode-switch 2xl:col-span-1 justify-items-center my-10 md:justify-items-center md:my-10">
                     <ModeSwitch />
                 </div> 
 
-                <div class="justify-self-center my-10">
+                <div class="lang-switch justify-self-center my-10">
                     <button @click="setLocale('fr')" role="button" class="dark:text-white text-2xl px-4">
                         <img src="assets/images/flagFR.webp" alt="drapeau français" 
                         class="w-7 border-2 border-sky-700 dark:border-orange-400"/>
