@@ -1,5 +1,5 @@
 <template>
-    <div class="w-auto">
+    <div class="w-auto overflow-x-hidden">
         <ClientOnly>
         <nav class="md:grid grid-cols-2 md:row-span-4 md:items-center md:justify-items-center">
             <div class="flex justify-center mx-auto md:flex md:items-start md:col-span-2 md:my-2 md:mt-10 md:w-auto 
@@ -22,7 +22,7 @@
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 <span class="h-0.5 rounded bg-sky-700 dark:bg-white w-full"></span> 
                 </button> 
-                <div v-if="isMenuOpen"  class="flex flex-col pt-8">
+                <div v-if="isMenuOpen"  class="flex flex-col pt-8 overflow-x-hidden">
                     <NuxtLink class="relative group overflow-hidden 
                     flex justify-center -mt-10 text-orange-400 font-black hover:underline dark:text-white text-2xl" aria-label="Cliquez ici pour revenir sur la page d'accueil" 
                     :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}
