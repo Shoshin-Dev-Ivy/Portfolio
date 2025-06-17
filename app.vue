@@ -2,6 +2,7 @@
   <div class="bg-sky-50 dark:bg-sky-900 mb-0 bg-cover box-shadow font-roboto">
     <ClientOnly>
       <Header />
+      <IosBanner />
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
@@ -32,6 +33,7 @@ import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
 import ScrollToTop from '~/components/ScrollToTop.vue'
 import CookieConsent from '~/components/CookieConsent.vue'
+import IosBanner from '~/components/IosBanner.vue'
 
 // Composants tiers
 import AnalyticsLoader from '~/components/ThirdParty/AnalyticsLoader.vue'
