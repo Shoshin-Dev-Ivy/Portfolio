@@ -3,7 +3,7 @@
   <transition name="fade">
     <div v-if="isVisible" class="fixed top-0 left-0 w-full bg-sky-700 text-white text-center p-2 z-50 flex items-center justify-center">
       <span class="text-lg mr-4 my-6">
-        Pour une meilleure expérience, veuillez utiliser Chrome pour visiter le site.
+         {{ $t("IosBanner") }}
       </span>
       <button @click="closeBanner" class="text-red-500 font-px-4 font-black pr-4 text-3xl">
         ✕

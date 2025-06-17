@@ -18,5 +18,48 @@
   font-display: swap;
 }
 
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  /* Centrage du switch light/dark */
+  .mode-switch {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  /* Centrage des drapeaux du switch langue */
+  .lang-switch {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  /* Correction border-radius du switch image */
+  .image-switcher {
+    border-radius: 12px !important; /* ajuste selon ton design */
+    overflow: hidden !important;
+  }
+
+  /* Correction espaces Parcours */
+  .parcours-title {
+    margin-bottom: 1rem !important;
+  }
+
+  .parcours-ul {
+    margin-top: 1rem !important;
+    padding-left: 1.25rem !important; /* ajuste si nécessaire */
+  }
+
+  .parcours-li {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+
 
 

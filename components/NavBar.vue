@@ -24,7 +24,7 @@
                 </button> 
                 <div v-if="isMenuOpen"  class="flex flex-col pt-8 overflow-x-hidden">
                     <NuxtLink class="relative group overflow-hidden 
-                    flex justify-center -mt-10 text-orange-400 font-black hover:underline dark:text-white text-2xl" aria-label="Cliquez ici pour revenir sur la page d'accueil" 
+                    flex justify-center -mt-10 mb-2 text-orange-400 font-black hover:underline hover:underline-offset-8 py-2 dark:text-white text-2xl transition-transform transform hover:scale-105 duration-300" aria-label="Cliquez ici pour revenir sur la page d'accueil" 
                     :to="{ path: localePath('/'), hash:'' }">{{ $t("Accueil") }}
                     <span class="absolute bottom-0 left-0 w-0 h-0 bg-orange-400 dark:bg-white transition-all duration-300 group-hover:w-full"></span>
                     </NuxtLink> 

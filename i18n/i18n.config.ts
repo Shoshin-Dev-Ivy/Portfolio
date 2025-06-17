@@ -5,6 +5,7 @@ export default defineI18nConfig(() => ({
     fr: {
       ToLight: "Mode clair",
       ToDark: "Mode sombre",
+      IosBanner: "Pour une meilleure expérience, veuillez utiliser Chrome pour visiter le site.",
       MaintenanceToggle: "maintenance",
       Activer: "Activer",
       Desactiver: "Désactiver",
@@ -220,6 +221,7 @@ export default defineI18nConfig(() => ({
     en: {
       ToLight: "Clear mode",
       ToDark: "Dark mode",
+      IosBanner: "For a better experience, please use Chrome to visit the site.",
       MaintenanceToggle: "maintenance",
       Activer: "Enable",
       Desactiver: "Disable",
@@ -435,6 +437,7 @@ export default defineI18nConfig(() => ({
     ja: {
       ToLight: "クリアモード",
       ToDark: "ダークモード",
+      IosBanner: "より良い体験のために、Chrome を使用してサイトにアクセスしてください。",
       MaintenanceToggle: "メンテナンス",
       Activer: "有効にする",
       Desactiver: "無効にする",
