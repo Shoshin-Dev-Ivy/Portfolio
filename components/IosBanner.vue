@@ -5,9 +5,6 @@
       <span class="text-lg mr-4 my-6">
          {{ $t("IosBanner") }}
       </span>
-      <button @click="closeBanner" class="text-red-500 font-px-4 font-black pr-4 text-3xl">
-        ✕
-      </button>
     </div>
   </transition>
 </template>
@@ -31,11 +28,6 @@ onMounted(() => {
     }, 10000)
   }
 })
-
-// Fonction pour fermer le bandeau manuellement
-function closeBanner() {
-  isVisible.value = false
-}
 </script>
 
 <style scoped>
