@@ -31,7 +31,7 @@ onMounted(() => {
           currentImage.value = image1
           fadingOut.value = false
         }, 3000) // duration of fade
-      }, 10000) // 10 seconds show aikido
+      }, 2000) // 2 seconds show aikido
 
     }, 3000) // duration of fade
   }, 100) // slight delay on mount
