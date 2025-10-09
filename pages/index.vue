@@ -103,7 +103,7 @@
             <Icon name="logos:mongodb" class="size-16" />
             <Icon name="logos:mysql" class="size-16" />
             <Icon name="logos:postgresql" class="size-16" />
-            <Icon name="logos:django" class="size-16" />
+            <Icon name="logos:django" class="size-16 mb-4" />
           </div>
         </div>
       </div>
