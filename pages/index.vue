@@ -72,7 +72,7 @@
         <ul class="-mt-8">
         <li class="text-xl text-sky-700 dark:text-white">SaaS</li>
         <li class="text-xl text-sky-700 dark:text-white">API / API REST</li>
-        <li class="text-xl text-sky-700 dark:text-white">{{$t("BDD")}} MySQL / NoSQL (MongoDB)</li>
+        <li class="text-xl text-sky-700 dark:text-white">{{$t("BDD")}} MySQL / MongoDB / PostgreSQL</li>
       </ul>
     </div>
     <div class="flex" id="item-2">
