@@ -102,6 +102,8 @@
             <Icon name="logos:nodejs" class="size-16" />
             <Icon name="logos:mongodb" class="size-16" />
             <Icon name="logos:mysql" class="size-16" />
+            <Icon name="logos:postgresql" class="size-16" />
+            <Icon name="logos:django" class="size-16" />
           </div>
         </div>
       </div>
@@ -118,9 +120,14 @@
               <li class="parcours-li timeline-item">
                 <div class="timeline-middle"></div>
                 <div class="timeline-start mb-10 md:text-end">
+                  <time class="font-mono font-black italic">{{ $t("2025") }}</time>
+                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} Udemy</div>
+                  {{ $t("Formation") }} Python/ PostgreSQL/ Django
+                </div>
+                <div class="timeline-end mb-10 md:text-start">
                   <time class="font-mono font-black italic">{{ $t("2024") }}</time>
-                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} Nuxt.js / Python</div>
-                  {{ $t("Formation") }} {{ $t("Autodidacte") }} Nuxt / Python (Udemy).
+                  <div class="text-lg font-black text-orange-400">{{ $t("Formation") }} Udemy</div>
+                  {{ $t("Formation") }} Nuxt.js/ Tailwind.css
                 </div>
                 <hr class="mx-2 bg-orange-400" />
               </li>
@@ -340,9 +347,9 @@
           <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("News")}}</h2>
         </div>
         <div class="flex flex-col text-center md:flex-col">
-          <p class="ml-2 -mt-4 text-black dark:text-white">{{ $t("News1") }}</p>
-          <p class="ml-2 text-black dark:text-white">{{ $t("News2") }}</p>
-          <p class="ml-2 md:mb-4 text-black dark:text-white">{{ $t("News3") }}</p>
+          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewPostgreSQL") }}</p>
+          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewFrançoisGBussac") }}</p>
+          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewPortfolio") }}</p>
         </div>
       </div>
     </div>
