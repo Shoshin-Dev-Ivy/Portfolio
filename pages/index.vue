@@ -70,43 +70,47 @@
     </div>
     <div class="text-center">
         <ul class="-mt-8">
-        <li class="text-xl text-sky-700 dark:text-white">SaaS</li>
-        <li class="text-xl text-sky-700 dark:text-white">API / API REST</li>
-        <li class="text-xl text-sky-700 dark:text-white">{{$t("BDD")}} MySQL / MongoDB / PostgreSQL</li>
-      </ul>
+          <li class="text-2xl text-sky-700 dark:text-white">{{$t("Appli")}} / SaaS / API</li>
+          <li class="text-2xl text-sky-700 dark:text-white">{{$t("BDD")}} PostgreSQL</li>
+        </ul>
     </div>
     <div class="flex" id="item-2">
       <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
       <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Skills") }}</h2>
     </div>
       <div class="flex flex-col items-center md:mx-auto md:w-96 dark:bg-sky-100 rounded-2xl -mt-4">
-      <div class="flex">
-        <div class="flex flex-col items-center">
-          <p class="flex justify-center text-xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
-          <div class="grid grid-cols-2 gap-y-10 gap-x-14">
-            <Icon name="logos:html-5" class="size-16" />
-            <Icon name="logos:css-3" class="size-16" />
-            <Icon name="logos:vue" class="size-16" />
-            <Icon name="logos:nuxt" class="size-16" />
-            <Icon name="logos:typescript-icon" class="size-16" />
-            <Icon name="skill-icons:tailwindcss-light" class="size-16" />
-          </div>
-          <Icon name="devicon:javascript" class="size-16 my-10" />
-        </div>
-      </div>
-      <div class="flex">
-        <div class="flex flex-col">
-          <p class="flex justify-center text-xl text-orange-400 font-black mb-8">{{ $t("Backend") }}</p>
-          <div class="grid grid-cols-2 gap-y-10 gap-x-14">
-            <Icon name="logos:python" class="size-16" />
-            <Icon name="logos:nodejs" class="size-16" />
-            <Icon name="logos:mongodb" class="size-16" />
-            <Icon name="logos:mysql" class="size-16" />
-            <Icon name="logos:postgresql" class="size-16" />
-            <Icon name="logos:django" class="size-16 mb-4" />
+        <div class="flex">
+          <div class="flex flex-col items-center">
+            <p class="flex justify-center text-2xl text-orange-400 font-black mb-8 mt-4">{{ $t("Frontend") }}</p>
+            <div class="grid grid-cols-2 gap-y-10 gap-x-14 place-items-center">
+              <Icon name="logos:nuxt" class="size-18 my-4" />
+              <Tooltip text="TypeScript">
+                <Icon name="logos:typescript-icon" class="size-16" />
+              </Tooltip>
+              <Tooltip text="TailwindCss">
+                <Icon name="skill-icons:tailwindcss-light" class="size-16" />
+              </Tooltip>
+              <Tooltip text="JavaScript">
+                 <Icon name="devicon:javascript" class="size-16" />
+              </Tooltip>
+            </div>
           </div>
         </div>
-      </div>
+        <div class="flex">
+          <div class="flex flex-col items-center">
+            <p class="flex justify-center text-2xl text-orange-400 font-black my-8">{{ $t("Backend") }}</p>
+            <div class="grid grid-cols-2 gap-y-10 gap-x-14 place-items-center">
+              <Icon name="logos:nodejs" class="size-16" />
+              <Tooltip text="postgreSql">
+                 <Icon name="logos:postgresql" class="size-16" />
+              </Tooltip>
+              <Tooltip text="Python">
+                <Icon name="logos:python" class="size-16 mb-8" />
+              </Tooltip>
+              <Icon name="logos:django" class="size-16" />
+            </div>
+          </div>
+        </div>
     </div>
     <div>
       <div>

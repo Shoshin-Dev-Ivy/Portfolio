@@ -3,6 +3,7 @@ export default defineI18nConfig(() => ({
   locale: 'fr',
   messages: {
     fr: {
+      Appli: "Applications web",
       ToLight: "Mode clair",
       ToDark: "Mode sombre",
       IosBanner: "Pour une meilleure expérience, veuillez utiliser Chrome pour visiter le site.",
@@ -24,7 +25,7 @@ export default defineI18nConfig(() => ({
       RDV: "Prendre un rendez-vous",
       PierreTinard: "Pierre Tinard",
       DevWeb: "Développeur Web",
-      Tagline1: "Ma priorité est d'utiliser la solution la plus efficace et la plus évolutive possible.",
+      Tagline1: "Ma priorité: utiliser la solution la plus efficace / évolutive possible.",
       Tagline2: "Créons ensemble vos projets web !",
       Parcours: "Parcours",
       2025: "2025",
@@ -219,6 +220,7 @@ export default defineI18nConfig(() => ({
       Charte87: "Nous vous rappelons que vous pouvez contacter la CNIL directement sur le site internet de la CNIL, ou par courrier à l’adresse suivante : Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715, 75334 PARIS CEDEX 07.",
     },
     en: {
+      Appli: "Web applications",
       ToLight: "Clear mode",
       ToDark: "Dark mode",
       IosBanner: "For a better experience, please use Chrome to visit the site.",
@@ -241,7 +243,7 @@ export default defineI18nConfig(() => ({
       RDV: "Make an appointment",
       PierreTinard: "Pierre Tinard",
       DevWeb: "Web Developer",
-      Tagline1: "My priority is to use the most efficient and scalable solution possible.",
+      Tagline1: "My priority: to use the most efficient / scalable solution possible.",
       Tagline2: "Let’s create your web projects together !",
       Parcours: "Career",
       2024: "2024",
@@ -435,6 +437,7 @@ export default defineI18nConfig(() => ({
       Charte87: "We remind you that you can contact the CNIL directly on the CNIL website, or by mail to the following address: Commission Nationale de l'Informatique et des Libertés (CNIL), 3 Place de Fontenoy - TSA 80715, 75334 PARIS CEDEX 07.",
     },
     ja: {
+      Appli: "Web アプリケーション",
       ToLight: "クリアモード",
       ToDark: "ダークモード",
       IosBanner: "より良い体験のために、Chrome を使用してサイトにアクセスしてください。",
@@ -458,7 +461,7 @@ export default defineI18nConfig(() => ({
       DevWeb: "かいはつしゃ",
       Tagline1: "私の優先事項は、可能な限り最も効率的でスケーラブルなソリューションを使用することです。",
       Tagline2: "あなたのウェブプロジェクトを一緒に作りましょう !",
-      Parcours: 'コース',
+      Parcours: "コース",
       2024: "二千二十",
       Formation: "トレーニング",
       Autodidacte: "独学",
