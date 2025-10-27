@@ -87,7 +87,7 @@
               <Tooltip text="TypeScript">
                 <Icon name="logos:typescript-icon" class="size-16" />
               </Tooltip>
-              <Tooltip text="TailwindCss">
+              <Tooltip text="Tailwind.css">
                 <Icon name="skill-icons:tailwindcss-light" class="size-16" />
               </Tooltip>
               <Tooltip text="JavaScript">
@@ -101,7 +101,7 @@
             <p class="flex justify-center text-2xl text-orange-400 font-black my-8">{{ $t("Backend") }}</p>
             <div class="grid grid-cols-2 gap-y-10 gap-x-14 place-items-center">
               <Icon name="logos:nodejs" class="size-16" />
-              <Tooltip text="postgreSql">
+              <Tooltip text="PostgreSQL">
                  <Icon name="logos:postgresql" class="size-16" />
               </Tooltip>
               <Tooltip text="Python">
