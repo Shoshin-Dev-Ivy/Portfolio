@@ -1,77 +1,35 @@
-# Nuxt Minimal Starter
+# Portfolio #
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Contexte: ##
+Création d’un portfolio pour mettre en avant les projets réalisés en formation, personnel,
+et professionnel...
 
-## Setup
+## Structure du projet: ##
+/backend  =>  # Node.js, PostgreSQL 
 
-Make sure to install dependencies:
+/frontend =>  # Nuxt "^3.17.1", TypeScript, Tailwind.css
 
-```bash
-# npm
-npm install
+## Partie technique: ##
+- traduction en anglais et japonais (i18n) avec switcher
 
-# pnpm
-pnpm install
+- switcher immage
 
-# yarn
-yarn install
+- gestion des cookies
 
-# bun
-bun install
-```
+- easter définition Shoshin 
 
-## Development Server
+- page maintenance géré par admin
 
-Start the development server on `http://localhost:3000`:
+- page admin uniquement accessible par admin
 
-```bash
-# npm
-npm run dev
+- formulaire de contact protection recaptcha / gestion des emails par emailjs
 
-# pnpm
-pnpm dev
+- déploiement (Vercel)
 
-# yarn
-yarn dev
+## Variables d’environnement: ##
 
-# bun
-bun run dev
-```
+Les clés sensibles (API, SMTP, etc.) sont stockées dans un fichier `.env` **non versionné**.
 
-## Production
+Un exemple de structure est fourni dans `.env.example`.
 
-Build the application for production:
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-=======
-# Portfolio

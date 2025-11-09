@@ -231,12 +231,12 @@
         </div>
         <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/JardinierFGBussac.webp" alt="Aperçu de l'univers littéraire de F-G Bussac" 
+            <figure><img src="assets/images/KZEN.png" alt="Aperçu de la page login KZEN" 
               class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
             <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} F-G Bussac</h2>
-              <p>{{ $t("ProjetBussac") }}</p>
-              <p>Nuxt.js, Tailwind.css, TypeScript</p>
+              <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} {{ $t("KZEN") }}</h2>
+              <p>{{ $t("ProjetKZEN") }}</p>
+              <p>Nuxt.js, Node.js, JavaScript, PostgreSQL, Tailwind.css </p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
@@ -247,7 +247,7 @@
             <div class="card-body">
               <h2 class="card-title text-white dark:text-orange-400">{{ $t("Projet") }} {{ $t("Portfolio") }}</h2>
               <p>{{ $t("ProjetPortfolio") }}</p>
-              <p>Nuxt.js, Tailwind.css, TypeScript</p>
+              <p>Nuxt.js, Node.js, TypeScript, PostgreSQL, Tailwind.css</p>
             </div>
           </div>
           <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
@@ -352,8 +352,6 @@
         </div>
         <div class="flex flex-col text-center md:flex-col">
           <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewPostgreSQL") }}</p>
-          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewFrançoisGBussac") }}</p>
-          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewPortfolio") }}</p>
         </div>
       </div>
     </div>
