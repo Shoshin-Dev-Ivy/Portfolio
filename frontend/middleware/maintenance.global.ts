@@ -1,3 +1,4 @@
+//middleware maintenance.global.ts
 export default defineNuxtRouteMiddleware(async (to) => {
   const enabled = useState<boolean>('maintenance_enabled').value
   const isAdmin = useState<boolean>('is_admin').value

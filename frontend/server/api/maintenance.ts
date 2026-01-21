@@ -1,3 +1,4 @@
+// server/api/maintenance.ts
 export default defineEventHandler(() => {
   return {
     enabled: false,

@@ -80,6 +80,7 @@ export default defineNuxtConfig({
     recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY,
     MAIL_USER: process.env.MAIL_USER,  
     MAIL_PASS: process.env.MAIL_PASS,  
-    MAIL_TO: process.env.MAIL_TO
+    MAIL_TO: process.env.MAIL_TO,
+    databaseUrl: process.env.DATABASE_URL,
   }
 })

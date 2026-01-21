@@ -1,3 +1,4 @@
+// stores/maintenance.ts
 import { defineStore } from 'pinia'
 
 export const useMaintenanceStore = defineStore('maintenance', {
