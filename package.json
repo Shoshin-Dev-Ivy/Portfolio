@@ -1,0 +1,49 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@dargmuesli/nuxt-cookie-control": "^8.5.4",
+    "@emailjs/browser": "^4.4.1",
+    "@heroicons/vue": "^2.2.0",
+    "@nuxt/icon": "^1.8.2",
+    "@nuxt/image": "^1.10.0",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/i18n": "^9.3.1",
+    "@pinia/nuxt": "^0.11.0",
+    "emailjs-com": "^3.2.0",
+    "js-cookie": "^3.0.5",
+    "nodemailer": "^6.10.1",
+    "nuxt": "^3.17.1",
+    "sanitize-html": "^2.16.0",
+    "vue": "latest",
+    "vue-cookies": "^1.8.5",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/akar-icons": "^1.2.1",
+    "@iconify-json/devicon": "^1.2.8",
+    "@iconify-json/entypo-social": "^1.2.2",
+    "@iconify-json/heroicons": "^1.2.1",
+    "@iconify-json/logos": "^1.2.3",
+    "@iconify-json/lucide": "^1.2.20",
+    "@iconify-json/material-symbols": "^1.2.10",
+    "@iconify-json/mdi": "^1.2.2",
+    "@iconify-json/skill-icons": "^1.2.0",
+    "@iconify-json/typcn": "^1.2.1",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.24",
+    "nuxt-anchorscroll": "^1.0.3",
+    "nuxt-headlessui": "^1.2.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.19"
+  }
+}

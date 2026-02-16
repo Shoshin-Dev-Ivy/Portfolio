@@ -1,0 +1,135 @@
+/* assets/css/main.css  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/roboto-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/roboto-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  .mode-switch {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .lang-switch {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .image-switcher {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .parcours-title {
+    margin-bottom: 1rem !important;
+  }
+
+  .parcours-ul {
+    margin-top: 1rem !important;
+    padding-left: 1.25rem !important;
+  }
+
+  .parcours-li {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* Patch Iphone 12 Pro */
+@media (width: 390px) {
+  .nav-fix.h-16.w-16 {
+    width: 3.2rem;      /* taille logo */
+    height: 3.2rem;
+    border-radius: 50%;
+  }
+
+  .nav-fix.div {
+    font-size: 1.40rem;  /* réduction texte */
+    margin-top: 2.0rem; /* ajuste vertical si nécessaire */
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Patch iPhone SE */
+@media (width: 375px) {
+  .nav-fix.h-16.w-16 {
+    width: 3.2rem;      /* taille logo */
+    height: 3.2rem;
+    border-radius: 50%;
+  }
+
+  .nav-fix.div {
+    font-size: 1.40rem;  /* réduction texte */
+    margin-top: 2.0rem; /* ajuste vertical si nécessaire */
+    margin-bottom: 0.25rem;
+  }
+
+  .nav-fix.scroll {
+    margin-right: 3rem;
+  }
+}
+
+/* Patch Galaxy S8+ */
+@media (width: 360px) {
+  .nav-fix.h-16.w-16 {
+    width: 3.0rem;      /* taille logo */
+    height: 3.0rem;
+    border-radius: 50%;
+  }
+
+  .nav-fix.div {
+    font-size: 1.30rem;  /* réduction texte */
+    margin-top: 2.0rem; /* ajuste vertical si nécessaire */
+    margin-bottom: 0.25rem;
+  }
+
+  .nav-fix.scroll {
+    margin-right: 3rem;
+  }
+}
+
+/* Patch Galaxy Z Fold 5 */
+@media (width: 344px) {
+  .nav-fix.h-16.w-16 {
+    width: 3.0rem;      /* taille logo */
+    height: 3.0rem;
+    border-radius: 50%;
+  }
+
+  .nav-fix.div {
+    font-size: 1.17rem;  /* réduction texte */
+    margin-top: 2.0rem; /* ajuste vertical si nécessaire */
+    margin-bottom: 0.25rem;
+  }
+
+  .nav-fix.scroll {
+    margin-right: 3rem;
+  }
+}
+
+
+
+
+

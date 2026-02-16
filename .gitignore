@@ -1,19 +1,19 @@
 # ==============================
-# Frontend (Nuxt 3)
+# Nuxt 3
 # ==============================
-frontend/node_modules/
-frontend/.nuxt/
-frontend/.output/
-frontend/.nitro/
-frontend/.cache/
-frontend/dist/
+.nuxt/
+.output/
+.nitro/
+.cache/
+dist/
+node_modules/
 
 # ==============================
-# Backend (Node / TS)
+# Environment files
 # ==============================
-backend/node_modules/
-backend/dist/
-backend/.cache/
+.env
+.env.*
+!.env.example
 
 # ==============================
 # Logs
@@ -23,13 +23,6 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
-
-# ==============================
-# Environment files
-# ==============================
-**/.env
-**/.env.*
-!**/.env.example
 
 # ==============================
 # IDE / OS
