@@ -31,7 +31,7 @@ export default defineNuxtConfig({
             "style-src 'self' 'unsafe-inline'",
             "img-src 'self' data: https:",
             "font-src 'self'",
-            "connect-src 'self' http://localhost:4000 ws://localhost:4001",
+            `connect-src 'self' ${process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:4000'} ws://localhost:4001`,
             "frame-src https://www.google.com https://calendly.com",
             "object-src 'none'",
             "base-uri 'self'",
