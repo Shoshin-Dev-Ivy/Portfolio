@@ -40,37 +40,6 @@
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.shoshin-web-services.com" />
-
-  <!-- Schema.org LocalBusiness pour Google -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Shoshin Web Services",
-    "description": "Services web de qualité - Développement web, backend Python, Nuxt.js",
-    "url": "https://www.shoshin-web-services.com",
-    "image": "https://www.shoshin-web-services.com/images/HomeSWS.webp",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Carcassonne",
-      "addressRegion": "Occitanie",
-      "postalCode": "11000",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "43.2130",
-      "longitude": "2.3491"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Pierre Tinard"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/pierre-tinard"
-    ]
-  }
-  </script>
 </Head>
 <ClientOnly>
   <div class="flex justify-center mx-auto -mt-12">
@@ -426,13 +395,47 @@ onBeforeUnmount(() => {
 
 useHead({
   title: 'Shoshin Web Services',
+
   meta: [
     { name: 'description', content: 'Des services web de qualité avec des solutions évolutives.' },
     { name: 'author', content: 'Pierre Tinard' },
     {
       name: 'keywords',
       content: 'Shoshin Web Services, portfolio, services web, développement web, freelance, backend, Python, Nuxt, Pierre Tinard',
-    },
+    }
   ],
+
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Shoshin Web Services",
+        "description": "Services web de qualité - Développement web, backend Python, Nuxt.js",
+        "url": "https://www.shoshin-web-services.com",
+        "image": "https://www.shoshin-web-services.com/images/HomeSWS.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Carcassonne",
+          "addressRegion": "Occitanie",
+          "postalCode": "11000",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.2130",
+          "longitude": "2.3491"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Pierre Tinard"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/pierre-tinard"
+        ]
+      })
+    }
+  ]
 })
 </script>
