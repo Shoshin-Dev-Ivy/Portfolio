@@ -3,6 +3,21 @@ import { useMaintenanceStore } from '~/stores/maintenance'
 import { useAdminStore } from '~/stores/useAdminStore'
 
 export default defineNuxtRouteMiddleware(async (to) => {
+  // Les bots (Google, Bing) ne sont jamais redirigés
+  if (process.server) {
+    const headers = useRequestHeaders()
+    const userAgent = headers['user-agent'] || ''
+    const isBot = /bot|crawler|spider|crawling|googlebot|bingbot/i.test(userAgent)
+    
+    if (isBot) {
+      return // Les bots ne sont jamais redirigés
+    }
+  }
+  
+  // BYPASS temporaire - Permet accès au login admin
+  if (to.path.includes('/admin/login') || to.path.includes('/admin')) {
+    return
+  }
 
   const maintenanceStore = useMaintenanceStore()
   const adminStore = useAdminStore()
