@@ -346,9 +346,9 @@
           <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("News")}}</h2>
         </div>
         <div class="flex flex-col text-center md:flex-col -mt-6">
-          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewFrançoisGBussac1") }}</p>
-          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewFrançoisGBussac2") }}</p>
-          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewFrançoisGBussac3") }}</p>
+          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewLeMonsieur1") }}</p>
+          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewLeMonsieur2") }}</p>
+          <p class="ml-2 mb-2 text-black dark:text-white">{{ $t("NewLeMonsieur3") }}</p>
         </div>
       </div>
       <template>
