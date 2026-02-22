@@ -23,7 +23,7 @@
                                 </a>
                         </li>
                         <li>
-                                <a href="https://github.com/Shoshin-Dev-Ivy" aria-label="Cliquez ici pour accéder mon profil GitHub" target="_blank">
+                                <a href="https://github.com/Shoshin-Dev-Ivy?tab=repositories&q=&type=&language=&sort=name" aria-label="Cliquez ici pour accéder mon profil GitHub" target="_blank">
                                 <Icon name="mdi:github" class="size-9 mx-2 text-sky-700 dark:text-white hover:text-orange-400 dark:hover:text-orange-400"/>
                                 </a> 
                         </li>
