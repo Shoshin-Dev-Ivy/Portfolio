@@ -57,18 +57,30 @@
   }
 }
 
-/* Patch Iphone 12 Pro */
-@media (width: 390px) {
+/* Patch Galaxy Z Fold 5 */
+@media (width: 344px) {
   .nav-fix.h-16.w-16 {
-    width: 3.2rem;      /* taille logo */
-    height: 3.2rem;
+    width: 3.0rem;      /* taille logo */
+    height: 3.0rem;
     border-radius: 50%;
   }
 
   .nav-fix.div {
-    font-size: 1.40rem;  /* réduction texte */
+    font-size: 1.17rem;  /* réduction texte */
     margin-top: 2.0rem; /* ajuste vertical si nécessaire */
     margin-bottom: 0.25rem;
+  }
+
+  .nav-fix.scroll {
+    margin-right: 3rem;
+  }
+
+  h2.card-title {
+    margin-left: 3rem;
+  }
+
+  .projet {
+    margin-left: 0.5rem;
   }
 }
 
@@ -89,6 +101,66 @@
   .nav-fix.scroll {
     margin-right: 3rem;
   }
+
+  h2.card-title {
+    margin-left: 2.5rem;
+  }
+
+  .projet {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Patch Iphone 12 Pro */
+@media (width: 390px) {
+  .nav-fix.h-16.w-16 {
+    width: 3.2rem;      /* taille logo */
+    height: 3.2rem;
+    border-radius: 50%;
+  }
+
+  .nav-fix.div {
+    font-size: 1.40rem;  /* réduction texte */
+    margin-top: 2.0rem; /* ajuste vertical si nécessaire */
+    margin-bottom: 0.25rem;
+  }
+
+  h2.card-title {
+    margin-left: 2rem;
+  }
+
+  .projet {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Patch iPhone Pixel 7 */
+@media (width: 412px) {
+  h2.card-title {
+    margin-left: 2rem;
+  }
+
+  .projet {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Patch iPhone SR */
+@media (width: 414px) {
+  h2.card-title {
+    margin-left: 2rem;
+  }
+
+  .projet {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Patch iPhone 14 Pro Max */
+@media (width: 430px) {
+  h2.card-title {
+    margin-left: 2rem;
+  }
 }
 
 /* Patch Galaxy S8+ */
@@ -108,24 +180,13 @@
   .nav-fix.scroll {
     margin-right: 3rem;
   }
-}
 
-/* Patch Galaxy Z Fold 5 */
-@media (width: 344px) {
-  .nav-fix.h-16.w-16 {
-    width: 3.0rem;      /* taille logo */
-    height: 3.0rem;
-    border-radius: 50%;
+  h2.card-title {
+    margin-left: 2.1rem;
   }
 
-  .nav-fix.div {
-    font-size: 1.17rem;  /* réduction texte */
-    margin-top: 2.0rem; /* ajuste vertical si nécessaire */
-    margin-bottom: 0.25rem;
-  }
-
-  .nav-fix.scroll {
-    margin-right: 3rem;
+  .projet {
+    margin-left: 0.5rem;
   }
 }
 

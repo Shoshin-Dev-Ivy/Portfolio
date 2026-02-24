@@ -23,6 +23,7 @@
     "nodemailer": "^6.10.1",
     "nuxt": "^3.17.1",
     "sanitize-html": "^2.16.0",
+    "swiper": "^12.1.2",
     "vue": "latest",
     "vue-cookies": "^1.8.5",
     "vue-router": "latest"

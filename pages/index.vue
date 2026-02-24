@@ -73,9 +73,8 @@
       </div>
     </div>
     <div class="flex flex-col text-center">
-      <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline1 /></p>
       <p class="text-2xl text-sky-700 dark:text-white"><DisplayTagline2 /></p>
-    </div> 
+    </div>
     <div class="flex" id="item-1">
       <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
       <h2 class="flex text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{$t("Services")}}</h2>
@@ -237,105 +236,7 @@
             </ul>
           </div>
         </div>
-       
-        <div class="flex" id="item-4">
-          <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-12 size-12 2xl:ml-24" />
-          <h2 class="text-2xl font-black text-sky-700 dark:text-white my-14 ml-4">{{ $t("Projets") }}</h2>
-        </div>
-        <div class="text-center md:text-center xl:text-center">
-          <h3 class="text-xl -mt-6 mb-6 md:mb-10">{{ $t("Aperçu1") }}</h3>
-          <h3 class="text-xl -mt-6 mb-6 md:mb-10">{{ $t("Aperçu2") }}</h3>
-        </div>
-        <div class="grid grid-cols-2 justify-center gap-x-20 gap-y-16 md:w-auto md:mx-32 lg:mx-32 lg:w-auto 2xl:mx-96 2xl:w-auto max-lg:grid-cols-1 mb-26">
-          <div class="card bg-sky-600 dark:bg-sky-800 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/KZEN.png" alt="Aperçu de la page login KZEN" 
-              class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} {{ $t("KZEN") }}</h2>
-              <p class="text-lg">{{ $t("ProjetKZEN") }}</p>
-              <p class="text-lg">{{ $t("ProjetKZEN2") }}</p>
-              <p class="font-black text-lg">{{ $t("Frontend") }}</p>
-              <p>=> Nuxt.js, JavaScript, Tailwind.css</p>
-              <p class="font-black text-lg">{{ $t("Backend") }}</p>
-              <p>=> Node.js, Express.js, PostgreSQL, Neon.PostgreSQL</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 w-auto shadow-xl grid grid-rows-2">
-            <figure>
-              <img src="assets/images/HomeSWS.webp" alt="Aperçu de la page d'accueil du portfolio Shoshin Web Services" 
-              class="object-cover w-full h-full" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} {{ $t("Portfolio") }}</h2>
-              <p class="text-lg">{{ $t("ProjetPortfolio") }}</p>
-              <p class="font-black text-lg">{{ $t("Frontend") }}</p>
-              <p>=> Nuxt.js, TypeScript, Tailwind.css</p>
-              <p class="font-black text-lg">{{ $t("Backend") }}</p>
-              <p>=> Node.js, Express.js, PostgreSQL, Neon.PostgreSQL</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeGroupomania.webp" alt="Aperçu de la page d'accueil Groupomania" 
-              class="object-cover sm:object-cover md:object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} P7 Groupomania</h2>
-              <p class="text-lg">{{ $t("Projet7") }}</p>
-              <p class="font-black text-lg">{{ $t("Frontend") }}</p>
-              <p>=> Vue.js, JavaScript</p>
-              <p class="font-black text-lg">{{ $t("Backend") }}</p>
-              <p>=> MySQL, Node.js</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeHotTakes.webp" alt="Aperçu de la page d'accueil Hot Takes" 
-              class="object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} P6 Hot Takes</h2>
-              <p class="text-lg">{{ $t("Projet6") }}</p>
-              <p class="font-black text-lg">{{ $t("Frontend") }}</p>
-              <p>=> Angular</p>
-              <p class="font-black text-lg">{{ $t("Backend") }}</p>
-              <p>=> Node.js, NoSQL (MongoDB)</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeKanap.webp" alt="Aperçu de la page d'accueil Kanap" 
-              class="object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} P5 Kanap</h2>
-              <p class="text-lg">{{ $t("Projet5") }}</p>
-               <p class="font-black text-lg">{{ $t("Frontend") }}</p>
-              <p>=> JavaScript</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeLaChouetteAgence.webp" alt="Aperçu de la page d'accueil La Chouette Agence" 
-              class="object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} P4 La Chouette Agence</h2>
-              <p class="text-lg">{{ $t("Projet4") }}</p>
-              <p>SEO</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeOhmyfood.webp" alt="Aperçu de la page d'accueil Ohmyfood" 
-              class="object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} P3 Ohmyfood</h2>
-              <p class="text-lg">{{ $t("Projet3") }}</p>
-              <p>{{ $t("Projet3Techno") }}</p>
-            </div>
-          </div>
-          <div class="card bg-sky-600 dark:bg-sky-800 h-96 w-auto shadow-xl grid grid-rows-2">
-            <figure><img src="assets/images/homeReservia.webp" alt="Aperçu de la page d'accueil Reservia" 
-              class="object-cover w-full h-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title text-white dark:text-orange-400 text-xl">{{ $t("Projet") }} P2 Reservia</h2>
-              <p class="text-lg">{{ $t("Projet2") }}</p>
-              <p>{{ $t("Projet2Techno") }}</p>
-            </div>
-          </div>
-        </div>
+        <ProjectsCarousel />
         <div class="flex my-12" id="item-5">
           <Icon name="heroicons:code-bracket-16-solid" class="bg-orange-400 my-2 size-12 2xl:ml-24" />
           <h2 class="flex justify-left text-2xl font-black text-sky-700 dark:text-white my-4 ml-4" id="contact-form">{{ $t("Contact") }}</h2>
