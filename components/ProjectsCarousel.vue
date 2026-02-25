@@ -37,6 +37,29 @@
         :grab-cursor="true"
         class="projects-swiper py-10"
       >
+      <!-- Le Monsieur d'en Face -->
+        <SwiperSlide class="project-slide">
+          <div class="card bg-sky-600 dark:bg-sky-800 shadow-2xl overflow-hidden h-full">
+            <figure class="h-48 overflow-hidden">
+              <img src="assets/images/Le_Monsieur d_en_Face.webp" alt="Aperçu de la page d'accueil Le Monsieur d'en Face"
+                class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
+            </figure>
+            <div class="card-body p-5">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap justify-center pb-16">
+                 Le Monsieur<span class="monsieur-break">d'en Face</span>
+              </h2>
+              <p class="projet text-sm text-white/90">{{ $t("NewLeMonsieur2") }}</p>
+              <p class="projet text-sm text-white/90 mt-3">{{ $t("NewLeMonsieur3") }}</p>
+              <div class="mt-3 space-y-1">
+                <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
+                <p class="projet text-sm text-white/80">Nuxt.js · JavaScript · Tailwind.css</p>
+                <p class="projet font-black text-orange-300 text-sm mt-2">{{ $t("Backend") }}</p>
+                <p class="projet text-sm text-white/80">Node.js · Express.js · PostgreSQL · Neon</p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
         <!-- KZEN -->
         <SwiperSlide class="project-slide">
           <div class="card bg-sky-600 dark:bg-sky-800 shadow-2xl overflow-hidden h-full">
@@ -45,11 +68,11 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 {{ $t("KZEN") }}
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("ProjetKZEN") }}</p>
-              <p class="projet text-sm text-white/90">{{ $t("ProjetKZEN2") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("ProjetKZEN") }}</p>
+              <p class="projet text-sm text-white/90 mt-3">{{ $t("ProjetKZEN2") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Nuxt.js · JavaScript · Tailwind.css</p>
@@ -68,10 +91,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 {{ $t("Portfolio") }}
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("ProjetPortfolio") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("ProjetPortfolio") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Nuxt.js · TypeScript · Tailwind.css</p>
@@ -90,10 +113,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 P7 Groupomania
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("Projet7") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet7") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Vue.js · JavaScript</p>
@@ -112,10 +135,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 P6 Hot Takes
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("Projet6") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet6") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Angular</p>
@@ -134,10 +157,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 P5 Kanap
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("Projet5") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet5") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">JavaScript</p>
@@ -154,10 +177,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap justify-center pb-16">
                  P4 La chouette<span class="agence-break">agence</span>
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("Projet4") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet4") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet text-sm text-white/80">SEO</p>
               </div>
@@ -173,10 +196,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 P3 Ohmyfood
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("Projet3") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet3") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet text-sm text-white/80">{{ $t("Projet3Techno") }}</p>
               </div>
@@ -192,10 +215,10 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
                 P2 Reservia
               </h2>
-              <p class="projet text-sm text-white/90 mt-1">{{ $t("Projet2") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet2") }}</p>
               <div class="mt-3 space-y-1">
                 <p class="projet text-sm text-white/80">{{ $t("Projet2Techno") }}</p>
               </div>
@@ -211,7 +234,7 @@
                w-10 h-10 rounded-full bg-orange-400 hover:bg-orange-500
                text-white shadow-lg flex items-center justify-center
                transition-all duration-200 hover:scale-110 focus:outline-none
-               -ml-1 lg:-ml-5"
+               -ml-4 lg:-ml-5"
         aria-label="Projet précédent"
       >
         <Icon name="heroicons:chevron-left-20-solid" class="size-5" />
@@ -222,7 +245,7 @@
                w-10 h-10 rounded-full bg-orange-400 hover:bg-orange-500
                text-white shadow-lg flex items-center justify-center
                transition-all duration-200 hover:scale-110 focus:outline-none
-               -mr-1 lg:-mr-5"
+               -mr-4 lg:-mr-5"
         aria-label="Projet suivant"
       >
         <Icon name="heroicons:chevron-right-20-solid" class="size-5" />
@@ -251,6 +274,7 @@ const modules = [EffectCoverflow, Navigation, Pagination, Autoplay]
 @media (max-width: 375px) {
   .agence-break {
     flex-basis: 100%;
+    text-align: center;
   }
 }
 
@@ -259,6 +283,21 @@ const modules = [EffectCoverflow, Navigation, Pagination, Autoplay]
     content: none;
   }
 }
+
+/* Forcer "d'en Face" à la ligne uniquement sur 344px / 360px / 375px */
+@media (max-width: 375px) {
+  .monsieur-break {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 376px) {
+  .monsieur-break::before {
+    content: none;
+  }
+}
+
 
 /* Largeur fixe des slides pour l'effet coverflow */
 .project-slide {

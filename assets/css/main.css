@@ -76,7 +76,7 @@
   }
 
   h2.card-title {
-    margin-left: 3rem;
+    margin-left: 0rem;
   }
 
   .projet {
@@ -103,7 +103,7 @@
   }
 
   h2.card-title {
-    margin-left: 2.5rem;
+    margin-left: 0rem;
   }
 
   .projet {
@@ -126,7 +126,7 @@
   }
 
   h2.card-title {
-    margin-left: 2rem;
+    margin-left: 0rem;
   }
 
   .projet {
@@ -137,7 +137,7 @@
 /* Patch iPhone Pixel 7 */
 @media (width: 412px) {
   h2.card-title {
-    margin-left: 2rem;
+    margin-left: 0rem;
   }
 
   .projet {
@@ -148,7 +148,7 @@
 /* Patch iPhone SR */
 @media (width: 414px) {
   h2.card-title {
-    margin-left: 2rem;
+    margin-left: 0rem;
   }
 
   .projet {
@@ -159,7 +159,7 @@
 /* Patch iPhone 14 Pro Max */
 @media (width: 430px) {
   h2.card-title {
-    margin-left: 2rem;
+    margin-left: 0rem;
   }
 }
 
@@ -182,7 +182,7 @@
   }
 
   h2.card-title {
-    margin-left: 2.1rem;
+    margin-left: 0rem;
   }
 
   .projet {
