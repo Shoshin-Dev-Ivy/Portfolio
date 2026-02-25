@@ -45,11 +45,13 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap justify-center pb-14">
                  Le Monsieur<span class="monsieur-break">d'en Face</span>
               </h2>
               <p class="projet text-sm text-white/90">{{ $t("NewLeMonsieur2") }}</p>
-              <p class="projet text-sm text-white/90 mt-3">{{ $t("NewLeMonsieur3") }}</p>
+              <p class="projet text-sm text-white/90 mt-3">{{ $t("NewLeMonsieur3") }}
+                <span class="projet font-black text-base text-white/90">{{ $t("2026") }}</span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Nuxt.js · JavaScript · Tailwind.css</p>
@@ -68,11 +70,13 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 {{ $t("KZEN") }}
               </h2>
               <p class="projet text-sm text-white/90">{{ $t("ProjetKZEN") }}</p>
-              <p class="projet text-sm text-white/90 mt-3">{{ $t("ProjetKZEN2") }}</p>
+              <p class="projet text-sm text-white/90 mt-3">{{ $t("ProjetKZEN2") }}
+                <span class="projet font-black text-base text-white/90">{{ $t("2025") }}</span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Nuxt.js · JavaScript · Tailwind.css</p>
@@ -91,10 +95,12 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 {{ $t("Portfolio") }}
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("ProjetPortfolio") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("ProjetPortfolio") }}
+                <span class="projet font-black text-base text-white/90">{{ $t("2024") }}</span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Nuxt.js · TypeScript · Tailwind.css</p>
@@ -113,10 +119,12 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 P7 Groupomania
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("Projet7") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet7") }}
+                <span class="projet font-black text-base text-white/90">{{ $t("2023") }}</span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Vue.js · JavaScript</p>
@@ -135,10 +143,12 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 P6 Hot Takes
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("Projet6") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet6") }}
+                <span class="projet font-black text-base text-white/90">{{ $t("2021") }}</span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">Angular</p>
@@ -157,10 +167,14 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 P5 Kanap
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("Projet5") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet5") }}
+                <span class="projet font-black text-base text-white/90">
+                 {{ $t("2021") }}
+                </span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet font-black text-orange-300 text-sm">{{ $t("Frontend") }}</p>
                 <p class="projet text-sm text-white/80">JavaScript</p>
@@ -177,10 +191,14 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black flex-wrap justify-center pb-14">
                  P4 La chouette<span class="agence-break">agence</span>
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("Projet4") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet4") }}
+                <span class="projet font-black text-base text-white/90">
+                  {{ $t("2021") }}
+                </span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet text-sm text-white/80">SEO</p>
               </div>
@@ -196,10 +214,12 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 P3 Ohmyfood
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("Projet3") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet3") }}
+                <span class="projet font-black text-base text-white/90">{{ $t("2021") }}</span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet text-sm text-white/80">{{ $t("Projet3Techno") }}</p>
               </div>
@@ -215,10 +235,14 @@
                 class="object-cover w-full h-full transition-transform duration-500 hover:scale-105" />
             </figure>
             <div class="card-body p-5">
-              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-16">
+              <h2 class="card-title text-white dark:text-orange-400 text-lg font-black justify-center pb-14">
                 P2 Reservia
               </h2>
-              <p class="projet text-sm text-white/90">{{ $t("Projet2") }}</p>
+              <p class="projet text-sm text-white/90">{{ $t("Projet2") }}
+                <span class="projet font-black text-base text-white/90">
+                  {{ $t("2021") }}
+                </span>
+              </p>
               <div class="mt-3 space-y-1">
                 <p class="projet text-sm text-white/80">{{ $t("Projet2Techno") }}</p>
               </div>
